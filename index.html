@@ -504,6 +504,9 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
           <button class="mi" id="expBtn">Export &mdash; full detail</button>
           <button class="mi" id="expShort">Export &mdash; short list</button>
           <button class="mi" id="opmlBtn">RSS feeds (OPML)</button>
+          <button class="mi" id="exportSetsBtn">Export pinned sets</button>
+          <button class="mi" id="importSetsBtn">Import pinned sets</button>
+          <input type="file" id="importSetsFile" accept=".json" style="display:none">
           <button class="mi" id="saveCopyBtn">Save copy of this page</button>
           <button class="mi" id="creditsBtn">Credits &amp; sources</button>
           <button class="mi" id="rndBtn">Show me a random tool</button>
@@ -2897,6 +2900,60 @@ function downloadOPML(){
     toast("141 feeds downloaded \u2014 import the OPML into your RSS reader");
   }catch(e){ toast("Couldn't write the file in this browser"); }
 }
+function exportSets(){
+  const setsOut={};
+  Object.entries(SETS).forEach(([name,set])=>{ setsOut[name]=[...set]; });
+  const total=Object.values(setsOut).reduce((a,v)=>a+v.length,0);
+  if(!total){ toast("No pins to export — pin some tools first"); return; }
+  const payload=JSON.stringify({
+    version:1,
+    exported:new Date().toISOString().slice(0,10),
+    sets:setsOut
+  },null,2);
+  const blob=new Blob([payload],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="dfir-toolkit-sets.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  toast(`Exported ${Object.keys(setsOut).length} set${Object.keys(setsOut).length===1?"":"s"} (${total} pins)`);
+}
+function importSets(file){
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      // accept both {sets:{...}} and a raw {name:[...]} object
+      const incoming=data.sets||data;
+      if(typeof incoming!=="object"||Array.isArray(incoming)) throw new Error("Unrecognised format");
+      let added=0, merged=0, skipped=0;
+      Object.entries(incoming).forEach(([name,keys])=>{
+        if(!Array.isArray(keys)) return;
+        // only import keys that still exist in the current toolkit
+        const valid=keys.filter(k=>ITEMS.some(x=>x.k===k));
+        skipped+=keys.length-valid.length;
+        if(!valid.length) return;
+        if(SETS[name]){
+          // merge into existing set — never overwrite
+          valid.forEach(k=>{ if(!SETS[name].has(k)){ SETS[name].add(k); merged++; } });
+        } else {
+          SETS[name]=new Set(valid); added+=valid.length;
+        }
+      });
+      render(); saveState();
+      const parts=[];
+      if(added) parts.push(`${added} new pin${added===1?"":"s"}`);
+      if(merged) parts.push(`${merged} merged`);
+      if(skipped) parts.push(`${skipped} skipped (tools no longer in index)`);
+      toast("Imported — "+parts.join(", "));
+    }catch(err){
+      toast("Couldn't read that file — make sure it's a DFIR Toolkit export");
+    }
+  };
+  reader.readAsText(file);
+}
+
 function saveCopy(){
   const setsOut={}; Object.entries(SETS).forEach(([n,s])=>setsOut[n]=[...s]);
   const payload={sets:setsOut, activeSet, custom:CUSTOM, edits:EDITS, removed:REMOVED,
@@ -3023,6 +3080,9 @@ $("#pinMd").onclick=()=>copy(md(pinnedItems(),`Tooling selected \u2014 ${activeS
   `Copied ${state.pins.size} pinned tools as Markdown`);
 $("#pinClear").onclick=()=>{state.pins.clear(); render(); saveState();};
 $("#opmlBtn").onclick=downloadOPML;
+$("#exportSetsBtn").onclick=exportSets;
+$("#importSetsBtn").onclick=()=>$("#importSetsFile").click();
+$("#importSetsFile").onchange=e=>{ importSets(e.target.files[0]); e.target.value=""; };
 $("#saveCopyBtn").onclick=saveCopy;
 $("#moreBtn").onclick=e=>{
   e.stopPropagation();
