@@ -571,7 +571,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
  licensed <a href="https://creativecommons.org/licenses/by/4.0/" data-ext="1" target="_blank" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
  &mdash; reuse, adapt and redistribute freely, including commercially, with attribution.
  Linked tools remain the property of their respective authors and carry their own licences.</div>
-<div>Built on work shared by Kevin Pagano, Andrew Rathbun, Eric Zimmerman, Alexis Brignoni, Sarah Edwards, Hexordia, North Loop Consulting, s0cm0nkey, Josh Brunty and many others &mdash; see Credits in the &#8943; menu. Pinned sets and added tools are saved in this browser only &mdash; clearing your browser data resets them.</div>
+<div>Built on work shared by Kevin Pagano, Andrew Rathbun, Eric Zimmerman, Alexis Brignoni, Sarah Edwards, Hexordia, North Loop Consulting, s0cm0nkey, Josh Brunty and many others &mdash; see Credits in the &#8943; menu. Pinned sets and added tools are saved in this browser only &mdash; clearing your browser data resets them. Use <strong>Export pinned sets</strong> in the &#8943; menu to back them up or share them.</div>
 </div></footer>
 
 <script type="text/xml" id="opml-data">
@@ -2430,7 +2430,7 @@ function buildSetsPanel(container){
   container.innerHTML="";
   const note=document.createElement("p");
   note.className="setsnote";
-  note.textContent="Saved in this browser only. Clearing your browser data resets sets and pins.";
+  note.textContent="Saved in this browser only. Clearing your browser data resets sets and pins — use Export in the \u22EF menu to back them up.";
   container.appendChild(note);
 
   // Local UI state (which row is mid-rename, mid-delete, or the add-set
