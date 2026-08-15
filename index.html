@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 880 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 919 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -771,7 +771,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">880</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">919</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -924,7 +924,10 @@ const T = [
 ]],
 
 ["Event Logs & Detection",[
-["TChunt","https://github.com/A-poc/TChunt","Scans Windows systems for signs of post-exploitation and compromise by checking for known threat-hunting indicators across the registry, filesystem and running processes. Lightweight, standalone and useful for rapid triage on a suspect host.","oss",["win"],["win"]],
+["AutorunsToWinEventLog","https://github.com/palantir/windows-event-forwarding/tree/master/AutorunsToWinEventLog","Runs Autoruns non-interactively, converts the output to JSON and writes it into a custom Windows Event Log channel so it can be forwarded via WEF into your SIEM. Detects persistence implants that survive across reboots without requiring agent changes on the endpoint.","oss",["win"],["win"]],
+["SysmonSearch","https://github.com/JPCERTCC/SysmonSearch","JPCERT's Elasticsearch and Kibana-based interface for Sysmon event analysis. Visualises process and network relationships, surfaces statistical outliers across devices and monitors for IOC matches via STIX/OpenIOC uploads.","oss",["win"],["web"]],
+["procfilter","https://github.com/godaddy/procfilter","GoDaddy's YARA-integrated process filtering framework for Windows, running as a service via Microsoft's ETW API. Blocks processes matching YARA rules at launch and logs results to the Windows Event Log. Lightweight and precise — designed for targeted defence against known threats rather than broad AV coverage.","oss",["win"],["win"]],
+["PersistenceSniper","https://github.com/last-byte/PersistenceSniper","PowerShell module for hunting persistence mechanisms implanted on Windows machines, covering a wide range of techniques mapped to MITRE ATT&CK. Can be run against local or remote systems and outputs structured data suitable for SIEM ingestion.","oss",["win"],["win"]],
 ["Palantir Windows Event Forwarding","https://github.com/palantir/windows-event-forwarding","Palantir's WEF deployment model with subscription definitions and channel configuration. Centralises Windows event collection without an agent, using what Windows already provides.","oss",["win"],["win"]],
 ["Windows Event Forwarding (Microsoft)","https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/use-windows-event-forwarding-to-assist-in-intrusion-detection","Microsoft's own guidance on using WEF for intrusion detection, including which events to subscribe to and how to structure subscriptions.","free",["win"],["web"]],
 ["Sysdig","https://github.com/draios/sysdig","Captures system calls and OS events to a scap file that can be replayed and queried afterwards, so live activity becomes a reviewable artifact rather than something you had to be watching for. Works on hosts and containers.","oss",["nix"],["nix"]],
@@ -1026,6 +1029,7 @@ const T = [
 ]],
 
 ["iOS & Android",[
+["ALEX (Android Logical Extractor)","https://github.com/prosch88/ALEX","Android Logical Extractor — the ADB counterpart to UFADE, by the same author (Christian Peter). GUI-based Python tool that automates ADB acquisition of Android, FireOS, WearOS and Ubuntu Touch devices on Windows, Linux and macOS. Based on the android_triage bash script concept but cross-platform throughout. Ubuntu Touch devices also have a physical acquisition flow. Requires Python 3.11 and active ADB debugging on the device.","oss",["and"],["win","mac","nix"]],
 ["palera1n","https://palera.in/","Semi-tethered checkm8-based jailbreak for iOS 15 through 17 on A8 through A11 devices, including the iPhone X. Enables full file system acquisition on supported hardware. Requires a Mac with Apple Silicon or Intel. The most actively maintained free jailbreak for acquisition purposes as of 2026.","free",["ios"],["mac"]],
 ["checkra1n","https://checkra.in/","checkm8 exploit-based jailbreak for A5 through A11 devices on iOS 12 through 14.8.1. The original hardware-level jailbreak for forensic full file system acquisition. Development has effectively halted in favour of palera1n for supported devices, but remains the tool for older hardware in that range.","free",["ios"],["mac", "nix"]],
 ["Biome SEGB Record Parser","https://marketplace.opentext.com/cybersecurity/content/biome-segb-record-parser","EnScript for EnCase that parses Biome SEGB records, decoding protobuf payloads without the .proto files using the ProtoUntyped library and writing results to bookmarks, a logical evidence file and the console. Field names come through as numeric IDs, so values need interpreting.","free",["ios"],["win"]],
@@ -1084,6 +1088,7 @@ const T = [
 ]],
 
 ["Email & Messaging",[
+["parsedmarc","https://github.com/domainaware/parsedmarc","Python tool and CLI for parsing DMARC aggregate and forensic reports from an inbox via IMAP, Microsoft Graph or Gmail API. Outputs to JSON, CSV, Elasticsearch or Splunk. Self-hosted alternative to commercial DMARC report processors — useful in BEC investigations to understand what DMARC is and isn't catching.","oss",["any"],["xplat"]],
 ["XstReader","https://github.com/iluvadev/XstReader","Open source viewer for Outlook .ost and .pst files that reads them directly without Outlook installed, and exports messages and attachments. Solves the recurring problem of an OST with no matching mail client.","oss",["win"],["win"]],
 ["Forensic Email Collector","https://www.metaspike.com/forensic-email-collector/","Metaspike's tool for forensically sound acquisition directly from Gmail, Microsoft 365, IMAP and other providers, preserving original message sources and metadata rather than re-rendering them. The reference tool for cloud mailbox acquisition.","com",["cloud","any"],["win"]],
 ["Forensic Email Intelligence","https://www.metaspike.com/forensic-email-intelligence/","Metaspike's analysis counterpart, examining message authenticity: header anomalies, DKIM validation against original bodies, timestamp inconsistencies and signs of forgery or tampering.","com",["any"],["win"]],
@@ -1320,6 +1325,8 @@ const T = [
 ]],
 
 ["Hashing & Triage",[
+["TCHunt-ng","https://github.com/antagon/TCHunt-ng","Updated successor to TCHunt. Scans files and directories to detect potential encrypted containers — TrueCrypt, VeraCrypt and similar — by testing file size divisibility, running a chi-squared entropy test and checking for the absence of a known file header. Supports a preserve-access-time flag useful for forensic work. Cross-platform, actively maintained.","oss",["win", "mac", "nix"],["xplat"]],
+["TCHunt","https://github.com/stephenjudge/TCHunt","Original encrypted file detector using four attributes: size modulo 512, minimum 5 MB, chi-squared entropy test and no common file header. The predecessor to TCHunt-ng and widely cited in forensic methodology for locating hidden encrypted volumes on examined media. Requires the Boost and FLTK libraries to build.","oss",["win", "mac", "nix"],["xplat"]],
 ["Hasher","https://ericzimmerman.github.io/","Calculates file and folder hashes for validation, integrity checking and comparison. Handles recursive folder hashing and comparison against a known set, which is the routine verification job on every case.","free",["any"],["win"]],
 ["hashdeep / md5deep","https://github.com/jessek/hashdeep","Recursive hashing with audit modes that compare a directory tree against a known hash set and report matches, misses and changes. Built for verifying large evidence sets rather than individual files.","oss",["any"],["xplat"]],
 ["HashMyFiles","https://www.nirsoft.net/utils/hash_my_files.html","Lightweight GUI for calculating and comparing file hashes with Explorer integration. Convenient for the routine task of verifying an image or exhibit hash.","free",["any"],["win"]],
@@ -1371,6 +1378,8 @@ const T = [
 ]],
 
 ["OSINT & Threat Intelligence",[
+["Phishing Catcher","https://github.com/x0rz/phishing_catcher","Monitors the Certificate Transparency Log stream via CertStream API and scores newly issued TLS certificates against a configurable list of suspicious patterns — domain names that look like your brand, typosquats and phishing kit indicators. Catches phishing infrastructure before it goes live.","oss",["any"],["xplat"]],
+["Maltrail","https://github.com/stamparm/maltrail","Malicious traffic detection system that checks DNS queries, URLs and IP connections against 30+ publicly maintained threat lists. Runs a sensor on the network segment and provides a web-based reporting interface. Useful for continuous detection of known-bad infrastructure.","oss",["any"],["nix"]],
 ["Malpedia","https://malpedia.caad.fkie.fraunhofer.de/","Fraunhofer FKIE's curated library of malware families with consistent naming, YARA rules and actor mappings. The go-to reference when you have a sample and need rapid identification with context on the family and associated campaigns.","free",["any"],["web"]],
 ["ThreatMiner","https://www.threatminer.org/","Threat intelligence portal aggregating IOCs — domains, IPs, hashes, SSL certificates — from open source feeds, with passive DNS, WHOIS and sandbox report pivoting all in one place.","free",["any"],["web"]],
 ["IPsum","https://github.com/stamparm/ipsum","Daily-updated threat intelligence feed aggregating 30+ public lists of suspicious and malicious IP addresses into a single ranked blocklist. The higher the score, the more lists flagged that IP.","oss",["net"],["web"]],
@@ -1525,6 +1534,7 @@ const T = [
 ]],
 
 ["Training & CTFs",[
+["KC7 Cyber","https://kc7cyber.com/","Free gamified cybersecurity training platform where participants act as digital detectives investigating simulated attacks against realistic-looking organisations. Uses real-world log formats and KQL queries. No prior experience required — good for onboarding analysts new to threat hunting.","free",["any"],["web"]],
 ["Cyber5W","https://cyber5w.com/","DFIR training with a strong macOS and mobile focus, including free courses and challenge material.","free",["any"],["web"]],
 ["Cellebrite Community Series","https://www.cellebrite.com/en/series/","Cellebrite's free webinar and article series covering mobile analysis technique, much of it tool-agnostic.","free",["ios","and"],["web"]],
 ["Cyber Social Hub","https://cybersocialhub.com/","Community hub with training, webinars and forums spanning digital forensics, OSINT and investigation practice.","free",["any"],["web"]],
@@ -1624,6 +1634,10 @@ const T = [
 ]],
 
 ["References & Cheat Sheets",[
+["filesec.io","https://filesec.io/","Reference for attacker-abused file extensions — what each is, which OS it targets, how attackers use it and how to defend against it. Useful when investigating suspicious email attachments or building mail gateway rules.","free",["any"],["web"]],
+["KQL Search","https://www.kqlsearch.com/","Community aggregator for KQL (Kusto Query Language) queries shared on GitHub. Search by keyword to find pre-built hunting and detection queries for Azure Monitor, Microsoft Sentinel and Microsoft Defender. The fastest way to find a starting point for a new query.","free",["cloud"],["web"]],
+["decode-vbe","https://github.com/DidierStevens/DidierStevensSuite/blob/master/decode-vbe.py","Didier Stevens' decoder for Microsoft Script Encoding (VBE/JSE), the obfuscation layer attackers use to hide VBScript malware from casual inspection. Converts encoded scripts back to readable plaintext for analysis.","oss",["any"],["xplat"]],
+["A-poc BlueTeam-Tools","https://github.com/A-poc/BlueTeam-Tools","Curated collection of 70+ blue team tools and techniques covering network discovery, vulnerability management, security monitoring, threat intelligence, incident response, malware analysis and digital forensics. A well-organised reference for building or evaluating a blue team toolkit.","free",["any"],["web"]],
 ["Blue Team Handbook: Incident Response Edition","https://www.amazon.com/Blue-Team-Handbook-Incident-Response/dp/1500734756","Don Murdoch's zero-fluff field reference for incident responders covering the IR process, attacker methodology, common tools, network analysis methodology, IOC identification, Windows and Linux analysis, tcpdump and Snort usage. Designed to sit on the desk during an active incident.","com",["any"],["web"]],
 ["Cybersecurity Stash","https://cybersecuritystash.com/","Curated directory of security tools spanning DFIR, red team, blue team and general security tooling. Useful as a second-opinion index when looking for a tool the main DFIR lists don't cover.","free",["any"],["web"]],
 ["Notari on log Command Updates","https://www.ios-unifiedlogs.com/post/ios-unified-logs-log-command-major-updates-to-not-miss","Lionel Notari's coverage of significant changes to Apple's log command-line tool: log repack, filtering behaviour changes, and bounded log stats output. Worth checking against whatever macOS version your analysis machine is running — these changes affect command output you may be relying on.","free",["mac", "ios"],["web"]],
@@ -1713,6 +1727,17 @@ const T = [
 ]],
 
 ["Command References & Playbooks",[
+["IRFlow DFIR Tips: AI Query History & AI App Artifacts","https://r3nzsec.github.io/irflow-timeline/dfir-tips/ai-query-history","Guidance on locating and interpreting AI application artifacts — query histories, cached responses and associated user activity — as AI tool use becomes increasingly relevant evidence in investigations.","free",["any"],["web"]],
+["IRFlow DFIR Tips: Ransomware Investigation","https://r3nzsec.github.io/irflow-timeline/dfir-tips/ransomware-investigation","Step-by-step methodology for ransomware incident response: initial triage, identifying the variant, tracing the intrusion path, scoping encryption impact and documenting findings for recovery and reporting.","free",["any"],["web"]],
+["IRFlow DFIR Tips: Lateral Movement Tracing","https://r3nzsec.github.io/irflow-timeline/dfir-tips/lateral-movement-tracing","Practical guidance for tracing adversary lateral movement across Windows environments using authentication logs, network connections and artifact cross-referencing to reconstruct the attack path.","free",["win"],["web"]],
+["IRFlow DFIR Tips: Malware Execution Analysis","https://r3nzsec.github.io/irflow-timeline/dfir-tips/malware-execution-analysis","Methodology for reconstructing malware execution from Windows artifacts — prefetch, Shimcache, Amcache, event logs and process telemetry — to determine what ran, when and what it touched.","free",["win"],["web"]],
+["IRFlow DFIR Tips: Brute Force & Account Compromise","https://r3nzsec.github.io/irflow-timeline/dfir-tips/brute-force-account-compromise","Guidance for investigating credential-based attacks: identifying brute force patterns in authentication logs, tracing successful compromise, and scoping the extent of account misuse.","free",["any"],["web"]],
+["IRFlow DFIR Tips: Insider Threat & Exfiltration","https://r3nzsec.github.io/irflow-timeline/dfir-tips/insider-threat-exfiltration","Methodology for investigating insider threat scenarios with a focus on data exfiltration: identifying staging activity, transfer mechanisms, volume indicators and supporting artifact correlation.","free",["any"],["web"]],
+["IRFlow DFIR Tips: Log Tampering Detection","https://r3nzsec.github.io/irflow-timeline/dfir-tips/log-tampering-detection","Techniques for detecting evidence of log tampering or anti-forensic activity — gaps in log sequences, USN journal anomalies, cleared event logs and timestamp inconsistencies.","free",["win"],["web"]],
+["IRFlow DFIR Tips: Persistence Hunting","https://r3nzsec.github.io/irflow-timeline/dfir-tips/persistence-hunting","Systematic methodology for hunting persistence mechanisms across Windows registry run keys, scheduled tasks, services, WMI subscriptions, startup folders and browser extensions.","free",["win"],["web"]],
+["IRFlow DFIR Tips: KAPE Triage Workflow","https://r3nzsec.github.io/irflow-timeline/dfir-tips/kape-triage-workflow","Practical workflow for KAPE-based triage collection and processing — target and module selection, output organisation, and integrating KAPE output into downstream analysis tools.","free",["win"],["web"]],
+["IRFlow DFIR Tips: Threat Intel IOC Sweeps","https://r3nzsec.github.io/irflow-timeline/dfir-tips/threat-intel-ioc-sweeps","Guidance on conducting IOC sweeps across collected artifacts using threat intelligence feeds — hash matching, IP/domain correlation and YARA rule application across endpoint evidence.","free",["any"],["web"]],
+["IRFlow DFIR Tips: Building the Final Report","https://r3nzsec.github.io/irflow-timeline/dfir-tips/building-final-report","Structure and guidance for building a DFIR final report — executive summary, timeline of events, technical findings, evidence handling documentation and recommendations.","free",["any"],["web"]],
 ["Logging & Security Architecture","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/security-logging","What to collect, how to collect it, where to store it and how to keep log quality high enough to support real work. Covers collectors, aggregators, brokers, hot/warm/cold and WORM storage. Read before an incident: it determines what evidence will exist when you arrive.","free",["any"],["web"]],
 ["How to Create a Logging Strategy","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/security-logging/how-to-log","Building a logging strategy from scratch rather than accumulating sources ad hoc, prioritising by detection value against volume and cost.","free",["any"],["web"]],
 ["Logging: Endpoint (Windows & Linux)","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/security-logging/logging-guide-windows-endpoint-logs","Which endpoint logs to enable and forward on Windows and Linux, and what each yields for investigation. The gap between default logging and useful logging is the difference between having evidence and not.","free",["win", "nix"],["web"]],
@@ -1736,6 +1761,9 @@ const T = [
 ]],
 
 ["Utilities",[
+["Lynis","https://github.com/CISOfy/lynis","Security auditing and hardening tool for Linux, macOS and UNIX. Scans the running system for configuration issues, vulnerable packages, missing patches and compliance gaps (CIS, HIPAA, ISO27001, PCI-DSS). Run it on a system post-incident to document the security baseline that was in place at the time.","oss",["mac", "nix"],["mac", "nix"]],
+["Canary Tokens","https://canarytokens.org/nest/","Thinkst's free honeypot token service. Generates URLs, documents, DNS tokens and more that silently alert you when accessed. Place them in sensitive directories, on network shares or in documents — any access indicates an intruder has reached that resource.","free",["any"],["web"]],
+["certSniff","https://github.com/A-poc/certSniff","Python tool that monitors Certificate Transparency logs for newly issued TLS certificates matching keywords you specify — your domain, brand name or product. Complements Phishing Catcher; useful for continuous brand monitoring without requiring a CertStream dependency.","oss",["any"],["xplat"]],
 ["Install_EZTools on Linux","https://github.com/sethenoka/Install_EZTools/tree/main","Installs the EZ Tools suite on Linux, so MFTECmd, EvtxECmd, RECmd and the rest run on a SIFT or Ubuntu workstation rather than requiring Windows. Removes the usual reason for keeping a Windows VM alongside a Linux analysis box.","oss",["win"],["nix"]],
 ["EZViewer","https://ericzimmerman.github.io/","Standalone viewer for documents, text, logs, spreadsheets, HTML, CSV and PDF during review, without launching the associated application on the examination machine.","free",["any"],["win"]],
 ["Get-ZimmermanTools","https://ericzimmerman.github.io/","PowerShell script that discovers, downloads and updates the entire EZ Tools set. Run it periodically; several tools depend on maps and plugins that change more often than the binaries.","free",["win"],["win"]],
