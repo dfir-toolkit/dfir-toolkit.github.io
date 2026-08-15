@@ -874,6 +874,8 @@ const T = [
 ]],
 
 ["Windows",[
+["mftdump","https://github.com/mlbd/mftdump","Dumps MFT records from an NTFS filesystem image, producing a parseable output covering file creation, access and modification timestamps, file sizes, flags and parent directory linkage. A thin, fast alternative to MFTECmd when you need raw MFT output without the EZ Tools dependency.","oss",["win"],["xplat"]],
+["USBSleuth","https://github.com/woanware/usbdeviceforensics","Extracts USB device history from Windows registry hives — vendor, product, serial number, first install date and last insertion time — without requiring a live system. The dedicated complement to RegRipper's USB plugins.","oss",["win"],["xplat"]],
 ["RustyUsn","https://github.com/forensicmatt/RustyUsn","Fast Rust parser for the NTFS USN journal, built for very large journals where Python parsers become impractical.","oss",["win"],["xplat"]],
 ["WinPrefetchView","https://www.nirsoft.net/utils/win_prefetch_view.html","Reads prefetch files and displays the referenced file list, run count and timestamps in a sortable grid. Quicker than PECmd when you just want to eyeball what a program touched.","free",["win"],["win"]],
 ["MUICacheView","https://www.nirsoft.net/utils/muicache_view.html","Views the MuiCache registry key, which retains the display name of applications a user has launched. Frequently holds evidence of programs long since deleted.","free",["win"],["win"]],
@@ -922,6 +924,7 @@ const T = [
 ]],
 
 ["Event Logs & Detection",[
+["TChunt","https://github.com/A-poc/TChunt","Scans Windows systems for signs of post-exploitation and compromise by checking for known threat-hunting indicators across the registry, filesystem and running processes. Lightweight, standalone and useful for rapid triage on a suspect host.","oss",["win"],["win"]],
 ["Palantir Windows Event Forwarding","https://github.com/palantir/windows-event-forwarding","Palantir's WEF deployment model with subscription definitions and channel configuration. Centralises Windows event collection without an agent, using what Windows already provides.","oss",["win"],["win"]],
 ["Windows Event Forwarding (Microsoft)","https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/use-windows-event-forwarding-to-assist-in-intrusion-detection","Microsoft's own guidance on using WEF for intrusion detection, including which events to subscribe to and how to structure subscriptions.","free",["win"],["web"]],
 ["Sysdig","https://github.com/draios/sysdig","Captures system calls and OS events to a scap file that can be replayed and queried afterwards, so live activity becomes a reviewable artifact rather than something you had to be watching for. Works on hosts and containers.","oss",["nix"],["nix"]],
@@ -1274,6 +1277,7 @@ const T = [
 ]],
 
 ["Timelines",[
+["IRFlow Timeline","https://r3nzsec.github.io/irflow-timeline/","SQLite-backed DFIR timeline analysis with a browser-based interface. Ingests CSV, TSV, XLSX, EVTX, Plaso, $MFT and $J files into a unified chronological view. Features AI artifact detection, AI Secret Hunt, process inspection, lateral movement tracking, persistence detection and VirusTotal enrichment. Source: github.com/r3nzsec/irflow-timeline.","free",["win","mac","nix"],["web"]],
 ["AutoTimeliner","https://github.com/andreafortuna/autotimeliner","Automatically extracts a timeline from a memory image by combining Volatility timeliner, mftparser and shellbags output into one sorted body file.","oss",["win"],["xplat"]],
 ["Timely","https://github.com/northloopforensics/Timely","Timestamp epoch converter covering the encodings that turn up across artifacts.","oss",["any"],["xplat"]],
 ["CSV_TimeFilter","https://github.com/northloopforensics/CSV_TimeFilter","Filters large CSV-based timeline files down to a date range or criteria, for when a super timeline is too large to open let alone review.","oss",["any"],["xplat"]],
@@ -1367,6 +1371,11 @@ const T = [
 ]],
 
 ["OSINT & Threat Intelligence",[
+["Malpedia","https://malpedia.caad.fkie.fraunhofer.de/","Fraunhofer FKIE's curated library of malware families with consistent naming, YARA rules and actor mappings. The go-to reference when you have a sample and need rapid identification with context on the family and associated campaigns.","free",["any"],["web"]],
+["ThreatMiner","https://www.threatminer.org/","Threat intelligence portal aggregating IOCs — domains, IPs, hashes, SSL certificates — from open source feeds, with passive DNS, WHOIS and sandbox report pivoting all in one place.","free",["any"],["web"]],
+["IPsum","https://github.com/stamparm/ipsum","Daily-updated threat intelligence feed aggregating 30+ public lists of suspicious and malicious IP addresses into a single ranked blocklist. The higher the score, the more lists flagged that IP.","oss",["net"],["web"]],
+["Cyber Cure Intelligence Feeds","https://www.cybercure.ai/","Free threat intelligence feeds covering infected and attacking IP addresses, malware-distribution URLs and known malware hashes. Updated regularly and freely downloadable.","free",["any"],["web"]],
+["Reverse.IT","https://www.reverse.it/","Hybrid Analysis's online malware analysis portal — submit files or URLs for dynamic sandbox detonation and get a detailed behavioral report with IOCs, network traffic, dropped files and a threat score. The same backend as Hybrid Analysis.","free",["any"],["web"]],
 ["Cyber Intelligence (Reference Guide)","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/cyber-intelligence","Section overview covering the four analyst responsibilities — collect, manage indicators, enrich, produce and disseminate — plus the intelligence disciplines and the intelligence cycle. The framework behind indicator work rather than another tool list.","free",["any"],["web"]],
 ["Intel Feeds and Sources","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/cyber-intelligence/intel-feeds-and-sources","Curated index of threat intelligence feeds and sources, with the context to judge which are worth ingesting. Feed quality varies enormously and bad feeds cost you in false positives.","free",["any"],["web"]],
 ["Threat Data","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/cyber-intelligence/threat-data","Reputation and enrichment platforms organised by what they tell you about an indicator — blacklists, passive DNS, ASN and domain age, actor and campaign reporting.","free",["net"],["web"]],
@@ -1427,6 +1436,7 @@ const T = [
 ]],
 
 ["Incident Response & Endpoint",[
+["FastIR Collector","https://github.com/SekoiaLab/Fastir_Collector","Fast artifact collection from live Windows systems, gathering volatile data, registry hives, prefetch, event logs, USB history, browser data and network state in a single pass. Written by Sekoia, used widely as a first-response collection tool before deep analysis begins.","oss",["win"],["win"]],
 ["AIDE","https://aide.github.io/","Advanced Intrusion Detection Environment: builds a baseline database of file hashes, permissions and inode data, then reports what changed. If a baseline predates the incident, this identifies every modified binary and config immediately.","oss",["nix"],["nix"]],
 ["Tripwire (Open Source)","https://github.com/Tripwire/tripwire-open-source","The original host-based file integrity monitor. Same role as AIDE and still deployed widely enough that you will meet its databases on compromised hosts.","oss",["nix"],["nix"]],
 ["Linux Malware Detect","https://www.rfxn.com/projects/linux-malware-detect/","Malware scanner built for shared and web hosting environments, with signatures drawn from real-world intrusion data and edge network telemetry. Integrates with ClamAV for scanning performance.","oss",["nix"],["nix"]],
@@ -1614,6 +1624,8 @@ const T = [
 ]],
 
 ["References & Cheat Sheets",[
+["Blue Team Handbook: Incident Response Edition","https://www.amazon.com/Blue-Team-Handbook-Incident-Response/dp/1500734756","Don Murdoch's zero-fluff field reference for incident responders covering the IR process, attacker methodology, common tools, network analysis methodology, IOC identification, Windows and Linux analysis, tcpdump and Snort usage. Designed to sit on the desk during an active incident.","com",["any"],["web"]],
+["Cybersecurity Stash","https://cybersecuritystash.com/","Curated directory of security tools spanning DFIR, red team, blue team and general security tooling. Useful as a second-opinion index when looking for a tool the main DFIR lists don't cover.","free",["any"],["web"]],
 ["Notari on log Command Updates","https://www.ios-unifiedlogs.com/post/ios-unified-logs-log-command-major-updates-to-not-miss","Lionel Notari's coverage of significant changes to Apple's log command-line tool: log repack, filtering behaviour changes, and bounded log stats output. Worth checking against whatever macOS version your analysis machine is running — these changes affect command output you may be relying on.","free",["mac", "ios"],["web"]],
 ["Apple Logging Documentation","https://developer.apple.com/documentation/os/logging","Apple's own overview of the unified logging system: how it categorises and stores log messages, privacy redaction of dynamic values, and the levels (default, info, debug, error, fault) that control what actually gets persisted. The primary source everything else in this section is built on top of.","free",["mac", "ios"],["web"]],
 ["Apple OSLog Documentation","https://developer.apple.com/documentation/OSLog","Apple's reference for programmatic access to historical log data via the OSLogStore API. Useful for understanding what a native application or script can query directly, as distinct from the log command-line tool or a logarchive export.","free",["mac", "ios"],["web"]],
@@ -1745,7 +1757,6 @@ const T = [
 ["Tool Fetcher","https://github.com/kev365/ToolFetcher","Fetches and updates DFIR tools from GitHub and other sources in bulk, keeping a workstation's toolset current without visiting dozens of repos by hand. Useful when rebuilding an analysis VM.","oss",["any"],["xplat"]],
 ["MultiDrive","https://multidrive.io/","Free utility for backing up, cloning and erasing drives, handling several drives at once. Useful for the routine media handling around a case rather than acquisition itself.","free",["any"],["win"]],
 ["Lumyx Path Builder","https://lumyx-inc.github.io/path-builder/","Builds and validates artifact file paths for collection targets, saving the error-prone job of typing long Windows and mobile paths by hand.","free",["any"],["web"]],
-["IRFlow Timeline","https://github.com/r3nzsec/irflow-timeline","Incident response timeline builder for assembling and presenting a case chronology from mixed sources.","oss",["any"],["xplat"]],
 ["ZipWalker","https://github.com/stark4n6/ZipWalker","Kevin Pagano's utility that walks a directory tree, inventories every archive it finds and hashes the contents without extracting them.","oss",["any"],["xplat"]],
 ["TeraCopy","https://www.codesector.com/teracopy","File copy utility with hash verification on transfer, so you can prove the copy matches the source. Its own logs are also a forensic artifact worth parsing on a suspect system.","free",["any"],["win"]],
 ["Everything","https://www.voidtools.com/","Instant filename search across NTFS volumes using the MFT directly. Locating a filename across a mounted image takes under a second.","free",["any"],["win"]],
