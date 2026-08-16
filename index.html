@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 919 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 921 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -772,7 +772,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">919</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">921</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -942,7 +942,7 @@ const T = [
 ["Elastic Detection Rules","https://github.com/elastic/detection-rules","Elastic's open detection rule repository with hundreds of rules, unit tests and ATT&CK mappings. Valuable as detection logic even outside the Elastic stack.","oss",["win","mac","nix"],["web"],"tool"],
 ["Splunk Security Content","https://github.com/splunk/security_content","Splunk's open detection and response content, organised into analytic stories that tie related detections to a threat scenario.","oss",["win","mac","nix"],["web"],"tool"],
 ["OTRF Security Datasets","https://github.com/OTRF/Security-Datasets","Open Threat Research's library of pre-recorded telemetry from simulated attacks. Develop and test detections against real malicious activity without building a lab first.","oss",["win","nix"],["web"],"tool"],
-["ThreatHunter Playbook","https://threathunterplaybook.com/","Open collection of hunting analytics with the logic, data requirements and validation steps for each, structured so hunts are repeatable rather than ad hoc.","oss",["win"],["web"],"tool"],
+["ThreatHunter Playbook","https://threathunterplaybook.com/","Open collection of hunting analytics with the logic, data requirements and validation steps for each, structured so hunts are repeatable rather than ad hoc. From Open Threat Research Forge (OTRF), the same group behind Security-Datasets and OSSEM.","oss",["win"],["web"],"tool"],
 ["Uncoder.io","https://uncoder.io/","Translates detection rules between Sigma, KQL, SPL, EQL, Lucene and other query languages. Saves rewriting a rule by hand for each platform.","free",["any"],["web"],"tool"],
 ["HELK","https://github.com/Cyb3rWard0g/HELK","Hunting ELK: a research platform bundling Elasticsearch, Kibana, Spark and Jupyter for advanced hunting and analytics on collected telemetry.","oss",["win","nix"],["nix"],"tool"],
 ["PowerShell-Hunter","https://github.com/MHaggis/PowerShell-Hunter","Collection of PowerShell hunting tools covering 4104 script block analysis, Tarrask-style hidden scheduled task detection, Active Directory password spray and lockout analysis, and registry MRU extraction.","oss",["win"],["win"],"tool"],
@@ -1476,6 +1476,7 @@ const T = [
 ["FACT","https://fkie-cad.github.io/FACT_core/","Firmware Analysis and Comparison Tool automating unpacking, identification and analysis of embedded firmware, with comparison between versions. Suited to IoT investigations where the device itself is the evidence.","oss",["any"],["nix"],"tool"]
 ]],
 ["Distros & VMs",[
+["Blacksmith","https://github.com/OTRF/Blacksmith","Builds small replica network environments and deploys applications into them for detection testing and research, from Open Threat Research Forge. Useful for standing up a repeatable lab to validate a hunting analytic or detection rule before trusting it in production.","oss",["win"],["win"],"tool"],
 ["Cloud Investigate","https://github.com/op7ic/Cloud-Investigate","Preconfigured Windows-based investigation system for Azure and AWS, deployable into the cloud environment you are investigating so evidence never leaves it. Automates building the workstation rather than doing it by hand under time pressure.","oss",["cloud"],["win"],"tool"],
 ["sift-cli","https://github.com/teamdfir/sift-cli","Installs the whole SIFT toolset onto an existing Ubuntu box or WSL rather than running the VM. The practical way to get SIFT's tooling on a machine you already use, including a Windows workstation via WSL2.","oss",["any"],["nix"],"tool"],
 ["SOF-ELK","https://github.com/philhagen/sof-elk","Phil Hagen's pre-built ELK appliance tuned for DFIR. Ingests Plaso timelines, NetFlow, AWS and Azure logs, HTTP logs and more with parsers and dashboards already configured.","oss",["any"],["nix"],"tool"],
@@ -1606,6 +1607,7 @@ const T = [
 ["Learn Forensics (Forensic Lunch)","https://www.youtube.com/@LearnForensics","David Cowen's long-running show and teaching series, including guest interviews and extended walkthroughs of research and tooling.","free",["any"],["web"],"blog"]
 ]],
 ["References & Cheat Sheets",[
+["OSSEM","https://github.com/OTRF/OSSEM","Open Source Security Events Metadata. Standardises how security event fields are named and described across log sources and platforms, so detection content written against OSSEM's schema stays portable rather than tied to one vendor's field names. From Open Threat Research Forge, the same group behind ThreatHunter Playbook and Security-Datasets.","oss",["any"],["web"],"reference"],
 ["filesec.io","https://filesec.io/","Reference for attacker-abused file extensions \u2014 what each is, which OS it targets, how attackers use it and how to defend against it. Useful when investigating suspicious email attachments or building mail gateway rules.","free",["any"],["web"],"reference"],
 ["KQL Search","https://www.kqlsearch.com/","Community aggregator for KQL (Kusto Query Language) queries shared on GitHub. Search by keyword to find pre-built hunting and detection queries for Azure Monitor, Microsoft Sentinel and Microsoft Defender. The fastest way to find a starting point for a new query.","free",["cloud"],["web"],"reference"],
 ["decode-vbe","https://github.com/DidierStevens/DidierStevensSuite/blob/master/decode-vbe.py","Didier Stevens' decoder for Microsoft Script Encoding (VBE/JSE), the obfuscation layer attackers use to hide VBScript malware from casual inspection. Converts encoded scripts back to readable plaintext for analysis.","oss",["any"],["xplat"],"tool"],
