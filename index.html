@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 921 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 923 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -772,7 +772,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">921</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">923</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1267,6 +1267,7 @@ const T = [
 ["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool"]
 ]],
 ["Timelines",[
+["Timestamped","https://thebinaryhick.blog/2026/08/16/timestamped/","Josh Hickman's macOS-native timestamp decoder — a faithful Swift equivalent of DCode for examiners who work primarily on Mac. Currently handles roughly 25 formats including Unix (seconds/ms/µs/ns), Mac Absolute, Apple Absolute, Windows FILETIME, Chromium, HFS+, APFS, .NET Ticks, DOS/FAT, UUID v1 timestamps and the Google URL ei parameter. Not the full ~69 formats DCode covers yet, but closes a real gap for Mac-based examiners who previously had to switch to a browser tool.","free",["mac"],["mac"],"tool"],
 ["IRFlow Timeline","https://r3nzsec.github.io/irflow-timeline/","SQLite-backed DFIR timeline analysis with a browser-based interface. Ingests CSV, TSV, XLSX, EVTX, Plaso, $MFT and $J files into a unified chronological view. Features AI artifact detection, AI Secret Hunt, process inspection, lateral movement tracking, persistence detection and VirusTotal enrichment. Source: github.com/r3nzsec/irflow-timeline.","free",["win","mac","nix"],["web"],"tool"],
 ["AutoTimeliner","https://github.com/andreafortuna/autotimeliner","Automatically extracts a timeline from a memory image by combining Volatility timeliner, mftparser and shellbags output into one sorted body file.","oss",["win"],["xplat"],"tool"],
 ["Timely","https://github.com/northloopforensics/Timely","Timestamp epoch converter covering the encodings that turn up across artifacts.","oss",["any"],["xplat"],"tool"],
@@ -1529,6 +1530,7 @@ const T = [
 ["DFIR Diva","https://dfirdiva.com/","Curated listings of free and affordable training, written for people entering the field without an employer training budget.","free",["any"],["web"],"training"]
 ]],
 ["Blogs, Podcasts & Video",[
+["The Binary Hick","https://thebinaryhick.blog/","Josh Hickman's research blog, focused heavily on Apple platforms and Mac-native tooling. Publishes both write-ups and original tools — Timestamped and the Lost Apples test image set both originate here.","free",["mac", "ios"],["web"],"blog"],
 ["dfir.blog","https://dfir.blog","Practitioner blog on Windows and general DFIR analysis covering artifact research and investigation methodology.","free",["any"],["web"],"blog"],
 ["Az4n6","https://az4n6.blogspot.com","The Another Forensics Blog by Patrick Olsen \u2014 Windows registry and file system artifact research.","free",["win"],["web"],"blog"],
 ["Binary Foray","https://binaryforay.blogspot.com","Eric Zimmerman's research blog, covering the development background and artifact specifics behind the EZ Tools suite.","free",["win"],["web"],"blog"],
