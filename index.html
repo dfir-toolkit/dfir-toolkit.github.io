@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 924 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 927 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -772,7 +772,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">924</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">927</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1068,6 +1068,7 @@ const T = [
 ["WhatsApp Chat Exporter","https://github.com/KnugiHK/WhatsApp-Chat-Exporter","Converts WhatsApp databases and backups into readable, searchable HTML or JSON with media attached. Handles both Android and iOS layouts, including encrypted crypt14 and crypt15 backups given the key.","oss",["ios","and"],["xplat"],"tool"]
 ]],
 ["Browser & Internet",[
+["bhgrep","https://github.com/jondot/bhgrep","Fast CLI search across browser history — Chrome, Firefox, Safari and Edge — with fuzzy, direct-database and regex search modes. Scores results by recency and visit frequency, and outputs plain text, JSON or URL-only for scripting. A scriptable, cross-platform alternative to GUI browser history viewers when you need to search rather than browse.","free",["any"],["win", "mac", "nix"],"tool"],
 ["Browser History Capturer","https://www.foxtonforensics.com/browser-history-capturer/","Foxton's free collector for capturing browser history and cache files from a live Windows system, preserving them for later examination with Browser History Viewer.","free",["win"],["win"],"tool"],
 ["ChatGPT Parser Script","https://github.com/northloopforensics/ChatGPT-Parser-Script","Parses ChatGPT conversation data from an iOS extraction into reviewable form. AI chat history is increasingly relevant evidence and almost nothing mainstream parses it yet.","oss",["ios"],["xplat"],"tool"],
 ["Browser History Viewer","https://www.foxtonforensics.com/browser-history-viewer/","Foxton Forensics' free tool for viewing and searching web history across major browsers, with cached image preview and timeline filtering.","free",["any"],["win"],"tool"],
@@ -1309,6 +1310,7 @@ const T = [
 ["SQLiteWalker","https://github.com/stark4n6/SQLiteWalker","Walks a directory tree and inventories every SQLite database, table and row count it finds. Run it first against a mobile extraction to see what data exists before deciding where to look.","oss",["any"],["xplat"],"tool"]
 ]],
 ["Hashing & Triage",[
+["WalletSleuth","https://github.com/CH-CLARK/WalletSleuth","Identifies cryptocurrency addresses and transaction data left behind by wallet applications during a triage pass. Cryptocurrency involvement turns up across ransomware, fraud and money-laundering cases, and wallet artifacts are easy to miss if you are not specifically looking for them.","oss",["any"],["xplat"],"tool"],
 ["TCHunt-ng","https://github.com/antagon/TCHunt-ng","Updated successor to TCHunt. Scans files and directories to detect potential encrypted containers \u2014 TrueCrypt, VeraCrypt and similar \u2014 by testing file size divisibility, running a chi-squared entropy test and checking for the absence of a known file header. Supports a preserve-access-time flag useful for forensic work. Cross-platform, actively maintained.","oss",["win","mac","nix"],["xplat"],"tool"],
 ["TCHunt","https://github.com/stephenjudge/TCHunt","Original encrypted file detector using four attributes: size modulo 512, minimum 5 MB, chi-squared entropy test and no common file header. The predecessor to TCHunt-ng and widely cited in forensic methodology for locating hidden encrypted volumes on examined media. Requires the Boost and FLTK libraries to build.","oss",["win","mac","nix"],["xplat"],"tool"],
 ["Hasher","https://ericzimmerman.github.io/","Calculates file and folder hashes for validation, integrity checking and comparison. Handles recursive folder hashing and comparison against a known set, which is the routine verification job on every case.","free",["any"],["win"],"tool"],
@@ -1425,6 +1427,7 @@ const T = [
 ["Have I Been Pwned","https://haveibeenpwned.com/","Checks whether an account appears in known credential breaches. Useful for establishing plausible initial access when credential stuffing is suspected.","free",["any"],["web"],"intel"]
 ]],
 ["Incident Response & Endpoint",[
+["AIFT","https://github.com/FlipForensics/AIFT","AI-powered forensic triage for Windows and Linux evidence. Point it at a disk image, VM image, forensic archive or triage package; it auto-discovers what can be opened, parses artifacts with Dissect, then uses an LLM to turn the parsed data into evidence-linked leads, timelines, cross-host correlations and gaps for the investigator to verify. GUI for non-DFIR team members, plus CLI, REST API and MCP modes for repeatable or automated runs. No Elasticsearch, no Docker, no database — one local Python application. Actively developed.","oss",["win", "nix"],["xplat"],"tool"],
 ["FastIR Collector","https://github.com/SekoiaLab/Fastir_Collector","Fast artifact collection from live Windows systems, gathering volatile data, registry hives, prefetch, event logs, USB history, browser data and network state in a single pass. Written by Sekoia, used widely as a first-response collection tool before deep analysis begins.","oss",["win"],["win"],"tool"],
 ["AIDE","https://aide.github.io/","Advanced Intrusion Detection Environment: builds a baseline database of file hashes, permissions and inode data, then reports what changed. If a baseline predates the incident, this identifies every modified binary and config immediately.","oss",["nix"],["nix"],"tool"],
 ["Tripwire (Open Source)","https://github.com/Tripwire/tripwire-open-source","The original host-based file integrity monitor. Same role as AIDE and still deployed widely enough that you will meet its databases on compromised hosts.","oss",["nix"],["nix"],"tool"],
