@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 927 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 934 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -772,7 +772,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">927</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">934</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -966,6 +966,8 @@ const T = [
 ["Sysmon for Linux","https://github.com/Sysinternals/SysmonForLinux","Brings Sysmon's process, network and file telemetry to Linux via eBPF, giving the same depth of endpoint logging that makes Windows investigations tractable.","oss",["nix"],["nix"],"tool"]
 ]],
 ["Memory",[
+["Rip Raw","https://github.com/cado-security/rip_raw","Cado Security's small, focused tool for analysing memory dumps from compromised Linux systems, extracting log events, binaries, images and other recoverable artifacts. A lighter alternative to a full Volatility workflow when you need a fast first pass over a Linux memory image.","oss",["nix"],["xplat"],"tool"],
+["mquire","https://github.com/trailofbits/mquire","Trail of Bits' zero-dependency Linux memory forensics tool. Reads BTF (BPF Type Format) and Kallsyms data embedded directly in the kernel to reconstruct process lists, memory mappings, open file handles and cached file data — including files deleted from disk but still cached in memory — without needing matching debug symbols for the exact kernel build. Provides an interactive SQL interface inspired by osquery. Requires kernel 4.18+ for BTF, 6.4+ for Kallsyms support; both are default-enabled on most modern distributions. Supports raw physical memory dumps, LiME snapshots and ELF core dumps. Rust, Apache 2.0, actively developed.","oss",["nix"],["nix"],"tool"],
 ["Magnet Process Capture","https://www.magnetforensics.com/resources/magnet-process-capture/","Free tool for capturing the memory of individual running processes rather than the whole system. Useful when full memory acquisition is impractical or you only need one suspect process.","free",["win"],["win"],"tool"],
 ["WinPmem","https://github.com/Velocidex/WinPmem","Open source Windows physical memory acquisition driver, maintained alongside Velociraptor. Writes raw or AFF4 output and handles modern Windows memory layouts that older acquisition drivers stumble on.","oss",["win"],["win"],"tool"],
 ["Belkasoft RAM Capturer","https://belkasoft.com/ram-capturer","Small free memory imager with a kernel driver that works against anti-debugging and anti-dumping protections. Handy when a target process actively resists acquisition.","free",["win"],["win"],"tool"],
@@ -989,6 +991,7 @@ const T = [
 ["volatility3-symbols","https://github.com/Abyss-W4tcher/volatility3-symbols","Prebuilt Linux symbol tables for Volatility 3 covering thousands of distribution kernels. Linux memory analysis normally stalls on building an ISF for the exact running kernel; this removes that step, which is the single biggest practical blocker in Linux memory forensics.","oss",["nix"],["xplat"],"tool"]
 ]],
 ["Linux",[
+["POFR","https://github.com/gmagklaras/pofr","Penguin OS Flight Recorder. Collects, stores and organises process execution, file access and network/socket endpoint data from a running Linux system for later analysis — a lightweight, continuous audit trail rather than a one-time triage snapshot.","oss",["nix"],["nix"],"tool"],
 ["swap_digger","https://github.com/sevagas/swap_digger","Automates Linux swap analysis, extracting user credentials, web form credentials and emails, HTTP basic auth, and WiFi SSIDs and keys. Point it at a mounted filesystem with -r and a swap device with -s for offline examination. Swap is routinely ignored and routinely holds cleartext. The repository has had no commits since 2019; test before relying on it against a current kernel.","oss",["nix"],["nix"],"tool"],
 ["debsums","https://www.kali.org/tools/debsums/","Verifies installed package files against the checksums shipped in their Debian packages, identifying binaries and configs that have been modified since installation. The fastest route to spotting a trojanised system binary on a Debian or Ubuntu host.","oss",["nix"],["nix"],"tool"],
 ["utmpdump","https://www.kali.org/tools/util-linux/","Dumps and reconstructs utmp, wtmp and btmp records \u2014 the login, logout and failed-login history of a Linux host. Part of util-linux, so it is already present, and it also writes records back, which is worth knowing when assessing whether these files were tampered with.","oss",["nix"],["nix"],"tool"],
@@ -1023,6 +1026,7 @@ const T = [
 ["spotlight_parser","https://github.com/ydkhatri/spotlight_parser","Extracts metadata from Spotlight store-db files, including entries for files that have since been deleted. Recovers filenames, paths, timestamps and content metadata from a source many examinations overlook.","oss",["mac"],["mac"],"tool"]
 ]],
 ["iOS & Android",[
+["parse_sms.db","https://github.com/h4x0r/parse_sms.db","Extracts iMessage, RCS and SMS/MMS chat history from an iOS sms.db file and outputs an annotated CSV or HTML table for forensic examination. Can parse the database directly or extract it from within a zipped evidence archive. Windows binary releases available; also published on PyPI as parse-smsdb.","free",["ios"],["xplat"],"tool"],
 ["pymobiledevice3","https://github.com/doronz88/pymobiledevice3","Pure Python implementation of the Apple device protocol stack, underpinning UFADE and several other iOS acquisition tools. Useful directly when you need to interact with a device programmatically or when the GUI tools built on top of it do not expose a specific capability.","oss",["ios"],["xplat"],"tool"],
 ["ALEX (Android Logical Extractor)","https://github.com/prosch88/ALEX","Android Logical Extractor \u2014 the ADB counterpart to UFADE, by the same author (Christian Peter). GUI-based Python tool that automates ADB acquisition of Android, FireOS, WearOS and Ubuntu Touch devices on Windows, Linux and macOS. Based on the android_triage bash script concept but cross-platform throughout. Ubuntu Touch devices also have a physical acquisition flow. Requires Python 3.11 and active ADB debugging on the device.","oss",["and"],["win","mac","nix"],"tool"],
 ["palera1n","https://palera.in/","Semi-tethered checkm8-based jailbreak for iOS 15 through 17 on A8 through A11 devices, including the iPhone X. Enables full file system acquisition on supported hardware. Requires a Mac with Apple Silicon or Intel. The most actively maintained free jailbreak for acquisition purposes as of 2026.","free",["ios"],["mac"],"tool"],
@@ -1099,6 +1103,7 @@ const T = [
 ["oletools","https://github.com/decalage2/oletools","Philippe Lagadec's suite for OLE and Office file analysis. olevba extracts and deobfuscates macros, oleid flags risk indicators, and rtfobj pulls embedded objects from RTF. The first stop for any suspicious attachment.","oss",["any"],["xplat"],"tool"]
 ]],
 ["Network",[
+["tcpextract","https://github.com/faust/tcpextract","Extracts files from captured TCP sessions, supporting both live streams and pcap files. A lightweight, focused alternative to NetworkMiner or Xplico when you specifically need HTTP file carving from a session rather than full protocol reconstruction.","free",["net"],["xplat"],"tool"],
 ["CapLoader","https://www.netresec.com/?page=CapLoader","Handles very large PCAP sets by indexing flows rather than packets, letting you find the sessions that matter and export just those to Wireshark. Includes protocol identification and OS fingerprinting.","com",["net"],["win"],"tool"],
 ["PolarProxy","https://www.netresec.com/?page=PolarProxy","TLS-inspecting proxy that decrypts and saves traffic to PCAP, so malware lab traffic is readable rather than an opaque TLS stream.","free",["net"],["win","nix"],"tool"],
 ["RawCap","https://www.netresec.com/?page=RawCap","Tiny raw-socket sniffer needing no drivers or installation, capturing to PCAP on any Windows host including loopback. For when you cannot install Wireshark on a machine.","free",["net"],["win"],"tool"],
@@ -1142,6 +1147,7 @@ const T = [
 ["CISA StopRansomware","https://www.cisa.gov/stopransomware","US government hub consolidating ransomware advisories, the joint #StopRansomware guide, reporting channels and family-specific technical detail with IOCs.","free",["any"],["web"],"reference"]
 ]],
 ["Malware & Reverse Engineering",[
+["Valhalla","https://valhalla.nextron-systems.com/","Nextron's curated, quality-tested YARA rule feed — the rule source behind their THOR and LOKI scanners, with a free public tier searchable by hash, filename or rule name. Useful independent of Nextron's own tools: check a hash or sample against Valhalla's rule set even if you are running a different YARA-based scanner.","free",["any"],["web"],"intel"],
 ["Frida","https://frida.re/","Dynamic instrumentation toolkit for hooking running applications. In forensics it is mainly a research tool: hook encryption routines to understand how an app protects its data, so you can decode that data properly later.","oss",["ios","and"],["xplat"],"tool"],
 ["YARA-X","https://github.com/VirusTotal/yara-x","The Rust rewrite of YARA, stable since June 2025. YARA 4.x is now maintenance-only, with all new features landing here, so new rule development should target it. Faster, memory-safe, and stricter about rules that were silently wrong before.","oss",["any"],["xplat"],"tool"],
 ["Binary Refinery","https://github.com/binref/refinery","Collection of command-line units you pipe together to unpack, decode, decrypt and carve data out of malware. Turns multi-stage deobfuscation into a one-line pipeline instead of a throwaway script each time.","oss",["any"],["xplat"],"tool"],
@@ -1427,6 +1433,7 @@ const T = [
 ["Have I Been Pwned","https://haveibeenpwned.com/","Checks whether an account appears in known credential breaches. Useful for establishing plausible initial access when credential stuffing is suspected.","free",["any"],["web"],"intel"]
 ]],
 ["Incident Response & Endpoint",[
+["Beagle","https://github.com/yampelo/beagle","Transforms security logs and forensic data into interactive graphs for pivoting through an incident. Supports Windows EVTX, FireEye HX triage packages, VirusTotal sandbox reports and other sources out of the box, storing via NetworkX or Neo4j. The web interface lets you click through nodes and edges, filter by type, and expand neighbouring context without writing a query.","oss",["win", "any"],["xplat"],"tool"],
 ["AIFT","https://github.com/FlipForensics/AIFT","AI-powered forensic triage for Windows and Linux evidence. Point it at a disk image, VM image, forensic archive or triage package; it auto-discovers what can be opened, parses artifacts with Dissect, then uses an LLM to turn the parsed data into evidence-linked leads, timelines, cross-host correlations and gaps for the investigator to verify. GUI for non-DFIR team members, plus CLI, REST API and MCP modes for repeatable or automated runs. No Elasticsearch, no Docker, no database — one local Python application. Actively developed.","oss",["win", "nix"],["xplat"],"tool"],
 ["FastIR Collector","https://github.com/SekoiaLab/Fastir_Collector","Fast artifact collection from live Windows systems, gathering volatile data, registry hives, prefetch, event logs, USB history, browser data and network state in a single pass. Written by Sekoia, used widely as a first-response collection tool before deep analysis begins.","oss",["win"],["win"],"tool"],
 ["AIDE","https://aide.github.io/","Advanced Intrusion Detection Environment: builds a baseline database of file hashes, permissions and inode data, then reports what changed. If a baseline predates the incident, this identifies every modified binary and config immediately.","oss",["nix"],["nix"],"tool"],
