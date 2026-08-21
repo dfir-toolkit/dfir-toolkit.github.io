@@ -182,7 +182,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 /* layout */
 .shell{max-width:1560px;margin:0 auto;padding:24px 28px 90px;display:grid;
   grid-template-columns:238px minmax(0,1fr);gap:36px;align-items:start}
-.rail{position:sticky;top:120px;max-height:calc(100vh - 148px);overflow-y:auto;padding-right:8px}
+.rail{position:sticky;top:120px;max-height:calc(100vh - 148px);overflow-y:auto;
+  overscroll-behavior:contain;padding-right:8px}
 .rail::-webkit-scrollbar{width:6px}
 .rail::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
 .rail h2{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;
@@ -356,9 +357,9 @@ mark{background:var(--tape-soft);color:var(--ink);padding:0 2px;border-radius:2p
   font-variation-settings:"wdth" 102,"wght" 700;font-size:16px;
   text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
 .egs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:18px}
-footer{border-top:1px solid var(--rule);margin-top:20px;padding:24px 28px 70px;
-  color:var(--steel);font-size:12.5px;background:var(--panel)}
-footer .in{max-width:1560px;margin:0 auto;display:flex;gap:24px;flex-wrap:wrap;
+footer{border-top:1px solid var(--rule);margin-top:20px;padding:18px 28px 30px;
+  color:var(--steel);font-size:12px;line-height:1.5;background:var(--panel)}
+footer .in{max-width:1560px;margin:0 auto;display:flex;gap:16px;flex-wrap:wrap;
   justify-content:space-between}
 footer a{color:var(--verd)}
 footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
