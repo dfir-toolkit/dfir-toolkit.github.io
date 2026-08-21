@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 934 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 945 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -773,7 +773,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">934</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">945</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -804,6 +804,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
 /* ============================ DATA ============================ */
 const T = [
 ["Acquisition & Imaging",[
+["F-Response","https://www.f-response.com/","Vendor-neutral remote forensics utility that creates a live, read-only device on the examiner's machine representing a remote system's disks, volumes and physical memory over the network. Not an analysis tool itself — it hands off to whatever tool you already use (Volatility, X-Ways, FTK) once the remote target is mounted. Commercial, with Universal, Enterprise and Collect editions covering different deployment scales.","com",["any"],["win"],"tool"],
 ["iOS Unified Logs (Lionel Notari)","https://www.ios-unifiedlogs.com/iosunifiedlogtool","Extracts Unified Logs from an iOS device connected to a Mac in a forensically sound manner, alongside device details: name, model, iOS version, storage capacity, UDID and phone number. Extraction is customisable by examiner name, case name and a start date/time filter so you are not pulling the entire log every time. Produces a hashed extraction report recording the first and last log timestamps, archive size and total log count for chain-of-custody purposes.","free",["ios"],["mac"],"tool"],
 ["WriteBlocking Validation Utility","https://wiebetech.com/software/writeblocking-validation-utility/","WiebeTech utility that tests whether a write blocker is actually blocking writes. Validating the blocker before use is the step most people skip and the one that undermines everything downstream if it fails.","free",["any"],["win"],"tool"],
 ["Freezing Internet Tool (FIT)","https://github.com/fit-project/fit","Python 3 application for forensically sound acquisition of content directly from the internet: web pages, emails, social media posts and video. Captures the page with a hash, timestamp and PEC certification trail, so online evidence is preserved defensibly rather than screenshotted.","oss",["any"],["xplat"],"tool"],
@@ -1073,6 +1074,7 @@ const T = [
 ["WhatsApp Chat Exporter","https://github.com/KnugiHK/WhatsApp-Chat-Exporter","Converts WhatsApp databases and backups into readable, searchable HTML or JSON with media attached. Handles both Android and iOS layouts, including encrypted crypt14 and crypt15 backups given the key.","oss",["ios","and"],["xplat"],"tool"]
 ]],
 ["Browser & Internet",[
+["Foxton Browser History Examiner","https://www.foxtonforensics.com/","Extracts, analyses and reports internet history from Chrome, Edge, Firefox, Internet Explorer and Safari, including deleted history recovered from Volume Shadow Copies. Remote capture over a network, cached image gallery, and full web page reconstruction as originally seen. Commercial with a free trial.","com",["any"],["win"],"tool"],
 ["bhgrep","https://github.com/jondot/bhgrep","Fast CLI search across browser history — Chrome, Firefox, Safari and Edge — with fuzzy, direct-database and regex search modes. Scores results by recency and visit frequency, and outputs plain text, JSON or URL-only for scripting. A scriptable, cross-platform alternative to GUI browser history viewers when you need to search rather than browse.","free",["any"],["win", "mac", "nix"],"tool"],
 ["Browser History Capturer","https://www.foxtonforensics.com/browser-history-capturer/","Foxton's free collector for capturing browser history and cache files from a live Windows system, preserving them for later examination with Browser History Viewer.","free",["win"],["win"],"tool"],
 ["ChatGPT Parser Script","https://github.com/northloopforensics/ChatGPT-Parser-Script","Parses ChatGPT conversation data from an iOS extraction into reviewable form. AI chat history is increasingly relevant evidence and almost nothing mainstream parses it yet.","oss",["ios"],["xplat"],"tool"],
@@ -1104,6 +1106,14 @@ const T = [
 ["oletools","https://github.com/decalage2/oletools","Philippe Lagadec's suite for OLE and Office file analysis. olevba extracts and deobfuscates macros, oleid flags risk indicators, and rtfobj pulls embedded objects from RTF. The first stop for any suspicious attachment.","oss",["any"],["xplat"],"tool"]
 ]],
 ["Network",[
+["Dshell","https://github.com/USArmyResearchLab/Dshell","Python-based network forensic analysis framework from the U.S. Army Research Laboratory. Runs modular plugins against a capture file or a live interface, with built-in stream reassembly for IPv4 and IPv6, geolocation and IP-to-ASN mapping per connection. Plugins cover DHCP, DNS, HTTP, FTP, SSH, SSL, VoIP and more, and can be chained together.","oss",["net"],["nix"],"tool"],
+["ntopng","https://www.ntop.org/products/traffic-analysis/ntop/","Next-generation network traffic probe showing real-time usage the way top shows process activity. Web-based dashboard for identifying top talkers, protocol breakdowns and anomalous traffic patterns. Built on libpcap, runs on any Unix platform and Windows.","oss",["net"],["xplat"],"tool"],
+["Scapy","https://github.com/secdev/scapy","Python packet manipulation library for forging, decoding, sending and capturing packets across a huge range of protocols. Used constantly for scripting custom network analysis and traffic generation that a GUI tool can't express — write a few lines instead of hunting for the right filter syntax.","oss",["net"],["xplat"],"tool"],
+["ngrep","https://github.com/jpr5/ngrep","Applies grep-style regular expression or hex matching directly against packet payloads, live off an interface or against a capture file. The fastest way to answer whether a string appears anywhere in a given traffic sample without opening a GUI.","oss",["net"],["xplat"],"tool"],
+["tcpstat","https://github.com/jpr5/tcpstat","Reports network interface statistics — bandwidth, packet count, packets per second, average packet size and interface load — either live off an interface or from an existing capture file.","oss",["net"],["nix"],"tool"],
+["tcpxtract","https://sourceforge.net/projects/tcpxtract/","Extracts files from network traffic based on file signatures — carving applied specifically to packet captures rather than disk images. Catches files transferred over protocols without a dedicated parser, where NetworkMiner or Wireshark's export function doesn't reconstruct the object directly.","oss",["net"],["nix"],"tool"],
+["editcap","https://www.wireshark.org/docs/man-pages/editcap.html","Wireshark's command-line capture file editor: splits, merges, deduplicates and time-shifts pcap/pcapng files, and can strip specific packets out of a capture. Bundled with every Wireshark install, useful for preparing a huge capture into something that fits an analysis workflow.","free",["net"],["xplat"],"tool"],
+["NetSpot","https://www.netspotapp.com/","Wi-Fi site survey and analysis tool, mapping signal strength, channel usage and interference across a physical space. Relevant to network forensics engagements involving wireless access point investigation and geolocation via observed networks. Commercial, with a limited free tier.","free",["net"],["win", "mac"],"tool"],
 ["tcpextract","https://github.com/faust/tcpextract","Extracts files from captured TCP sessions, supporting both live streams and pcap files. A lightweight, focused alternative to NetworkMiner or Xplico when you specifically need HTTP file carving from a session rather than full protocol reconstruction.","free",["net"],["xplat"],"tool"],
 ["CapLoader","https://www.netresec.com/?page=CapLoader","Handles very large PCAP sets by indexing flows rather than packets, letting you find the sessions that matter and export just those to Wireshark. Includes protocol identification and OS fingerprinting.","com",["net"],["win"],"tool"],
 ["PolarProxy","https://www.netresec.com/?page=PolarProxy","TLS-inspecting proxy that decrypts and saves traffic to PCAP, so malware lab traffic is readable rather than an opaque TLS stream.","free",["net"],["win","nix"],"tool"],
@@ -1148,6 +1158,7 @@ const T = [
 ["CISA StopRansomware","https://www.cisa.gov/stopransomware","US government hub consolidating ransomware advisories, the joint #StopRansomware guide, reporting channels and family-specific technical detail with IOCs.","free",["any"],["web"],"reference"]
 ]],
 ["Malware & Reverse Engineering",[
+["Scylla","https://github.com/x64dbg/Scylla","Import table reconstruction tool for rebuilding a dumped, unpacked executable's import address table so it runs and disassembles correctly. Bundled directly into x64dbg/x32dbg's Plugins menu, and also available standalone. The standard last step after manually unpacking a packed malware sample.","oss",["win"],["win"],"tool"],
 ["Malcat","https://malcat.fr/","Hex editor, disassembler and static malware triage tool built for speed over depth — no heavy VSA or type recovery, so it can analyse most files in under a second. Inspects 40+ binary formats, extracts embedded files, scans for YARA matches and anomalies, and is scriptable in Python. The free Lite edition is fully usable for casual and occasional work; it lacks the decompiler and a few advanced features found in the paid Full (€49) and Pro (€199) editions. Windows, Linux and macOS.","free",["any"],["win","mac","nix"],"tool"],
 ["Valhalla","https://valhalla.nextron-systems.com/","Nextron's curated, quality-tested YARA rule feed — the rule source behind their THOR and LOKI scanners, with a free public tier searchable by hash, filename or rule name. Useful independent of Nextron's own tools: check a hash or sample against Valhalla's rule set even if you are running a different YARA-based scanner.","free",["any"],["web"],"intel"],
 ["Frida","https://frida.re/","Dynamic instrumentation toolkit for hooking running applications. In forensics it is mainly a research tool: hook encryption routines to understand how an app protects its data, so you can decode that data properly later.","oss",["ios","and"],["xplat"],"tool"],
@@ -1188,7 +1199,7 @@ const T = [
 ["Binary Ninja","https://binary.ninja/","Reversing platform built around a stack of intermediate languages that make automated analysis genuinely practical. A genuinely free Free edition exists for evaluation and non-commercial use, plus a completely free browser-based Binary Ninja Cloud \u2014 both lack plugin support and some Commercial-tier features. Its Python API is the main draw for anyone scripting large-scale binary analysis, but full API access requires a paid Non-Commercial license upward.","free",["any"],["xplat"],"tool"],
 ["Cutter","https://cutter.re/","Free Qt front end for Rizin with graph views, decompiler integration and debugging. A gentler introduction to command-line-oriented reversing tooling.","oss",["any"],["xplat"],"tool"],
 ["radare2","https://rada.re/n/","Scriptable command-line reversing framework that works on binaries, raw data, memory and disk alike. A famously steep learning curve, but unmatched for automation and for analysing things that are not neatly formatted executables.","oss",["any"],["xplat"],"tool"],
-["x64dbg","https://x64dbg.com/","Open source Windows user-mode debugger with a plugin ecosystem covering unpacking and anti-anti-debugging. The standard choice for dynamic analysis of Windows malware.","oss",["win"],["win"],"tool"],
+["x64dbg","https://x64dbg.com/","Open source Windows user-mode debugger with a plugin ecosystem covering unpacking and anti-anti-debugging. Ships both x64dbg and x32dbg binaries from the same project \u2014 same tool, matched to target architecture. Scylla (import table reconstruction) is bundled in via the Plugins menu. The standard choice for dynamic analysis of Windows malware.","oss",["win"],["win"],"tool"],
 ["PE-bear","https://github.com/hasherezade/pe-bear","PE inspector showing headers, sections, imports, exports and resources with inline editing. Fast for answering structural questions: is this packed, what does it import, are section characteristics unusual.","oss",["win"],["win"],"tool"],
 ["pestudio","https://www.winitor.com/","Static triage that scores a Windows executable against known indicators without executing it, flagging suspicious imports, strings, entropy and signatures. Ideal for the first three minutes with an unknown binary.","free",["win"],["win"],"tool"],
 ["Detect It Easy","https://github.com/horsicq/Detect-It-Easy","Identifies packers, compilers, protectors and installers, with entropy visualisation per section. Tells you what you are dealing with before you commit to an analysis approach.","oss",["any"],["xplat"],"tool"],
@@ -1984,6 +1995,43 @@ buildItems();
    switching sets just repoints that reference. */
 const SETS={"Default":new Set()};
 let activeSet="Default";
+/* Reference tool lists for five flagship SANS DFIR courses, sourced from
+   official syllabi, course "what you'll get" pages, and confirmed student
+   write-ups (checked directly, not guessed) as of August 2026. Seeded as
+   ready-made pinned sets on a visitor's very first, unmodified load only —
+   see loadState() below — so the toolkit doubles as a starting point for
+   anyone mapping out what a given SANS course actually teaches. */
+const SANS_COURSES={
+  "SANS FOR500 \u2014 Windows Forensic Analysis":[
+    "KAPE|Acquisition & Imaging","SIFT Workstation|Distros & VMs",
+    "Magnet AXIOM|Disk & File System","USB Detective|Utilities",
+    "Foxton Browser History Examiner|Browser & Internet",
+    "Forensic Email Intelligence|Email & Messaging"
+  ],
+  "SANS FOR508 \u2014 Advanced IR & Threat Hunting":[
+    "KAPE|Acquisition & Imaging","Velociraptor|Acquisition & Imaging",
+    "Volatility 3|Memory","SIFT Workstation|Distros & VMs",
+    "Magnet DumpIt|Memory","F-Response|Acquisition & Imaging",
+    "Kansa|Event Logs & Detection"
+  ],
+  "SANS FOR608 \u2014 Enterprise IR & Threat Hunting":[
+    "KAPE|Acquisition & Imaging","Velociraptor|Acquisition & Imaging",
+    "Aurora Incident Response|Reporting & Case Management",
+    "Timesketch|Timelines"
+  ],
+  "SANS FOR572 \u2014 Advanced Network Forensics":[
+    "SIFT Workstation|Distros & VMs","Wireshark|Network","tcpdump|Network",
+    "tcpflow|Network","Zeek|Network","NetworkMiner|Network",
+    "CyberChef|Logs & Data Processing","Arkime|Network","CapLoader|Network",
+    "nfdump|Network","Logstash|Logs & Data Processing","jq|Logs & Data Processing",
+    "Dshell|Network","ntopng|Network","Scapy|Network","ngrep|Network",
+    "tcpstat|Network","tcpxtract|Network","editcap|Network","NetSpot|Network"
+  ],
+  "SANS FOR610 \u2014 Reverse-Engineering Malware":[
+    "Ghidra|Malware & Reverse Engineering","x64dbg|Malware & Reverse Engineering",
+    "Scylla|Malware & Reverse Engineering"
+  ]
+};
 const state={q:"",editing:null,warned:false,cost:new Set(),plat:new Set(),runs:new Set(),types:new Set(),cat:null,pinnedOnly:false,pins:SETS["Default"],
              sel:-1,dense:false,sort:"cat",ready:false};
 const KEY="dfir-dashboard:v1";
@@ -2042,6 +2090,15 @@ async function loadState(){
       buildItems();
       Object.values(SETS).forEach(set=>{
         [...set].forEach(k=>{ if(!ITEMS.some(x=>x.k===k)) set.delete(k); });
+      });
+    } else {
+      // Brand new visitor, nothing saved anywhere yet — seed the SANS
+      // course reference sets so there's something useful to browse
+      // immediately. Any save at all (even clearing everything back to
+      // empty) writes real state, so this only ever fires once per browser.
+      Object.entries(SANS_COURSES).forEach(([name,keys])=>{
+        const valid=keys.filter(k=>ITEMS.some(x=>x.k===k));
+        if(valid.length) SETS[name]=new Set(valid);
       });
     }
   }catch(e){}
