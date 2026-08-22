@@ -9,7 +9,7 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 945 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 947 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -779,7 +779,7 @@ footer .lic{border-left:2px solid var(--tape);padding-left:12px;flex:1 1 300px}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">945</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">947</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1798,6 +1798,8 @@ const T = [
 ["Stark 4N6 GitHub","https://github.com/stark4n6","Kevin Pagano's tool repository, home to SQLiteWalker, ZipWalker, DirListHash and other utilities that appear across this index.","oss",["any"],["web"],"tool"]
 ]],
 ["Reporting & Case Management",[
+["CherryTree","https://www.giuspen.net/cherrytree/","Hierarchical, tree-structured note-taking — nest case notes under an exhibit, exhibits under a case, in a way flat notes apps cannot represent. Rich text, syntax-highlighted code blocks, embedded files and images, PDF export. Stores everything in a single local file (XML or SQLite), no cloud dependency. Free, open source, cross-platform, and the note-taking tool that consistently surfaces as the direct free alternative to Forensic Notes across independent comparisons — lacks the cryptographic signing and trusted timestamp of Forensic Notes or CaseNotes, but a strong general case-notes tool if that specific admissibility requirement is not in play.","oss",["any"],["win","mac","nix"],"tool"],
+["CaseNotes","https://www.first-response.co.uk/casenotes/","Free contemporaneous notes application for Windows, in active use since 2003. Write-once, read-many entry storage with MD5 hashing for tamper evidence, a self-contained audit trail of every edit to notes and metadata, and optional AES-512 encryption for sensitive cases. Stores notes, checklists and screen captures in a local SQLite file — no cloud dependency, no subscription. The free alternative to Forensic Notes when a signed timestamp authority is not a requirement but tamper-evident local records are.","free",["any"],["win"],"tool"],
 ["Pandoc","https://pandoc.org/","Converts Markdown into DOCX, PDF or HTML with reference templates for consistent house styling. Write findings in plain text and generate the formatted report deliverable from the same source.","oss",["any"],["xplat"],"tool"],
 ["Ghostwriter","https://github.com/GhostManager/Ghostwriter","SpecterOps' reporting and project management platform, generating consistent Word and PDF reports from structured findings so wording and formatting stop being per-report decisions.","oss",["any"],["nix"],"tool"],
 ["Dradis","https://dradisframework.com/","Collaboration and reporting platform that consolidates output from many tools into one report, with a community edition. Long established in security consultancies.","free",["any"],["nix"],"tool"],
@@ -1808,7 +1810,7 @@ const T = [
 ["NIST Evidence Chain of Custody Form","https://www.nist.gov/document/sample-chain-custody-formdocx","NIST's sample chain-of-custody tracking form in DOCX: evidence description, unique item IDs, collection date and location, and a released-by / received-by signature log for every transfer. The most widely cited starting point, and citing NIST rather than a form you invented is worth something if custody is challenged.","free",["any"],["web"],"reference"],
 ["Chain of Custody Form (Computer)","https://elitedigitalforensics.com/free-chain-of-custody-form-computer/","Editable DOCX chain-of-custody form written specifically for computer matters \u2014 machines, drives and removable media \u2014 with guidance on using one evidence ID per item when a case involves several. Add your own letterhead and adjust wording to your policy.","free",["any"],["web"],"tool"],
 ["Writing DFIR Reports: A Primer","https://joshbrunty.github.io/2021/01/27/reporting.html","Josh Brunty's compendium on report writing, built from 15+ years of casework. Covers examination planning, case notes and their discoverability, the five-step report flow (what I was asked to do, why I am qualified, what I did, what I found, my conclusions), section-by-section guidance, figures, glossaries and the first-versus-third-person question. The single best starting point on this topic.","free",["any"],["web"],"blog"],
-["Forensic Notes","https://www.forensicnotes.com/","Case notes application that stores notes, images and attachments as timestamped read-only PDFs, protecting integrity and admissibility. Built for contemporaneous documentation in a way Word and OneNote are not, with auditing that matters when notes become discoverable.","com",["any"],["web"],"tool"],
+["Forensic Notes","https://www.forensicnotes.com/","Every note gets a SHA-512 digital signature and an independently-sourced timestamp at the moment it's created, so if even one character changes afterward the hash breaks and tampering is immediately provable \u2014 the specific gap that gets contemporaneous notes challenged on cross-examination. Notebooks work like a bound paper notebook: pages can't be removed once written. PWA mobile app included, plus a companion tool for pulling evidence directly from a witness's phone via a one-time link. Commercial, with a free trial.","com",["any"],["web"],"tool"],
 ["Report Writing for Digital Forensics: Part I","https://www.bradgarnett.com/blog/2015/3/4/intro-to-report-writing-for-digital-forensics","Brad Garnett's 2010 primer (originally titled Intro to Report Writing for Digital Forensics), long used as a first reference for examiners writing their first serious report. Originally published on the SANS DFIR blog; that page no longer resolves, so this is the author's own hosted copy.","free",["any"],["web"],"blog"],
 ["Report Writing for Digital Forensics: Part II","https://www.sans.org/blog/report-writing-for-digital-forensics-part-ii/","The follow-up to Part I, on how a practitioner presents findings to the intended audience rather than just what sections a report needs. Still live on the SANS blog.","free",["any"],["web"],"blog"],
 ["SWGDE Requirements for Report Writing","https://www.swgde.org/wp-content/uploads/2023/11/2018-11-20-SWGDE-Requirements-for-Report-Writin.pdf","SWGDE 18-Q-002. The requirements document defining what a report of examination must contain: identification, page accountability, dates, amendments, subcontractor disclosure, acronym handling and supporting documentation. What accreditation bodies and opposing counsel will measure your report against. Published on SWGDE's own site rather than a third-party mirror.","free",["any"],["web"],"reference"],
@@ -1998,15 +2000,19 @@ buildItems();
 /* Named pin sets. SETS holds every set by name; state.pins always points
    at the Set object for whichever one is active, so the rest of the app
    (which reads/writes state.pins.add/delete/has/size) needs no changes —
-   switching sets just repoints that reference. */
-const SETS={"Default":new Set()};
-let activeSet="Default";
+   switching sets just repoints that reference. No set is auto-created —
+   SETS can legitimately be empty, and GHOST_PINS is what state.pins
+   points to in that case, so pin icons and filtering never see a null
+   reference; it just always reads as "not pinned anywhere yet". */
+const SETS={};
+const GHOST_PINS=new Set();
+let activeSet=null;
 /* Reference tool lists for five flagship SANS DFIR courses, sourced from
    official syllabi, course "what you'll get" pages, and confirmed student
-   write-ups (checked directly, not guessed) as of August 2026. Seeded as
-   ready-made pinned sets on a visitor's very first, unmodified load only —
-   see loadState() below — so the toolkit doubles as a starting point for
-   anyone mapping out what a given SANS course actually teaches. */
+   write-ups (checked directly, not guessed) as of August 2026. Loaded
+   on demand via the "+ Load SANS course sets" button in Pinned sets —
+   see loadSANSCourseSets() — so the toolkit doubles as a starting point
+   for anyone mapping out what a given SANS course actually teaches. */
 const SANS_COURSES={
   "SANS FOR500 \u2014 Windows Forensic Analysis":[
     "KAPE|Acquisition & Imaging","SIFT Workstation|Distros & VMs",
@@ -2038,7 +2044,7 @@ const SANS_COURSES={
     "Scylla|Malware & Reverse Engineering"
   ]
 };
-const state={q:"",editing:null,warned:false,cost:new Set(),plat:new Set(),runs:new Set(),types:new Set(),cat:null,pinnedOnly:false,pins:SETS["Default"],
+const state={q:"",editing:null,warned:false,cost:new Set(),plat:new Set(),runs:new Set(),types:new Set(),cat:null,pinnedOnly:false,pins:GHOST_PINS,
              sel:-1,dense:false,sort:"cat",ready:false};
 const KEY="dfir-dashboard:v1";
 const $=s=>document.querySelector(s);
@@ -2099,8 +2105,8 @@ async function loadState(){
       });
     }
   }catch(e){}
-  if(!SETS[activeSet]) SETS[activeSet]=new Set();
-  state.pins=SETS[activeSet];
+  if(activeSet && SETS[activeSet]){ state.pins=SETS[activeSet]; }
+  else { activeSet=null; state.pins=GHOST_PINS; }
   state.ready=true;
 }
 let saveT;
@@ -2342,10 +2348,10 @@ function render(){
   // opening the management modal rather than a per-row rail dropdown.
   const setsBtnLabel=$("#setsBtn2Label"), setsBtnCount=$("#setsBtn2Count"), setsBtn2=$("#setsBtn2");
   if(setsBtnLabel){
-    const totalPins=Object.values(SETS).reduce((a,s)=>a+s.size,0);
-    setsBtnLabel.textContent=state.pinnedOnly?activeSet:"Pinned sets";
-    setsBtnCount.textContent=state.pinnedOnly?SETS[activeSet].size:totalPins;
-    setsBtn2.classList.toggle("active",state.pinnedOnly);
+    const setCount=Object.keys(SETS).length;
+    setsBtnLabel.textContent=state.pinnedOnly&&activeSet?activeSet:"Pinned sets";
+    setsBtnCount.textContent=state.pinnedOnly&&activeSet?(SETS[activeSet]?.size||0):setCount;
+    setsBtn2.classList.toggle("active",state.pinnedOnly&&!!activeSet);
   }
 
   if(CUSTOM.length) mk("My Tools",counts.get("My Tools")||0,"My Tools");
@@ -2491,12 +2497,15 @@ function renameSet(oldName,newName){
   render(); saveState();
 }
 function deleteSet(name){
-  if(Object.keys(SETS).length<=1) return toast("Keep at least one set");
   delete SETS[name];
   if(activeSet===name){
-    const next=Object.keys(SETS)[0];
-    activeSet=next; state.pins=SETS[next];
-    if(state.pinnedOnly) state.cat=null;
+    const remaining=Object.keys(SETS);
+    if(remaining.length){
+      activeSet=remaining[0]; state.pins=SETS[activeSet];
+      if(state.pinnedOnly) state.cat=null;
+    } else {
+      activeSet=null; state.pins=GHOST_PINS; state.pinnedOnly=false;
+    }
   }
   render(); saveState();
   toast(`Deleted "${name}"`);
@@ -2567,7 +2576,6 @@ function buildSetsPanel(container){
       const warn=document.createElement("span"); warn.className="warn";
       const n=SETS[name].size;
       warn.textContent=`Clear its ${n} pin${n===1?"":"s"}, or delete "${name}" entirely?`;
-      const onlySet=Object.keys(SETS).length<=1;
       const clearBtn=document.createElement("button");
       clearBtn.className="setmenu-clear"; clearBtn.textContent="Clear pins";
       clearBtn.disabled=n===0;
@@ -2577,9 +2585,7 @@ function buildSetsPanel(container){
         toast(`Cleared "${name}"`); };
       const delBtn=document.createElement("button");
       delBtn.className="setmenu-danger"; delBtn.textContent="Delete set";
-      delBtn.disabled=onlySet;
-      delBtn.title=onlySet?"Create another set first \u2014 you need at least one":"";
-      delBtn.onclick=e=>{ e.stopPropagation(); if(onlySet) return;
+      delBtn.onclick=e=>{ e.stopPropagation();
         deletingSet=null; deleteSet(name); refresh(); };
       const cancel=document.createElement("button"); cancel.className="setmenu-cancel"; cancel.innerHTML="&times;";
       cancel.onclick=e=>{ e.stopPropagation(); deletingSet=null; refresh(); };
@@ -2794,6 +2800,7 @@ function buildSavePicker(){
       if(!v){ savePickerAdding=false; buildSavePicker(); return; }
       if(SETS[v]){ toast("A set with that name already exists"); return; }
       SETS[v]=new Set(); SETS[v].add(key); savePickerAdding=false;
+      if(!activeSet){ activeSet=v; state.pins=SETS[v]; }
       render(); saveState(); reselectAfterRender(sel); buildSavePicker();
       toast(`Created "${v}" and saved`);
     };
