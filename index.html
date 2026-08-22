@@ -300,6 +300,12 @@ mark{background:var(--tape-soft);color:var(--ink);padding:0 2px;border-radius:2p
   opacity:.65;border-radius:5px}
 .setmenu-icon:hover{opacity:1;color:var(--tape);background:var(--sunk)}
 .setmenu-icon:disabled{opacity:.2;cursor:not-allowed;background:none!important;color:var(--steel)!important}
+.setmenurow[draggable="true"]{cursor:grab}
+.setmenurow.dragging{opacity:.4}
+.setmenurow.dragover{border-top:2px solid var(--tape)}
+.setmenu-draghandle{flex:none;width:14px;color:var(--steel);opacity:.4;font-size:12px;
+  letter-spacing:-3px;display:flex;align-items:center;justify-content:center;user-select:none}
+.setmenurow:hover .setmenu-draghandle{opacity:.85}
 .setmenu-inline{display:flex;align-items:center;gap:5px;padding:3px 2px 6px;flex-wrap:wrap}
 .setmenu-inline input{flex:1;min-width:90px;font-family:"IBM Plex Mono",monospace;font-size:12px;
   color:var(--ink);background:var(--sunk);border:1px solid var(--rule);border-radius:5px;
@@ -2014,11 +2020,6 @@ const SANS_COURSES={
     "Magnet DumpIt|Memory","F-Response|Acquisition & Imaging",
     "Kansa|Event Logs & Detection"
   ],
-  "SANS FOR608 \u2014 Enterprise IR & Threat Hunting":[
-    "KAPE|Acquisition & Imaging","Velociraptor|Acquisition & Imaging",
-    "Aurora Incident Response|Reporting & Case Management",
-    "Timesketch|Timelines"
-  ],
   "SANS FOR572 \u2014 Advanced Network Forensics":[
     "SIFT Workstation|Distros & VMs","Wireshark|Network","tcpdump|Network",
     "tcpflow|Network","Zeek|Network","NetworkMiner|Network",
@@ -2026,6 +2027,11 @@ const SANS_COURSES={
     "nfdump|Network","Logstash|Logs & Data Processing","jq|Logs & Data Processing",
     "Dshell|Network","ntopng|Network","Scapy|Network","ngrep|Network",
     "tcpstat|Network","tcpxtract|Network","editcap|Network","NetSpot|Network"
+  ],
+  "SANS FOR608 \u2014 Enterprise IR & Threat Hunting":[
+    "KAPE|Acquisition & Imaging","Velociraptor|Acquisition & Imaging",
+    "Aurora Incident Response|Reporting & Case Management",
+    "Timesketch|Timelines"
   ],
   "SANS FOR610 \u2014 Reverse-Engineering Malware":[
     "Ghidra|Malware & Reverse Engineering","x64dbg|Malware & Reverse Engineering",
@@ -2495,7 +2501,19 @@ function deleteSet(name){
   render(); saveState();
   toast(`Deleted "${name}"`);
 }
-let addingSet=false, renamingSet=null, deletingSet=null;
+let addingSet=false, renamingSet=null, deletingSet=null, dragSetName=null;
+/* Sets are display-ordered by the SETS object's own key insertion order —
+   JS preserves that for string keys, and it survives JSON round-trips
+   through save/load automatically, so no separate order array is needed.
+   Reordering means rebuilding SETS with the same Set objects re-inserted
+   in a new sequence. */
+function reorderSets(newOrder){
+  const snapshot={};
+  newOrder.forEach(name=>{ if(SETS[name]) snapshot[name]=SETS[name]; });
+  Object.keys(SETS).forEach(name=>{ if(!(name in snapshot)) snapshot[name]=SETS[name]; });
+  Object.keys(SETS).forEach(name=>delete SETS[name]);
+  Object.entries(snapshot).forEach(([name,set])=>{ SETS[name]=set; });
+}
 
 /* Shared by the desktop rail dropdown and the mobile modal — one function,
    two places it can render into. Rename and delete are inline row states,
@@ -2570,6 +2588,10 @@ function buildSetsPanel(container){
       return;
     }
 
+    const handle=document.createElement("span");
+    handle.className="setmenu-draghandle"; handle.innerHTML="\u22ee\u22ee";
+    handle.setAttribute("aria-hidden","true");
+
     const b=document.createElement("button");
     b.className="setmenu-namebtn";
     b.innerHTML=`<span>${esc(name)}</span><span class="n">${SETS[name].size}</span>`;
@@ -2595,7 +2617,43 @@ function buildSetsPanel(container){
     del.title="Clear or delete this set";
     del.onclick=e=>{ e.stopPropagation(); deletingSet=name; renamingSet=null; refresh(); };
 
-    row.append(b,pen,del);
+    row.draggable=true;
+    row.title=(row.title?row.title+" \u2014 ":"")+"Drag to reorder";
+    row.ondragstart=e=>{
+      dragSetName=name;
+      e.dataTransfer.effectAllowed="move";
+      try{ e.dataTransfer.setData("text/plain",name); }catch(err){}
+      row.classList.add("dragging");
+    };
+    row.ondragend=()=>{
+      row.classList.remove("dragging");
+      container.querySelectorAll(".setmenurow.dragover").forEach(r=>r.classList.remove("dragover"));
+      dragSetName=null;
+    };
+    row.ondragover=e=>{
+      if(!dragSetName || dragSetName===name) return;
+      e.preventDefault();
+      row.classList.add("dragover");
+    };
+    row.ondragleave=()=>row.classList.remove("dragover");
+    row.ondrop=e=>{
+      e.preventDefault();
+      row.classList.remove("dragover");
+      if(!dragSetName || dragSetName===name) return;
+      const order=Object.keys(SETS);
+      const from=order.indexOf(dragSetName);
+      let to=order.indexOf(name);
+      const dragged=dragSetName;
+      dragSetName=null;
+      if(from<0||to<0) return;
+      order.splice(from,1);
+      if(from<to) to--; // account for the shift left by removing the dragged item first
+      order.splice(to,0,dragged);
+      reorderSets(order);
+      render(); saveState(); refresh();
+    };
+
+    row.append(handle,b,pen,del);
     container.appendChild(row);
   });
 
