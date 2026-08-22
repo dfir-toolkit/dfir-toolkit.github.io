@@ -2091,15 +2091,6 @@ async function loadState(){
       Object.values(SETS).forEach(set=>{
         [...set].forEach(k=>{ if(!ITEMS.some(x=>x.k===k)) set.delete(k); });
       });
-    } else {
-      // Brand new visitor, nothing saved anywhere yet — seed the SANS
-      // course reference sets so there's something useful to browse
-      // immediately. Any save at all (even clearing everything back to
-      // empty) writes real state, so this only ever fires once per browser.
-      Object.entries(SANS_COURSES).forEach(([name,keys])=>{
-        const valid=keys.filter(k=>ITEMS.some(x=>x.k===k));
-        if(valid.length) SETS[name]=new Set(valid);
-      });
     }
   }catch(e){}
   if(!SETS[activeSet]) SETS[activeSet]=new Set();
@@ -2637,6 +2628,36 @@ function buildSetsPanel(container){
     setTimeout(()=>{ const i=addWrap.querySelector("input"); if(i) i.focus(); },0);
   }
   container.appendChild(addWrap);
+
+  // On-demand SANS course reference sets — available to anyone, any time,
+  // fresh visitor or not. Merges like Import: adds new sets, adds missing
+  // pins to sets that already exist by that name, never touches or removes
+  // anything you already have.
+  const already=Object.keys(SANS_COURSES).every(name=>SETS[name]);
+  if(!already){
+    const sansWrap=document.createElement("div");
+    sansWrap.className="setaddrow";
+    const b=document.createElement("button");
+    b.className="setaddbtn"; b.textContent="+ Load SANS course sets";
+    b.title="Adds reference sets for FOR500, FOR508, FOR572, FOR608 and FOR610 \u2014 merges in, never overwrites your existing sets";
+    b.onclick=e=>{ e.stopPropagation(); loadSANSCourseSets(); refresh(); };
+    sansWrap.appendChild(b);
+    container.appendChild(sansWrap);
+  }
+}
+function loadSANSCourseSets(){
+  let added=0, merged=0;
+  Object.entries(SANS_COURSES).forEach(([name,keys])=>{
+    const valid=keys.filter(k=>ITEMS.some(x=>x.k===k));
+    if(!valid.length) return;
+    if(SETS[name]){
+      valid.forEach(k=>{ if(!SETS[name].has(k)){ SETS[name].add(k); merged++; } });
+    } else {
+      SETS[name]=new Set(valid); added++;
+    }
+  });
+  render(); saveState();
+  toast(added||merged ? `Loaded ${added} SANS set${added===1?"":"s"}${merged?`, ${merged} pin${merged===1?"":"s"} merged`:""}` : "Already up to date");
 }
 function closeSetsModal(){
   const m=$("#setsModal"); if(m) m.classList.remove("show");
