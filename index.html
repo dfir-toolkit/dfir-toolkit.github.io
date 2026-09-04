@@ -4274,10 +4274,16 @@ document.addEventListener("keydown",e=>{
   const TRACK_REACH = true;
   const TRACK_NO_RESULTS = true;
 
+  /* Append ?gcdebug=1 to the URL to force it on and log every event to the
+     console — the way to confirm the counter works from a live deploy, or to
+     tell "not firing" apart from "fired, but something blocked the request". */
+  const DEBUG = /[?&]gcdebug=1/.test(location.search);
   const local = location.hostname === "localhost"
              || location.hostname === "127.0.0.1"
              || location.protocol === "file:";
-  if(!SITE || local) return;
+  if(!SITE || (local && !DEBUG)) return;
+  const log = (...a) => { if(DEBUG) console.log("[gc]", ...a); };
+  log("active, endpoint https://" + SITE + ".goatcounter.com/count");
 
   window.goatcounter = { endpoint: "https://" + SITE + ".goatcounter.com/count" };
   const s = document.createElement("script");
@@ -4285,10 +4291,22 @@ document.addEventListener("keydown",e=>{
   s.setAttribute("data-goatcounter", window.goatcounter.endpoint);
   document.head.appendChild(s);
 
+  /* count.js loads async, so gc.count does not exist for the first few hundred
+     milliseconds. Anything fired in that window is buffered and flushed on
+     load. This matters for reached-index, which can fire on the very next
+     frame when the browser restores scroll position on a reload. */
+  const queue = [];
+  const ready = () => { const gc = window.goatcounter; return gc && typeof gc.count === "function"; };
   const send = (path, title) => {
-    const gc = window.goatcounter;
-    if(gc && typeof gc.count === "function") gc.count({path, title, event:true});
+    if(ready()){ log("send", path); window.goatcounter.count({path, title, event:true}); }
+    else { log("queued", path); queue.push([path, title]); }
   };
+  s.addEventListener("load", () => {
+    log("count.js loaded, flushing " + queue.length);
+    if(!ready()) return;
+    queue.splice(0).forEach(([p, t]) => window.goatcounter.count({path:p, title:t, event:true}));
+  });
+  s.addEventListener("error", () => console.warn("[gc] count.js blocked or unreachable"));
 
   if(TRACK_OUTBOUND){
     document.addEventListener("click", e => {
@@ -4348,9 +4366,18 @@ document.addEventListener("keydown",e=>{
       const term = input.value.trim().toLowerCase().slice(0, 60);
       if(term.length < 3 || seen.has(term)) return;
       const empty = results.querySelector(".empty strong");
-      if(!empty || !/^no tools match/i.test(empty.textContent.trim())) return;
+      if(!empty) return;
+      const msg = empty.textContent.trim();
+      if(!/^no tools match/i.test(msg)) return;
+      /* Two different empty states share that opening. "No tools match — but N
+         in the reading" means the references did match, which is not a gap in
+         the index; it is filed separately so the two never blur together. */
+      const partial = /in the reading/i.test(msg);
+      const slug = term.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      if(!slug) return;
       seen.add(term);
-      send("noresult-" + term, "No results: " + term);
+      if(partial) send("readingonly-" + slug, "Reading only: " + term);
+      else send("noresult-" + slug, "No results: " + term);
     };
     document.addEventListener("input", e => {
       if(e.target && e.target.id === "q"){ clearTimeout(timer); timer = setTimeout(check, 1400); }
