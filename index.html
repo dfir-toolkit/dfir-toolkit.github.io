@@ -9,24 +9,24 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 976 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 990 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 
 <!-- Open Graph / LinkedIn / Facebook preview card -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dfir-toolkit.github.io/">
 <meta property="og:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta property="og:description" content="A curated, searchable index of 976 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
+<meta property="og:description" content="A curated, searchable index of 990 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
 <meta property="og:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DFIR Toolkit — 976 tools indexed across 40 categories">
+<meta property="og:image:alt" content="DFIR Toolkit — 990 tools indexed across 43 categories">
 <meta property="og:site_name" content="DFIR Toolkit">
 
 <!-- Twitter/X card (falls back to the same og:image) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta name="twitter:description" content="A curated, searchable index of 976 digital forensics and incident response tools, references and research.">
+<meta name="twitter:description" content="A curated, searchable index of 990 digital forensics and incident response tools, references and research.">
 <meta name="twitter:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -835,7 +835,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
 <section class="paths" id="paths">
   <div class="sec-lead" data-rv>
     <p class="lead-eyebrow">Where to start</p>
-    <h2 class="lead-h">Eight areas, forty categories</h2>
+    <h2 class="lead-h">Eight areas, forty-three categories</h2>
     <p class="lead-note">Every tool has one home, filed by the area of work it belongs to &mdash; collection
       through reporting, then the reading and lab material around it. Tools that genuinely serve two
       areas are cross-listed. Pick a category to filter the full list below.</p>
@@ -861,6 +861,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <label class="field" for="q">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
       <input id="q" type="search" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"
              placeholder="Search tools — prefetch, APFS  (comma = or, space = and)">
       <span class="kbd">/</span>
       <div class="sugg" id="sugg" role="listbox" aria-label="Search suggestions"></div>
@@ -1181,7 +1182,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">976</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">990</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1235,7 +1236,7 @@ const T=[
 ["OSFMount","https://www.osforensics.com/osfmount.html","Mounts image files as read-only virtual drives so any Windows tool can examine them. Supports a wide range of image formats and can create RAM disks for scratch work that leaves nothing on disk.","free",["any"],["win"],"tool","gui"],
 ["PALADIN","https://sumuri.com/software/paladin/","Ubuntu-based forensic boot environment with a GUI toolbox layered on top. Handles imaging, hashing, mounting and basic examination while write-blocking attached media by default. Popular for on-scene triage where you cannot pull the drive.","free",["any"],["nix"],"tool","gui"],
 ["KAPE","https://www.kroll.com/kape","Targeted collection and processing driven by Targets and Modules. Collects just the artifacts you name from a live or mounted system in seconds, then chains Eric Zimmerman parsers over the output. The fastest route from raw endpoint to a reviewable artifact set.","free",["win"],["win"],"tool","gui cli"],
-["CyLR","https://github.com/orlikoski/CyLR","Live-response collector that reads artifacts directly from raw NTFS, bypassing file locks on in-use registry hives and event logs. Outputs a compressed archive ready for Plaso or KAPE processing, and can upload straight to SFTP or S3.","oss",["win","nix"],["win","nix"],"tool","cli"],
+["CyLR","https://github.com/orlikoski/CyLR","Live-response collector that reads artifacts directly from raw NTFS, bypassing file locks on in-use registry hives and event logs. Outputs a compressed archive ready for Plaso or KAPE processing, and can upload straight to SFTP or S3.","oss",["win"],["win","nix"],"tool","cli"],
 ["Velociraptor","https://docs.velociraptor.app/","Endpoint visibility platform driven by VQL, its own query language. Hunt across thousands of hosts for an artifact, collect matching files, and monitor for new occurrences continuously. Increasingly the open source backbone of enterprise-scale DFIR.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["UAC","https://github.com/tclahr/uac","Unix-like Artifacts Collector supporting Linux, macOS, ESXi, Solaris, AIX and BSD. Runs from a shell with no dependencies and collects live response data guided by editable YAML profiles, which matters when the target is an appliance you cannot install software on.","oss",["nix","mac"],["nix","mac"],"tool","cli"],
 ["AChoir","https://github.com/OMENScan/AChoir","Scriptable Windows live-response framework. Its scripting language lets you standardise exactly what gets collected across a team so every responder produces consistent output regardless of experience level.","oss",["win"],["win"],"tool","cli"],
@@ -1283,24 +1284,14 @@ const T=[
 ["artifactcollector","https://github.com/forensicanalysis/artifactcollector","Single-binary collector driven by the Forensic Artifacts definitions, gathering a defined artifact set with no dependencies on the target.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["Velociraptor Artifact Exchange","https://docs.velociraptor.app/exchange/","Community repository of Velociraptor artifacts covering hunts, collections and detections. Check here before writing VQL — someone has usually solved it already.","oss",["win","mac","nix"],["web"],"tool","web"],
 ["OpenRelik","https://openrelik.org/","Open collaborative platform for processing digital forensic evidence with pluggable workers, from the team behind Timesketch and Turbinia.","oss",["any"],["nix"],"tool","web"],
-["Microsoft IR Ninja Hub","https://techcommunity.microsoft.com/blog/microsoftsecurityexperts/welcome-to-the-microsoft-incident-response-ninja-hub/4243594","Microsoft's curated learning path for incident response across their stack, gathering playbooks, hunting queries, tooling guidance and case studies into one structured route rather than scattered docs.","free",["cloud","win"],["web"],"tool","web"],
-["CISA Playbook-NG","https://www.cisa.gov/eviction-strategies-tool","Matches incident findings to countermeasures for adversary containment and eviction, backed by CISA's COUN7ER countermeasure database. Paste in a report containing ATT&CK TTP IDs and it generates a tailored eviction playbook. Curated incident templates cover known campaigns, and it works equally well for building realistic tabletop scenarios.","oss",["any"],["web"],"reference",""],
 ["Magnet Nexus","https://www.magnetforensics.com/products/magnet-nexus/","Remote endpoint collection at scale for enterprise-wide investigations across many machines, aimed at cases where imaging each host individually is not viable.","com",["win","mac","nix"],["web"],"tool","web"],
-["RE&CT Framework","https://atc-project.github.io/atc-react/","ATT&CK for the response side: a knowledge base of incident response actions organised by IR stage, so you can map and measure your team's response capability the way ATT&CK maps detection coverage.","oss",["any"],["web"],"tool","web"],
-["CERT Societe Generale IRM","https://github.com/certsocietegenerale/IRM","Public incident response methodologies covering specific scenarios: ransomware, phishing, data leak, insider abuse. Concise, printable, and a solid basis for writing your own playbooks.","oss",["any"],["web"],"tool","web"],
-["Syntax IR Playbooks","https://gitlab.com/syntax-ir/playbooks","Detailed incident response playbooks broken down by phase with concrete commands and decision points.","oss",["any"],["web"],"tool","web"],
-["Microsoft Incident Response Playbooks","https://learn.microsoft.com/en-us/security/compass/incident-response-playbooks","Official playbooks for phishing, password spray and app consent grant attacks, with the exact queries and portal steps for Microsoft environments.","free",["cloud","win"],["web"],"reference",""],
 ["Meerkat","https://github.com/TonyPhipps/Meerkat","PowerShell modules that gather Windows artifacts and host state for hunting, designed to run against many hosts and stack the results for outlier analysis.","oss",["win"],["win"],"tool","cli"],
 ["PowerForensics","https://github.com/Invoke-IR/PowerForensics","PowerShell framework for live disk forensics, reading NTFS structures directly: MFT records, USN journal, boot sector and prefetch, from a running system without imaging.","oss",["win"],["win"],"tool","cli"],
-["ADTimeline","https://github.com/ANSSI-FR/ADTimeline","ANSSI tool that builds a timeline from Active Directory replication metadata, revealing when objects and attributes were changed even when event logs have rolled or been cleared.","oss",["win"],["win"],"tool","cli"],
 ["Windows Forensic Toolchest","http://www.foolmoon.net/security/wft/","Structured, repeatable automated live response for Windows: essentially a forensically enhanced batch processor that runs a defined tool sequence and produces an audited HTML report with hashes for every output. Dated, but the repeatability model still holds up. Entirely free, not a limited edition of a paid product.","free",["win"],["win"],"tool","cli"],
-["CobaltStrikeScan","https://github.com/Apr4h/CobaltStrikeScan","Scans process memory and files for Cobalt Strike beacons and extracts their configuration, giving you C2 servers, sleep intervals and watermarks.","oss",["win"],["win"],"tool","cli"],
-["NTDSxtract","https://github.com/csababarta/ntdsxtract","Active Directory forensic framework for extracting user, group, computer and credential data from a recovered NTDS.dit database.","oss",["win"],["xplat"],"tool","cli"]
+["GRR Rapid Response","https://github.com/google/grr","Google's remote live forensics framework for fleet-scale collection and hunting via deployed agents. Heavier to run than Velociraptor but proven at very large scale.","oss",["win","mac","nix"],["xplat"],"tool","cli"]
 ]],
 ["Endpoint & EDR",[
 ["MagicSword","https://www.magicsword.io/","Agentless, threat-driven application control — blocks abused-but-legitimate software (the exact LOLDrivers/LOLRMM/LOLBAS categories) before an EDR would flag it, built directly on the company's own open source threat research. Free up to 100 endpoints. The company behind LOLDrivers, LOLRMM, bootloaders.io and sigconverter.io, whose open source research is cited by CISA and Microsoft.","free",["win"],["win"],"tool","cli"],
-["AIDE","https://aide.github.io/","Advanced Intrusion Detection Environment: builds a baseline database of file hashes, permissions and inode data, then reports what changed. If a baseline predates the incident, this identifies every modified binary and config immediately.","oss",["nix"],["nix"],"tool","cli"],
-["Tripwire (Open Source)","https://github.com/Tripwire/tripwire-open-source","The original host-based file integrity monitor. Same role as AIDE and still deployed widely enough that you will meet its databases on compromised hosts.","oss",["nix"],["nix"],"tool","cli"],
 ["Linux Malware Detect","https://www.rfxn.com/projects/linux-malware-detect/","Malware scanner built for shared and web hosting environments, with signatures drawn from real-world intrusion data and edge network telemetry. Integrates with ClamAV for scanning performance.","oss",["nix"],["nix"],"tool","cli"],
 ["OSSEC","https://www.ossec.net/","Host intrusion detection with file integrity monitoring, log analysis, rootkit detection and active response. The long-standing open source HIDS, and the codebase Wazuh forked from.","oss",["nix"],["nix"],"tool","cli web"],
 ["Sandfly Security","https://www.sandflysecurity.com/","Agentless Linux forensics and intrusion detection, checking hosts over SSH for tampering, hidden processes, rogue accounts and rootkits without installing anything. Suits estates where agents are not permitted.","com",["nix"],["nix"],"tool","gui"],
@@ -1309,12 +1300,14 @@ const T=[
 ["Purple Knight","https://www.purple-knight.com/","Free AD and Entra ID assessment scoring indicators of exposure and indicators of compromise, with remediation guidance for each finding.","free",["win","cloud"],["win"],"tool","gui"],
 ["Fleet","https://fleetdm.com/","Open device management built on osquery, running queries across thousands of endpoints and returning structured results. The practical way to use osquery at scale.","oss",["win","mac","nix"],["nix"],"tool","web cli"],
 ["ClamAV","https://www.clamav.net/downloads","Open source antivirus engine, useful in DFIR as a scriptable scanner you can point at a mounted image with custom signature databases.","oss",["any"],["xplat"],"tool","cli"],
-["hashlookup-forensic-analyser","https://github.com/hashlookup/hashlookup-forensic-analyser","Analyses a mounted filesystem against CIRCL's hashlookup service to separate known-good from unknown files, cutting review volume dramatically.","oss",["any"],["nix"],"tool","cli"],
 ["osquery","https://osquery.io/","Exposes live endpoint state as SQL tables covering processes, listening ports, users, startup items and installed packages. The same query runs unchanged across Windows, macOS and Linux, which is rare and valuable.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["Wazuh","https://wazuh.com/","Open source security platform combining agent telemetry, file integrity monitoring, log analysis and rule-based detection. A workable free option where commercial EDR is not available.","oss",["win","mac","nix"],["xplat"],"tool","web cli"],
 ["Loki","https://github.com/Neo23x0/Loki","Simple IOC and YARA scanner for compromise assessment, checking file names, hashes, YARA matches and process anomalies. Portable enough to run from a USB stick on a suspect host.","oss",["win","nix"],["win","nix"],"tool","cli"],
 ["THOR Lite","https://www.nextron-systems.com/thor-lite/","Free reduced edition of Nextron's THOR APT scanner with a curated signature set. More thorough than Loki for triage sweeps while remaining free for the reduced ruleset.","free",["win","mac","nix"],["xplat"],"tool","gui"],
-["Sysinternals Autoruns","https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns","Enumerates every auto-start location Windows offers: run keys, services, scheduled tasks, drivers, codecs and shell extensions. Offline mode analyses a mounted image, and VirusTotal integration flags unknown entries immediately.","free",["win"],["win"],"tool","cli"]
+["Sysinternals Autoruns","https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns","Enumerates every auto-start location Windows offers: run keys, services, scheduled tasks, drivers, codecs and shell extensions. Offline mode analyses a mounted image, and VirusTotal integration flags unknown entries immediately.","free",["win"],["win"],"tool","cli"],
+["chkrootkit","https://www.chkrootkit.org/","Long-standing local rootkit checker scanning binaries and system state for known infection signatures and hidden processes.","oss",["nix"],["nix"],"tool","cli"],
+["rkhunter","https://rkhunter.sourceforge.net/","Rootkit Hunter: checks for rootkits, backdoors and local exploits by comparing file hashes, hunting for suspicious directories and inspecting kernel modules.","oss",["nix"],["nix"],"tool","cli"],
+["unhide","https://www.kali.org/tools/unhide/","Detects processes and TCP/UDP ports hidden by rootkits by comparing what /proc reports against direct system call results. Discrepancies between the two are how kernel rootkits reveal themselves.","oss",["nix"],["nix"],"tool","cli"]
 ]],
 ["Cloud, SaaS & Container",[
 ["Monkey365","https://github.com/silverhack/monkey365","PowerShell-based review of Microsoft 365, Entra ID and Azure subscription configuration, producing HTML reports mapped to CIS benchmarks. Useful for establishing how a tenant was configured at the time of an incident.","oss",["cloud"],["win"],"tool","cli"],
@@ -1349,7 +1342,6 @@ const T=[
 ["ScoutSuite","https://github.com/nccgroup/ScoutSuite","NCC Group's multi-cloud auditing tool producing a browsable HTML report of configuration and permissions. Good for capturing a point-in-time record of the environment during an incident.","oss",["cloud"],["xplat"],"tool","cli"],
 ["Docker Explorer","https://github.com/google/docker-explorer","Explores offline Docker filesystems to reconstruct container contents, layers and configuration from a disk image. Answers what was running inside a container when only the host image survives.","oss",["cloud","nix"],["nix"],"tool","gui cli"],
 ["dive","https://github.com/wagoodman/dive","Inspects container image layers and shows exactly what each one added, changed or deleted. Reveals secrets or tooling baked into an intermediate layer that the final image appears not to contain.","oss",["cloud"],["nix"],"tool","cli"],
-["GRR Rapid Response","https://github.com/google/grr","Google's remote live forensics framework for fleet-scale collection and hunting via deployed agents. Heavier to run than Velociraptor but proven at very large scale.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["Falco","https://falco.org/","Runtime security monitoring for containers and Kubernetes using kernel-level events. Provides the process and file telemetry that container environments otherwise lack entirely during an investigation.","oss",["cloud","nix"],["nix"],"tool","cli"]
 ]],
 ["Disk & File System",[
@@ -1362,7 +1354,7 @@ const T=[
 ["libvshadow","https://github.com/libyal/libvshadow","Reads Volume Shadow Snapshot data directly from an image, letting you list and mount individual VSS snapshots on Linux. Historical snapshots frequently hold the file that was deleted before acquisition.","oss",["win"],["xplat"],"tool","cli"],
 ["IPED","https://github.com/sepinf-inc/IPED","Brazilian Federal Police's open source processing and analysis platform. Handles very large datasets with indexing, carving, OCR and image classification, and is a genuine free alternative to commercial suites.","oss",["win","mac","nix"],["win","nix"],"tool","cli"],
 ["TRACE Forensic Toolkit","https://github.com/Gadzhovski/TRACE-Forensic-Toolkit","Cross-platform GUI for investigating disk images, covering mounting, tree browsing, hex and text views, EXIF extraction, registry viewing, basic carving and E01 verification.","oss",["win","mac","nix"],["xplat"],"tool","gui"],
-["Crush","https://github.com/kalink0/crush-forensics","Digital forensic analysis workbench pulling examination tasks into one environment. Its SEGB viewer decodes Apple Biome files automatically, handling both SEGB v1 (iOS 14-16) and v2 (iOS 17 onward, which added a trailer section), decoding the protobuf payloads and exposing every record — including nested and repeated fields — through a built-in SQL editor. The most capable free Biome viewer available.","oss",["win","mac","nix"],["win","nix"],"tool","gui"],
+["Crush","https://github.com/kalink0/crush-forensics","Digital forensic analysis workbench pulling examination tasks into one environment. Opens ZIP, TAR, 7z, Android adb backups and iTunes or Finder iOS backups without extracting anything to disk, and reconstructs mobile backups as the original device filesystem — iOS backups rebuild the domain and relativePath tree from Manifest.db rather than the flat, hash-named layout, Android backups unpack as a normal tree, and encrypted archives and backups prompt for a password. Viewers cover SQLite, hex, text, JSON, XML, plist and bplist, SEGB v1 and v2, Android Binary XML, LevelDB, MMKV, protobuf, PDF, Realm, images and media, alongside a multi-source log studio with format auto-detection. A built-in format database identifies forensically relevant files by magic bytes and links their specifications; the Value Inspector reads a selected value as integers, floats, a dozen timestamp epochs, UUIDs, network addresses and byte sizes at once; the BLOB Inspector chains Base64, hex, zlib, gzip and lzfse transforms before rendering. Optional integrity mode hashes sources on open and writes a manifest with every export. The most capable free Biome viewer available.","oss",["win","mac","nix","ios","and"],["win","mac","nix"],"tool","gui"],
 ["The Sleuth Kit","https://www.sleuthkit.org/sleuthkit/","The C library and CLI toolkit underneath much of open source forensics. fls, icat, istat and mmls give you file listings, file extraction, metadata and partition layout across NTFS, FAT, exFAT, HFS+, APFS, Ext and YAFFS2. Essential for scripted or automated processing.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["Autopsy","https://www.autopsy.com/","Full GUI examination platform built on TSK. Ingest modules handle hashing, keyword indexing, carving, EXIF, browser artifacts and timeline generation, with results organised into a case you can report from. The realistic free alternative to a commercial suite for most casework.","oss",["win","mac","nix"],["xplat"],"tool","gui"],
 ["X-Ways Forensics","https://www.x-ways.net/forensics/","Compact commercial suite with a reputation for speed and depth. Runs from a USB stick, handles enormous datasets on modest hardware and exposes file system internals other tools abstract away. Steep learning curve, exceptional payoff.","com",["win","mac","nix"],["win"],"tool","gui"],
@@ -1383,32 +1375,32 @@ const T=[
 ["apfs-fuse","https://github.com/sgan81/apfs-fuse","Read-only FUSE driver for mounting APFS containers on Linux, including encrypted volumes and snapshots. Fills a real gap when analysing Mac evidence from a Linux workstation.","oss",["mac"],["nix"],"tool","cli"],
 ["Disk Arbitrator","https://github.com/aburgh/Disk-Arbitrator","macOS utility that blocks automatic mounting of attached media, giving you a software write-block when examining evidence on a Mac. Pair with a hardware write-blocker rather than relying on it alone.","oss",["mac"],["mac"],"tool","cli"],
 ["libvslvm","https://github.com/libyal/libvslvm","Reads Linux LVM2 volume systems directly from an image, so logical volumes inside an LVM container become accessible without reconstructing the setup on a live host.","oss",["nix"],["xplat"],"tool","cli"],
-["DLEAPP","https://github.com/abrignoni/DLEAPP","Desktop Logs Events And Protobuf Parser, extending the LEAPP framework to desktop operating system artifacts.","oss",["win","mac","nix"],["xplat"],"tool","cli"]
+["DLEAPP","https://github.com/abrignoni/DLEAPP","Desktop Logs Events And Protobuf Parser, extending the LEAPP framework to desktop operating system artifacts.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
+["mftdump","https://github.com/mlbd/mftdump","Dumps MFT records from an NTFS filesystem image, producing a parseable output covering file creation, access and modification timestamps, file sizes, flags and parent directory linkage. A thin, fast alternative to MFTECmd when you need raw MFT output without the EZ Tools dependency.","oss",["win"],["xplat"],"tool","cli"],
+["Mft2Csv","https://github.com/jschicht/Mft2Csv","Joakim Schicht's MFT extractor, dumping record details to CSV with configurable timestamp handling and log output.","oss",["win"],["win"],"tool","cli"],
+["MFTExplorer","https://ericzimmerman.github.io/","GUI for exploring the $MFT as a live folder tree, letting you click through directories and inspect individual file records with all attributes decoded.","free",["win"],["win"],"tool","gui"],
+["RustyUsn","https://github.com/forensicmatt/RustyUsn","Fast Rust parser for the NTFS USN journal, built for very large journals where Python parsers become impractical.","oss",["win"],["xplat"],"tool","cli"],
+["INDXParse","https://github.com/williballenthin/INDXParse","Willi Ballenthin's suite for inspecting NTFS INDX records, recovering entries for files deleted from a directory but still present in slack within the index.","oss",["win"],["xplat"],"tool","gui"],
+["Usnjrnl Rewind","https://github.com/CyberCX-DFIR/usnjrnl_rewind","CyberCX script that rewinds the USN journal to rebuild the true full path of every entry, eliminating the Unknown paths that MFTECmd leaves when parent records were reused.","oss",["win"],["win"],"tool","cli"]
 ]],
 ["Windows",[
 ["ArtifactExtractor","https://github.com/Silv3rHorn/ArtifactExtractor","Extracts common Windows artifacts from forensic images and volume shadow copies, hashing artifacts in each VSC so only versions that differ from a later copy are pulled. Saves the manual work of mounting each shadow copy in turn.","oss",["win"],["win"],"tool","cli"],
 ["AutoParser","https://github.com/mayHamad/AutoParser","Parses offline registry hives for autostart entries, lateral movement traces and archive history, replaying transaction logs against the hive first and reporting key creation timestamps. Outputs CSV or JSON and works alongside the Kuiper platform.","oss",["win"],["xplat"],"tool","cli"],
 ["yarp","https://github.com/msuhanov/yarp","Python library and command-line tools for reading Windows registry files, including transaction logs, deleted keys and values recovered from unallocated hive space. Underpins several registry parsers and is useful directly when a hive is dirty or partially corrupt.","oss",["win"],["xplat"],"tool","cli"],
-["mftdump","https://github.com/mlbd/mftdump","Dumps MFT records from an NTFS filesystem image, producing a parseable output covering file creation, access and modification timestamps, file sizes, flags and parent directory linkage. A thin, fast alternative to MFTECmd when you need raw MFT output without the EZ Tools dependency.","oss",["win"],["xplat"],"tool","cli"],
 ["USBSleuth","https://github.com/woanware/usbdeviceforensics","Extracts USB device history from Windows registry hives — vendor, product, serial number, first install date and last insertion time — without requiring a live system. The dedicated complement to RegRipper's USB plugins.","oss",["win"],["xplat"],"tool","cli"],
-["RustyUsn","https://github.com/forensicmatt/RustyUsn","Fast Rust parser for the NTFS USN journal, built for very large journals where Python parsers become impractical.","oss",["win"],["xplat"],"tool","cli"],
 ["WinPrefetchView","https://www.nirsoft.net/utils/win_prefetch_view.html","Reads prefetch files and displays the referenced file list, run count and timestamps in a sortable grid. Quicker than PECmd when you just want to eyeball what a program touched.","free",["win"],["win"],"tool","gui"],
 ["MUICacheView","https://www.nirsoft.net/utils/muicache_view.html","Views the MuiCache registry key, which retains the display name of applications a user has launched. Frequently holds evidence of programs long since deleted.","free",["win"],["win"],"tool","gui"],
 ["ShellBags Explorer","https://ericzimmerman.github.io/","The GUI counterpart to SBECmd. Presents the shellbag hierarchy as a navigable folder tree with timestamps, which makes reconstructing what a user browsed far easier than reading CSV.","free",["win"],["win"],"tool","gui"],
 ["JumpList Explorer","https://ericzimmerman.github.io/","GUI jump list viewer showing per-application file access history with thumbnails and metadata. Easier than JLECmd output when you need to visually review what was opened.","free",["win"],["win"],"tool","gui cli"],
-["MFTExplorer","https://ericzimmerman.github.io/","GUI for exploring the $MFT as a live folder tree, letting you click through directories and inspect individual file records with all attributes decoded.","free",["win"],["win"],"tool","gui"],
 ["RLA","https://github.com/EricZimmerman/RECmd/tree/master/rla","Replay Log Alignment. Replays registry transaction logs into dirty hives so they reflect their true final state. Skipping this step means analysing a hive that is missing its most recent changes.","free",["win"],["win"],"tool","gui"],
 ["SDB Explorer","https://ericzimmerman.github.io/","Viewer for Windows Shim Database (.sdb) files. Application compatibility shims are a known persistence and injection technique, and this decodes what a custom shim actually does.","free",["win"],["win"],"tool","gui"],
 ["RecentFileCacheParser","https://github.com/EricZimmerman/RecentFileCacheParser","Parses RecentFileCache.bcf, a program execution artifact on older Windows versions that records recently executed applications.","free",["win"],["win"],"tool","cli"],
 ["VSCMount","https://github.com/EricZimmerman/VSCMount","Mounts every Volume Shadow Copy on a drive to a given mount point in one command, so you can run tools across all historical snapshots rather than one at a time.","free",["win"],["win"],"tool","gui"],
 ["SumECmd","https://ericzimmerman.github.io/","Parses Microsoft User Access Logs from C:\\Windows\\System32\\LogFiles\\SUM, recovering which accounts accessed which server roles and when. Often the only surviving record of access on a server.","free",["win"],["win"],"tool","cli"],
 ["iisGeoLocate","https://github.com/EricZimmerman/iisGeolocate","Extracts unique IP addresses from IIS logs and geolocates them, flagging malformed entries. Useful for triaging web server compromise.","free",["win"],["win"],"tool","gui"],
-["INDXParse","https://github.com/williballenthin/INDXParse","Willi Ballenthin's suite for inspecting NTFS INDX records, recovering entries for files deleted from a directory but still present in slack within the index.","oss",["win"],["xplat"],"tool","gui"],
 ["ese-analyst","https://github.com/MarkBaggett/ese-analyst","Mark Baggett's tool for forensic analysis of Microsoft ESE databases, with plugins that decode the tables into meaningful output.","oss",["win"],["xplat"],"tool","cli"],
 ["EventTranscriptParser","https://github.com/stuxnet999/EventTranscriptParser","Extracts forensically useful records from EventTranscript.db, the Windows diagnostic telemetry database that retains application and device activity.","oss",["win"],["win"],"tool","cli"],
 ["SIDR","https://github.com/strozfriedberg/sidr","Search Index DB Reporter from Stroz Friedberg. Parses Windows.edb and Windows.db search index databases into file existence, internet history and activity reports. Recovers content of files deleted before acquisition, which makes it valuable against anti-forensics.","oss",["win"],["win"],"tool","cli"],
-["Mft2Csv","https://github.com/jschicht/Mft2Csv","Joakim Schicht's MFT extractor, dumping record details to CSV with configurable timestamp handling and log output.","oss",["win"],["win"],"tool","cli"],
-["Usnjrnl Rewind","https://github.com/CyberCX-DFIR/usnjrnl_rewind","CyberCX script that rewinds the USN journal to rebuild the true full path of every entry, eliminating the Unknown paths that MFTECmd leaves when parent records were reused.","oss",["win"],["win"],"tool","cli"],
 ["bmc-tools","https://github.com/ANSSI-FR/bmc-tools","ANSSI parser for RDP bitmap cache files, extracting the individual tiles a Remote Desktop session left behind on the client.","oss",["win"],["win"],"tool","cli"],
 ["RdpCacheStitcher","https://github.com/BSI-Bund/RdpCacheStitcher","BSI tool that reassembles bmc-tools output into coherent screen images, turning scattered cache tiles into a viewable picture of the session.","oss",["win"],["win"],"tool","cli"],
 ["ShadowExplorer","https://www.shadowexplorer.com/","Browses and restores files from Volume Shadow Copies, recovering prior versions of files that were later modified or deleted.","free",["win"],["win"],"tool","gui"],
@@ -1435,11 +1427,12 @@ const T=[
 ["ShimCacheParser","https://github.com/mandiant/ShimCacheParser","Mandiant's Python parser for the Application Compatibility Cache, reading from live registry, exported hives or raw binary data. A dependable cross-platform alternative when you are not on Windows.","oss",["win"],["win"],"tool","cli"],
 ["flare-wmi","https://github.com/mandiant/flare-wmi","Tooling for parsing the WMI CIM repository, including python-cim for browsing objects. Recovers WMI event subscriptions used for stealthy persistence that leaves almost nothing on disk.","oss",["win"],["win"],"tool","cli"],
 ["KStrike","https://github.com/brimorlabs/KStrike","Parses SUM database files from Windows Server User Access Logging, revealing which accounts accessed which services and when. Frequently the only surviving record of lateral movement onto a server.","oss",["win"],["win"],"tool","cli"],
-["Hat-Trick Freenet Parser","https://github.com/northloopforensics/Hat-Trick-Freenet-Parser","Parses Freenet installations, packaged as a KAPE-compatible executable. Freenet turns up in distribution cases and is poorly served by mainstream tooling.","oss",["win"],["win"],"tool","cli"]
+["Hat-Trick Freenet Parser","https://github.com/northloopforensics/Hat-Trick-Freenet-Parser","Parses Freenet installations, packaged as a KAPE-compatible executable. Freenet turns up in distribution cases and is poorly served by mainstream tooling.","oss",["win"],["win"],"tool","cli"],
+["NTDSxtract","https://github.com/csababarta/ntdsxtract","Active Directory forensic framework for extracting user, group, computer and credential data from a recovered NTDS.dit database.","oss",["win"],["xplat"],"tool","cli"]
 ]],
 ["macOS",[
 ["MacForensics (Khatri)","https://github.com/ydkhatri/MacForensics","Yogesh Khatri's collection of small macOS forensic scripts. Headline tool is the NSKeyedArchive deserializer, which converts opaque serialized plists such as .SFL2 files into normal human-readable plists (also ships as a standalone Windows exe). The collection also includes a parser for AD domain ConfigProfiles.binary, a Mac Notifications database parser, an Office registry file reader, an iOS KTX-to-PNG image converter, and an 010 Editor template for dot-underscore (._) extended attribute files. Genuinely useful for the specific artifacts each script targets, none of which are well covered elsewhere.","oss",["mac","ios"],["xplat"],"tool","cli"],
-["Lionel Notari's Parsing Tool","https://www.ios-unifiedlogs.com/post/ios-unified-logs-my-parsing-tool-is-out","Announcement and walkthrough of Lionel Notari's macOS parser for Unified Logs: builds both complete and filtered databases from an extraction, supports custom filtering rules, and runs conversion quality checks against the source to catch parsing errors before you trust the output.","free",["ios"],["mac"],"tool","cli"],
+["Lionel Notari's Parsing Tool","https://www.ios-unifiedlogs.com/post/ios-unified-logs-my-parsing-tool-is-out","Announcement and walkthrough of Lionel Notari's parser for Apple Unified Logs, which are found on both iOS and macOS: builds both complete and filtered databases from an extraction, supports custom filtering rules, and runs conversion quality checks against the source to catch parsing errors before you trust the output.","free",["ios","mac"],["mac"],"tool","cli"],
 ["logarchive_info.py","https://github.com/Johann-PLW/logarchive_info","Johann Polewczyk's tool for generating the evidence-specific Info.plist that current macOS versions require to open a reconstructed logarchive. Companion to his Info.plist research below — use the research to understand why the file is needed, use this to actually produce a correct one.","oss",["mac","ios"],["xplat"],"tool","cli"],
 ["macMRU-Parser","https://github.com/mac4n6/macMRU-Parser","Parses Most Recently Used plists on macOS, including Microsoft Office for Mac 2011 and 2016 artifacts. Recovers what a user opened and from where, independent of the applications themselves.","oss",["mac"],["xplat"],"tool","cli"],
 ["macos-UnifiedLogs (Mandiant)","https://github.com/mandiant/macos-UnifiedLogs","Mandiant's open source Rust parser for the tracev3 format behind Apple Unified Logs, covering macOS, iOS, watchOS and tvOS. Uses no Apple APIs, so it runs on Windows and Linux as well as macOS, against a logarchive or extracted tracev3 files directly. This is the actual engine behind iLEAPP's native Unified Log support. Apache 2.0, actively maintained.","oss",["mac","ios"],["xplat"],"tool","cli"],
@@ -1464,15 +1457,18 @@ const T=[
 ["EAL (Extract Artefacts Linux)","https://github.com/lprat/EAL","Bash collector for Linux artifacts — shell history, SSH keys and known_hosts, logs, network state, Docker and libvirt inventory, package data — paired with a Python script that builds a JSON timeline. Output imports into Timesketch.","oss",["nix"],["nix"],"tool","cli"],
 ["POFR","https://github.com/gmagklaras/pofr","Penguin OS Flight Recorder. Collects, stores and organises process execution, file access and network/socket endpoint data from a running Linux system for later analysis — a lightweight, continuous audit trail rather than a one-time triage snapshot.","oss",["nix"],["nix"],"tool","cli"],
 ["swap_digger","https://github.com/sevagas/swap_digger","Automates Linux swap analysis, extracting user credentials, web form credentials and emails, HTTP basic auth, and WiFi SSIDs and keys. Point it at a mounted filesystem with -r and a swap device with -s for offline examination. Swap is routinely ignored and routinely holds cleartext. The repository has had no commits since 2019; test before relying on it against a current kernel.","oss",["nix"],["nix"],"tool","cli"],
-["debsums","https://www.kali.org/tools/debsums/","Verifies installed package files against the checksums shipped in their Debian packages, identifying binaries and configs that have been modified since installation. The fastest route to spotting a trojanised system binary on a Debian or Ubuntu host.","oss",["nix"],["nix"],"tool","cli"],
 ["utmpdump","https://www.kali.org/tools/util-linux/","Dumps and reconstructs utmp, wtmp and btmp records — the login, logout and failed-login history of a Linux host. Part of util-linux, so it is already present, and it also writes records back, which is worth knowing when assessing whether these files were tampered with.","oss",["nix"],["nix"],"tool","gui cli"],
-["unhide","https://www.kali.org/tools/unhide/","Detects processes and TCP/UDP ports hidden by rootkits by comparing what /proc reports against direct system call results. Discrepancies between the two are how kernel rootkits reveal themselves.","oss",["nix"],["nix"],"tool","cli"],
 ["pspy","https://github.com/DominicBreuker/pspy","Watches process execution in real time without root, catching short-lived commands, cron jobs and scripts that a periodic ps would miss entirely. Useful on a live host you cannot fully control.","oss",["nix"],["nix"],"tool","cli"],
 ["Linux CatScale","https://github.com/WithSecureLabs/LinuxCatScale","WithSecure's bash collection script gathering the full Linux artifact set, paired with an ELK stack and Hayabusa-style analysis scripts to process what it collects.","oss",["nix"],["nix"],"tool","cli"],
 ["Laurel","https://github.com/threathunters-io/laurel","Transforms auditd output into structured JSON that a SIEM can actually parse, resolving the multi-line, ID-correlated mess that makes raw auditd logs so painful to work with.","oss",["nix"],["nix"],"tool","cli"],
-["chkrootkit","https://www.chkrootkit.org/","Long-standing local rootkit checker scanning binaries and system state for known infection signatures and hidden processes.","oss",["nix"],["nix"],"tool","cli"],
-["rkhunter","https://rkhunter.sourceforge.net/","Rootkit Hunter: checks for rootkits, backdoors and local exploits by comparing file hashes, hunting for suspicious directories and inspecting kernel modules.","oss",["nix"],["nix"],"tool","cli"],
-["linux-explorer","https://github.com/intezer/linux-explorer","Live forensics toolbox for Linux endpoints with a web interface, covering process inspection, memory dumping and YARA scanning.","oss",["nix"],["nix"],"tool","gui"]
+["linux-explorer","https://github.com/intezer/linux-explorer","Live forensics toolbox for Linux endpoints with a web interface, covering process inspection, memory dumping and YARA scanning.","oss",["nix"],["nix"],"tool","gui"],
+["ChopChopGo","https://github.com/M00NLIG7/ChopChopGo","Applies Sigma rules to Linux evidence — journald, syslog, auditd and the file system — for rapid triage without standing up a SIEM first. The Linux answer to Chainsaw and Hayabusa, and it reads what Laurel and auditd produce.","oss",["nix"],["nix"],"tool","cli"],
+["unix_collector","https://github.com/op7ic/unix_collector","Single shell script that collects live response artifacts across Linux, the BSDs, Solaris, AIX and macOS with no dependencies. Written for the systems where you cannot install anything and have one shot at the collection.","oss",["nix","mac"],["nix"],"tool","cli"],
+["debugfs","https://man7.org/linux/man-pages/man8/debugfs.8.html","The ext2/3/4 filesystem debugger from e2fsprogs. Walks inodes, dumps blocks by number, reads directory entries and recovers deleted inodes on a mounted or raw image. Already on every Linux host, and the fastest route into ext internals when a parser will not do.","oss",["nix"],["nix"],"tool","cli"],
+["mac-robber","https://www.sleuthkit.org/mac-robber/","Collects modified, access and change times from a live filesystem and writes them in Sleuth Kit body format, ready for mactime to turn into a timeline. Useful where you cannot image the disk but can run a static binary against it.","oss",["nix"],["nix"],"tool","cli"],
+["bpftrace","https://bpftrace.org/","High-level eBPF tracing language for live Linux investigation — syscalls, process execution, file access and network activity observed in the kernel with minimal overhead. Where pspy guesses from /proc, bpftrace sees the event itself.","oss",["nix"],["nix"],"tool","cli"],
+["dwarf2json","https://github.com/volatilityfoundation/dwarf2json","Builds the ISF symbol tables Volatility 3 needs to read a Linux or macOS memory image. Linux memory analysis fails without a matching profile for the exact kernel, and this is how you generate one.","oss",["nix"],["nix"],"tool","cli"],
+["audit-userspace (ausearch, aureport)","https://github.com/linux-audit/audit-userspace","The auditd daemon and its query tools. ausearch filters the audit trail by user, syscall, file or time; aureport summarises it. The source of the logs that Laurel restructures and ChopChopGo scans.","oss",["nix"],["nix"],"tool","cli"]
 ]],
 ["iOS",[
 ["SEGB Hunter","https://github.com/stark4n6/script-stash","Traverses an iOS full filesystem extraction to enumerate and parse SEGB Biome streams, the format increasingly carrying what KnowledgeC once held. Reports stream categories, record counts, modified timestamps and tombstone status to CSV or SQLite, and accepts a zip, tar or folder as input. Part of Kevin Pagano's Script Stash.","oss",["ios"],["xplat"],"tool","cli"],
@@ -1490,7 +1486,7 @@ const T=[
 ["Lost Apples","https://github.com/joshuahickman1/Lost_Apples","Parses iOS FindMy and Bluetooth tracker data from searchpartyd and findmylocated folders with the accompanying keychain. Decrypts and presents AirTag and tracker records that commercial tools often leave as opaque blobs.","oss",["ios"],["win","mac"],"tool","gui cli"],
 ["iTunes Backup Explorer","https://github.com/MaxiHuHe04/iTunes-Backup-Explorer","Graphical tool for browsing and extracting files from iTunes and Finder backups, including encrypted ones, without command-line work.","oss",["ios"],["xplat"],"tool","gui cli"],
 ["iTunes_Backup_Reader","https://github.com/ydkhatri/iTunes_Backup_Reader","Yogesh Khatri's parser for iOS backup manifests, resolving hashed filenames back to real paths and extracting the plists inside.","oss",["ios"],["xplat"],"tool","cli"],
-["ccl-segb","https://github.com/cclgroupltd/ccl-segb","CCL's reader for SEGB, the binary log format behind Apple Biome. Biome appeared in iOS 14, expanded through iOS 15 and had largely replaced knowledgeC.db by iOS 16; a modern device carries well over 130 streams covering app foreground and background events, device unlocks, notifications, location, media playback and more. Payloads are protobuf. Essential for pattern-of-life reconstruction on current iOS.","oss",["ios"],["xplat"],"tool","cli"],
+["ccl-segb","https://github.com/cclgroupltd/ccl-segb","CCL's reader for SEGB, the binary log format behind Apple Biome. Biome appeared in iOS 14, expanded through iOS 15 and had largely replaced knowledgeC.db by iOS 16; a modern device carries well over 130 streams covering app foreground and background events, device unlocks, notifications, location, media playback and more. Payloads are protobuf. Essential for pattern-of-life reconstruction on current iOS.","oss",["ios","mac"],["xplat"],"tool","cli"],
 ["ArtEx","https://www.doubleblak.com/app.php?id=ArtEx2","Ian Whiffin's free iOS artifact examiner for verification, validation, reporting and research. Ingests the common extraction types and presents artifacts in views built for cross-checking what a commercial tool reported. May need adding to an AV exclusion list pending whitelisting.","free",["ios"],["win"],"tool","gui"],
 ["Hexordia Syslog Monitor","https://www.hexordia.com/hexordia-syslog-monitoring-tool","Presents real-time iOS system log traffic covering system functions, application crashes and network connections. Superseded by Evanole CE in January 2026, which now includes this functionality; page retained for reference.","free",["ios"],["win"],"tool","gui"],
 ["Hexordia Sysdiagnose Log Toolkit","https://www.hexordia.com/hexordia-sysdiagnose-monitoring-tool","Extracts sysdiagnose logs from an iOS device (the ones under Settings, Privacy, Analytics and Improvements, Analytics Data), and can optionally remove them afterwards. Works on locked or sleeping devices provided they are paired and authenticated with the host. Supports iOS 10 and later. Folded into Evanole CE in January 2026.","free",["ios"],["win"],"tool","gui"],
@@ -1511,10 +1507,8 @@ const T=[
 ["MITRE ATT&CK for ICS","https://attack.mitre.org/matrices/ics/","The ATT&CK matrix for industrial control systems, with techniques specific to operational technology: impairing process control, manipulating view, denying safety systems. Different from enterprise ATT&CK and necessary for OT incidents.","free",["net"],["web"],"intel",""],
 ["GRASSMARLIN","https://github.com/nsacyber/GRASSMARLIN","NSA's passive network mapper for ICS and SCADA environments, building a topology from captured traffic without active scanning, which matters when probing could disrupt a live process.","oss",["net"],["xplat"],"tool","cli"],
 ["ICSNPP","https://github.com/cisagov/icsnpp","CISA's Zeek parsers for industrial protocols including Modbus, DNP3, BACnet, Ethernet/IP, S7comm and OPCUA, turning OT traffic into structured logs Zeek can reason about.","oss",["net"],["nix"],"tool","cli"],
-["ICS Security Tools","https://github.com/ITI/ICS-Security-Tools","Curated collection of ICS security tools, protocol references, sample packet captures and scripts, maintained by the ICS community.","oss",["net"],["web"],"tool","web cli"],
 ["Conpot","https://github.com/mushorg/conpot","Low-interaction ICS honeypot emulating industrial protocols and devices, useful for capturing what attackers actually attempt against exposed OT.","oss",["net"],["nix"],"tool","cli"],
 ["CISA Industrial Control Systems","https://www.cisa.gov/topics/industrial-control-systems","CISA's ICS hub with advisories, alerts and mitigation guidance for control system vulnerabilities and active threats.","free",["net"],["web"],"reference",""],
-["Dragos Blog","https://www.dragos.com/blog/","OT threat intelligence and incident research from the leading ICS security vendor, including named threat group profiles and analysis of real industrial intrusions.","free",["net"],["web"],"blog",""],
 ["VehicleIQ","https://vehicleiq.shanon-02a.workers.dev/","Free searchable reference from Fenix Forensics mapping what connected-vehicle data may exist across every major OEM — cloud telematics systems, cell carrier records, infotainment modules, OEM dash cameras and Event Data Recorders. Built from validated casework and open source research rather than vendor marketing, and updated continuously. Answers where a given piece of data would actually live before you spend time chasing an acquisition that was never going to have anything.","free",["any"],["web"],"reference",""],
 ["QNXMounter","https://github.com/northloopforensics/QNXMounter","Mounts QNX filesystems, the OS underneath a great many vehicle infotainment units. Without it a QNX image is opaque to standard tooling, so this is often the step between having an infotainment dump and being able to examine it.","oss",["any"],["nix"],"tool","cli"],
 ["Vehicle_Forensic_Scripts","https://github.com/northloopforensics/Vehicle_Forensic_Scripts","Collection of scripts for parsing vehicle system data, filling gaps where commercial vehicle tooling stops or is unavailable.","oss",["any"],["xplat"],"tool","cli"],
@@ -1526,21 +1520,11 @@ const T=[
 ["Airdata UAV","https://airdata.com/","Web platform for uploading and analysing drone flight logs with mapped flight paths and event summaries. Convenient for visualisation, though uploading case data to a third party needs consideration.","free",["any"],["web"],"tool","web gui"],
 ["FACT","https://fkie-cad.github.io/FACT_core/","Firmware Analysis and Comparison Tool automating unpacking, identification and analysis of embedded firmware, with comparison between versions. Suited to IoT investigations where the device itself is the evidence.","oss",["any"],["nix"],"tool","web"]
 ]],
-["Memory",[
-["Linux Memory Grabber (lmg)","https://github.com/halpomeranz/lmg","Hal Pomeranz's script for dumping Linux memory and building a matching Volatility profile in one pass, designed to be as easy to use as DumpIt. Runs from a portable USB device, using AVML or LiME to acquire the image depending on what the target supports. The author is upfront that plugging in a USB device and compiling a profile on the target machine both touch it — not zero-footprint, but a fast, well-documented, and widely cited path when a matching precompiled Volatility profile does not already exist.","free",["nix"],["nix"],"tool","cli"],
+["Memory Analysis",[
 ["Rip Raw","https://github.com/cado-security/rip_raw","Cado Security's small, focused tool for analysing memory dumps from compromised Linux systems, extracting log events, binaries, images and other recoverable artifacts. A lighter alternative to a full Volatility workflow when you need a fast first pass over a Linux memory image.","oss",["nix"],["xplat"],"tool","cli"],
-["mquire","https://github.com/trailofbits/mquire","Trail of Bits' zero-dependency Linux memory forensics tool. Reads BTF (BPF Type Format) and Kallsyms data embedded directly in the kernel to reconstruct process lists, memory mappings, open file handles and cached file data — including files deleted from disk but still cached in memory — without needing matching debug symbols for the exact kernel build. Provides an interactive SQL interface inspired by osquery. Requires kernel 4.18+ for BTF, 6.4+ for Kallsyms support; both are default-enabled on most modern distributions. Supports raw physical memory dumps, LiME snapshots and ELF core dumps. Rust, Apache 2.0, actively developed.","oss",["nix"],["nix"],"tool","gui cli"],
-["Magnet Process Capture","https://www.magnetforensics.com/resources/magnet-process-capture/","Free tool for capturing the memory of individual running processes rather than the whole system. Useful when full memory acquisition is impractical or you only need one suspect process.","free",["win"],["win"],"tool","gui"],
-["WinPmem","https://github.com/Velocidex/WinPmem","Open source Windows physical memory acquisition driver, maintained alongside Velociraptor. Writes raw or AFF4 output and handles modern Windows memory layouts that older acquisition drivers stumble on.","oss",["win"],["win"],"tool","cli"],
-["Belkasoft RAM Capturer","https://belkasoft.com/ram-capturer","Small free memory imager with a kernel driver that works against anti-debugging and anti-dumping protections. Handy when a target process actively resists acquisition.","free",["win"],["win"],"tool","gui"],
-["AVML","https://github.com/microsoft/avml","Microsoft's portable Linux memory acquisition tool. Requires no target-specific compilation, which solves the usual Linux memory problem of needing kernel headers matching the exact running kernel. Outputs LiME format for Volatility.","oss",["nix"],["nix"],"tool","cli"],
-["LiME","https://github.com/504ensicsLabs/LiME","Loadable kernel module that captures volatile memory on Linux and Android with minimal process interference. The original standard for Linux memory acquisition; needs a module built against the running kernel.","oss",["nix","and"],["nix"],"tool","cli"],
-["Magnet DumpIt","https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/","Single-executable memory dumper descended from Comae DumpIt. Run it from a USB stick with no installation and get a raw dump or Microsoft crash dump. Ideal for first responders who need memory before pulling the plug.","free",["win"],["win"],"tool","cli"],
 ["MemProcFSHunter","https://github.com/memprocfshunt/MemProcFSHunter","Hunting layer over MemProcFS, applying detection logic against a mounted memory image so you get flagged findings rather than a filesystem to explore by hand.","oss",["win"],["win"],"tool","cli"],
 ["SuperMem","https://github.com/CrowdStrike/SuperMem","CrowdStrike's winSuperMem.py processes Windows memory images by triage type (Quick, Full, Comprehensive), chaining Volatility 2 and 3, Bulk Extractor, EVTxtract, Plaso, strings and YARA into one consistent output tree.","oss",["win"],["win","nix"],"tool","cli"],
 ["MemProcFS-Analyzer","https://github.com/evild3ad/MemProcFS-Analyzer","Automates MemProcFS analysis end to end, mounting the dump and running YARA, timeline and IOC checks over it, then producing an Excel report. Turns memory triage into a single command.","oss",["win"],["win"],"tool","cli"],
-["Collect-MemoryDump","https://github.com/evild3ad/Collect-MemoryDump","Automated creation of Windows memory dumps for incident response, wrapping the acquisition tools with consistent naming, hashing and logging.","oss",["win"],["win"],"tool","cli"],
-["MAGNET RAM Capture","https://www.magnetforensics.com/resources/magnet-ram-capture/","Free lightweight memory acquisition tool with a small footprint, minimising the amount of evidence overwritten during capture.","free",["win"],["win"],"tool","gui"],
 ["MemNixFS","https://github.com/MemNixFS/MemNixFS","Linux memory forensics framework that transforms a memory dump into a navigable filesystem, applying the MemProcFS approach to Linux targets.","oss",["nix"],["nix"],"tool","cli"],
 ["Volatility 3","https://github.com/volatilityfoundation/volatility3","Current-generation memory framework using symbol tables instead of hand-built profiles, so modern kernels are supported far more readily. Plugins cover processes, network connections, injected code, registry hives in memory and much more.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["Volatility 2","https://github.com/volatilityfoundation/volatility","The legacy framework, still needed for older profiles and a large body of community plugins never ported forward. Keep an environment available for it; some cases still require it.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
@@ -1550,7 +1534,20 @@ const T=[
 ["PE-sieve","https://github.com/hasherezade/pe-sieve","Scans live processes for injected code, hollowing, patched headers and inline hooks, dumping anything suspicious for analysis. A quick way to confirm code injection on a running system.","oss",["win"],["win"],"tool","cli"],
 ["Hollows Hunter","https://github.com/hasherezade/hollows_hunter","Wraps PE-sieve to scan every running process at once and report implants system-wide. The practical entry point for triaging a machine suspected of in-memory malware.","oss",["win"],["win"],"tool","cli"],
 ["Rekall","https://github.com/google/rekall","Archived Google memory framework. No longer maintained, but its plugin design and documentation remain a useful reference, and some historic case material depends on it.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
-["volatility3-symbols","https://github.com/Abyss-W4tcher/volatility3-symbols","Prebuilt Linux symbol tables for Volatility 3 covering thousands of distribution kernels. Linux memory analysis normally stalls on building an ISF for the exact running kernel; this removes that step, which is the single biggest practical blocker in Linux memory forensics.","oss",["nix"],["xplat"],"tool","cli"]
+["volatility3-symbols","https://github.com/Abyss-W4tcher/volatility3-symbols","Prebuilt Linux symbol tables for Volatility 3 covering thousands of distribution kernels. Linux memory analysis normally stalls on building an ISF for the exact running kernel; this removes that step, which is the single biggest practical blocker in Linux memory forensics.","oss",["nix"],["xplat"],"tool","cli"],
+["CobaltStrikeScan","https://github.com/Apr4h/CobaltStrikeScan","Scans process memory and files for Cobalt Strike beacons and extracts their configuration, giving you C2 servers, sleep intervals and watermarks.","oss",["win"],["win"],"tool","cli"]
+]],
+["Memory Acquisition",[
+["Linux Memory Grabber (lmg)","https://github.com/halpomeranz/lmg","Hal Pomeranz's script for dumping Linux memory and building a matching Volatility profile in one pass, designed to be as easy to use as DumpIt. Runs from a portable USB device, using AVML or LiME to acquire the image depending on what the target supports. The author is upfront that plugging in a USB device and compiling a profile on the target machine both touch it — not zero-footprint, but a fast, well-documented, and widely cited path when a matching precompiled Volatility profile does not already exist.","free",["nix"],["nix"],"tool","cli"],
+["mquire","https://github.com/trailofbits/mquire","Trail of Bits' zero-dependency Linux memory forensics tool. Reads BTF (BPF Type Format) and Kallsyms data embedded directly in the kernel to reconstruct process lists, memory mappings, open file handles and cached file data — including files deleted from disk but still cached in memory — without needing matching debug symbols for the exact kernel build. Provides an interactive SQL interface inspired by osquery. Requires kernel 4.18+ for BTF, 6.4+ for Kallsyms support; both are default-enabled on most modern distributions. Supports raw physical memory dumps, LiME snapshots and ELF core dumps. Rust, Apache 2.0, actively developed.","oss",["nix"],["nix"],"tool","gui cli"],
+["Magnet Process Capture","https://www.magnetforensics.com/resources/magnet-process-capture/","Free tool for capturing the memory of individual running processes rather than the whole system. Useful when full memory acquisition is impractical or you only need one suspect process.","free",["win"],["win"],"tool","gui"],
+["WinPmem","https://github.com/Velocidex/WinPmem","Open source Windows physical memory acquisition driver, maintained alongside Velociraptor. Writes raw or AFF4 output and handles modern Windows memory layouts that older acquisition drivers stumble on.","oss",["win"],["win"],"tool","cli"],
+["Belkasoft RAM Capturer","https://belkasoft.com/ram-capturer","Small free memory imager with a kernel driver that works against anti-debugging and anti-dumping protections. Handy when a target process actively resists acquisition.","free",["win"],["win"],"tool","gui"],
+["AVML","https://github.com/microsoft/avml","Microsoft's portable Linux memory acquisition tool. Requires no target-specific compilation, which solves the usual Linux memory problem of needing kernel headers matching the exact running kernel. Outputs LiME format for Volatility.","oss",["nix"],["nix"],"tool","cli"],
+["LiME","https://github.com/504ensicsLabs/LiME","Loadable kernel module that captures volatile memory on Linux and Android with minimal process interference. The original standard for Linux memory acquisition; needs a module built against the running kernel.","oss",["nix","and"],["nix"],"tool","cli"],
+["Magnet DumpIt","https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/","Single-executable memory dumper descended from Comae DumpIt. Run it from a USB stick with no installation and get a raw dump or Microsoft crash dump. Ideal for first responders who need memory before pulling the plug.","free",["win"],["win"],"tool","cli"],
+["Collect-MemoryDump","https://github.com/evild3ad/Collect-MemoryDump","Automated creation of Windows memory dumps for incident response, wrapping the acquisition tools with consistent naming, hashing and logging.","oss",["win"],["win"],"tool","cli"],
+["MAGNET RAM Capture","https://www.magnetforensics.com/resources/magnet-ram-capture/","Free lightweight memory acquisition tool with a small footprint, minimising the amount of evidence overwritten during capture.","free",["win"],["win"],"tool","gui"]
 ]],
 ["Event Logs",[
 ["Event Log Explorer","https://eventlogxp.com/","Windows event log viewer from FSPro Labs that opens live logs and saved EVT/EVTX files, with tabbed multi-log views, colour-coded filtering, saved filter presets and cross-log correlation. Reads logs from remote machines and from offline exports, so it suits triage where you want to read events directly rather than convert them to CSV first. Commercial, with a free licence for personal, non-commercial use.","com",["win"],["win"],"tool","gui"],
@@ -1565,13 +1562,12 @@ const T=[
 ["EvtxECmd","https://github.com/EricZimmerman/evtx","EVTX parser that normalises hundreds of event types into consistent fields using community-maintained maps. Turns inconsistent XML payloads into a single CSV you can filter and timeline without writing per-event parsing logic.","free",["win"],["win"],"tool","cli"],
 ["Chainsaw","https://github.com/WithSecureLabs/chainsaw","First-response hunting across EVTX, MFT, shimcache and registry with built-in Sigma support. Extremely fast, ships with useful default rules, and gives an actionable list of suspicious events within minutes of receiving a collection.","oss",["win"],["xplat"],"tool","cli"],
 ["Hayabusa","https://github.com/Yamato-Security/hayabusa","Windows event log timeline generator from Yamato Security with over 4,000 detection rules. Produces a single ranked CSV timeline plus summary dashboards showing which hosts and accounts deserve attention first.","oss",["win"],["xplat"],"tool","cli"],
-["Zircolite","https://github.com/wagga40/Zircolite","Standalone Sigma detection engine that runs rules directly against EVTX, Auditd, Sysmon for Linux and JSON logs using an in-memory SQLite database. No SIEM required, which suits offline analysis of a collected artifact set.","oss",["win"],["xplat"],"tool","cli"],
+["Zircolite","https://github.com/wagga40/Zircolite","Standalone Sigma detection engine that runs rules directly against EVTX, Auditd, Sysmon for Linux and JSON logs using an in-memory SQLite database. No SIEM required, which suits offline analysis of a collected artifact set.","oss",["win","nix"],["xplat"],"tool","cli"],
 ["DeepBlueCLI","https://github.com/sans-blue-team/DeepBlueCLI","PowerShell script that surfaces suspicious command lines, password spraying, service creation and obfuscated PowerShell from event logs. Minimal setup, and effective as an early pass before deeper analysis.","oss",["win"],["win"],"tool","cli"],
 ["python-evtx","https://github.com/williballenthin/python-evtx","Pure Python EVTX parser from Willi Ballenthin. The right building block when you need custom event log processing inside your own scripts rather than another finished tool.","oss",["win"],["xplat"],"tool","cli"],
 ["LogonTracer","https://github.com/JPCERTCC/LogonTracer","Visualises Windows logon events as a graph linking accounts to hosts, with ranked scoring for anomalous patterns. Lateral movement that hides in a spreadsheet becomes obvious as a graph.","oss",["win"],["win","nix"],"tool","gui"],
 ["Sysmon","https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon","Free Microsoft service that logs process creation with full command lines and hashes, network connections, image loads, and file and registry changes. Transforms Windows logging from barely adequate to genuinely investigable.","free",["win"],["win"],"tool","cli"],
 ["SwiftOnSecurity Sysmon config","https://github.com/SwiftOnSecurity/sysmon-config","Heavily commented baseline Sysmon configuration that captures high-value events while filtering routine noise. The standard starting point, usually tuned rather than deployed as-is.","oss",["win"],["win"],"tool","cli"],
-["Ultimate Windows Security Encyclopedia","https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/","Searchable reference explaining every Windows security event ID, its fields and what actually triggers it. The fastest way to settle what an event genuinely means before it goes in a report.","free",["win"],["web","win"],"tool","web"],
 ["auditd best practice config","https://github.com/Neo23x0/auditd","Florian Roth's hardened auditd ruleset, tuned to record the events that matter for detection without drowning the host in noise. Deploy before an incident; auditd's defaults capture very little of value.","oss",["nix"],["nix"],"tool","cli"],
 ["Sysmon for Linux","https://github.com/Sysinternals/SysmonForLinux","Brings Sysmon's process, network and file telemetry to Linux via eBPF, giving the same depth of endpoint logging that makes Windows investigations tractable.","oss",["nix"],["nix"],"tool","gui"]
 ]],
@@ -1591,7 +1587,6 @@ const T=[
 ["DeTT&CT","https://github.com/rabobank-cdc/DeTTECT","Scores and visualises your data source quality and detection coverage against ATT&CK, turning a vague sense of blind spots into a defensible heat map.","oss",["any"],["xplat"],"tool","gui"],
 ["Elastic Detection Rules","https://github.com/elastic/detection-rules","Elastic's open detection rule repository with hundreds of rules, unit tests and ATT&CK mappings. Valuable as detection logic even outside the Elastic stack.","oss",["win","mac","nix"],["web"],"tool","web"],
 ["Splunk Security Content","https://github.com/splunk/security_content","Splunk's open detection and response content, organised into analytic stories that tie related detections to a threat scenario.","oss",["win","mac","nix"],["web"],"tool","web"],
-["OTRF Security Datasets","https://github.com/OTRF/Security-Datasets","Open Threat Research's library of pre-recorded telemetry from simulated attacks. Develop and test detections against real malicious activity without building a lab first.","oss",["win","nix"],["web"],"tool","web cli"],
 ["ThreatHunter Playbook","https://threathunterplaybook.com/","Open collection of hunting analytics with the logic, data requirements and validation steps for each, structured so hunts are repeatable rather than ad hoc. From Open Threat Research Forge (OTRF), the same group behind Security-Datasets and OSSEM.","oss",["win"],["web"],"tool","web"],
 ["Uncoder.io","https://uncoder.io/","Translates detection rules between Sigma, KQL, SPL, EQL, Lucene and other query languages. Saves rewriting a rule by hand for each platform.","free",["any"],["web"],"tool","web"],
 ["HELK","https://github.com/Cyb3rWard0g/HELK","Hunting ELK: a research platform bundling Elasticsearch, Kibana, Spark and Jupyter for advanced hunting and analytics on collected telemetry.","oss",["win","nix"],["nix"],"tool","cli"],
@@ -1600,14 +1595,7 @@ const T=[
 ["Kansa","https://github.com/davehull/Kansa","PowerShell framework for collecting the same data across an entire estate, then applying frequency analysis. Stacking makes the one host with an unusual service or autorun entry stand out immediately.","oss",["win"],["win"],"tool","cli"],
 ["PANIX","https://github.com/Aegrah/PANIX","Linux persistence simulation covering a wide range of techniques — cron, systemd, udev, shell profiles, kernel modules, malicious packages. Deploy a technique, then confirm your collection and detection actually catch it.","oss",["nix"],["nix"],"tool","cli"],
 ["Kunai","https://github.com/kunai-project/kunai","eBPF-based threat hunting and monitoring for Linux, producing correlated events with process ancestry rather than isolated syscalls. The closest Linux equivalent to Sysmon's depth.","oss",["nix"],["nix"],"tool","cli"],
-["Tetragon","https://github.com/cilium/tetragon","Cilium's eBPF security observability and runtime enforcement, covering process execution, file and network activity across hosts and Kubernetes.","oss",["nix","cloud"],["nix"],"tool","cli"],
-["LOLRMM","https://lolrmm.io/","The RMM equivalent of LOLBAS — a structured, community-driven catalogue of legitimate remote monitoring and management software that attackers routinely abuse to blend in with normal IT operations (ScreenConnect, AnyDesk and similar have all shown up in real ransomware deployments). Each entry documents installation paths, PE metadata, on-disk and event log artifacts, and includes Sigma detection rules. Searchable site, plus a JSON/CSV API for pulling the whole catalogue into your own tooling. From the magicsword-io team, who also maintain LOLDrivers.","free",["win"],["web"],"intel",""],
-["LOLBASline","https://github.com/magicsword-io/LOLBASline","PowerShell tool that tests which LOLBAS binaries are actually present on a system and whether they can execute their documented technique, rather than just telling you the binary exists. Clones the current LOLBAS repository automatically if you don't point it at a local copy. Turns a static reference list into a live assessment of what LOLBAS-based abuse is genuinely possible on the box in front of you.","oss",["win"],["win"],"tool","gui cli"],
-["bootloaders.io","https://github.com/magicsword-io/bootloaders","Curated list of known malicious and vulnerable bootloaders across operating systems, in the same spirit as LOLDrivers but one layer lower in the boot chain. From the magicsword-io team.","free",["win","nix"],["web"],"intel",""],
-["MalAPI.io","https://malapi.io/","Reference mapping Windows API calls to the malicious techniques that use them. When capa or an import table shows an unfamiliar function, this explains why malware would call it.","free",["win"],["web"],"tool","web cli"],
-["LOLBAS","https://lolbas-project.github.io/","Catalogue of signed Microsoft binaries that can execute code, download files or bypass controls. Attackers prefer these because they are already present and trusted; the site documents the exact command lines to hunt for.","oss",["win"],["web","win"],"tool","web gui cli"],
-["GTFOBins","https://gtfobins.github.io/","The Unix counterpart to LOLBAS, listing standard binaries abusable for privilege escalation, file access and data exfiltration. Explains suspicious command lines found in bash history and auditd logs.","oss",["nix"],["web","nix"],"tool","web cli"],
-["LOLDrivers","https://www.loldrivers.io/","Index of vulnerable and malicious signed drivers used to disable security tooling from kernel space. Provides hashes and YARA rules for hunting bring-your-own-vulnerable-driver activity.","oss",["win"],["web","win"],"tool","web"]
+["Tetragon","https://github.com/cilium/tetragon","Cilium's eBPF security observability and runtime enforcement, covering process execution, file and network activity across hosts and Kubernetes.","oss",["nix","cloud"],["nix"],"tool","cli"]
 ]],
 ["Network",[
 ["chickadee","https://github.com/chapinb/chickadee","Enriches IP addresses found in logs, packet captures or plain text with geolocation and network ownership, resolving many addresses in one pass. Written for the point in an investigation where a list of addresses needs context before it is worth pivoting on.","oss",["net"],["xplat"],"tool","cli"],
@@ -1680,7 +1668,8 @@ const T=[
 ["Aid4Mail","https://www.aid4mail.com/","Commercial email conversion and forensic export tool supporting a very wide range of mail formats and webmail sources. Handles filtering and deduplication, which matters when mail volume runs into millions of items.","com",["any"],["win"],"tool","gui"],
 ["Google Message Header Analyzer","https://toolbox.googleapis.com/apps/messageheader/","Pastes in raw headers and visualises each SMTP hop with the delay introduced. Fast way to spot forged Received headers or unexplained routing in a phishing investigation.","free",["any"],["web"],"tool","web gui"],
 ["MXToolbox Header Analyzer","https://mxtoolbox.com/EmailHeaders.aspx","Parses headers and reports SPF, DKIM and DMARC results alongside the routing path. Useful second opinion when assessing whether a message genuinely originated where it claims.","free",["any"],["web"],"tool","web cli"],
-["oletools","https://github.com/decalage2/oletools","Philippe Lagadec's suite for OLE and Office file analysis. olevba extracts and deobfuscates macros, oleid flags risk indicators, and rtfobj pulls embedded objects from RTF. The first stop for any suspicious attachment.","oss",["any"],["xplat"],"tool","cli"]
+["oletools","https://github.com/decalage2/oletools","Philippe Lagadec's suite for OLE and Office file analysis. olevba extracts and deobfuscates macros, oleid flags risk indicators, and rtfobj pulls embedded objects from RTF. The first stop for any suspicious attachment.","oss",["any"],["xplat"],"tool","cli"],
+["bubbly","https://github.com/kalink0/bubbly","Renders messenger exports and backups as simple HTML chat bubbles that stay searchable and filterable, with tagging and media attached in place. Built for the review stage rather than the parsing stage — the point is handing a readable conversation to someone who is not going to open a database.","oss",["ios","and"],["xplat"],"tool","cli"]
 ]],
 ["Image & Video",[
 ["Griffeye Analyze DI","https://www.griffeye.com/","Media review platform used widely in law enforcement for large image and video sets, with classification, deduplication, hash-set matching against known collections and case collaboration. Handles volumes that general forensic suites review slowly.","com",["win"],["win"],"tool","gui"],
@@ -1696,9 +1685,7 @@ const T=[
 ["FotoForensics","https://fotoforensics.com/","Free online ELA and metadata analysis. Remember that uploads are retained and publicly viewable, so it is unsuitable for case material.","free",["any"],["web"],"tool","web"],
 ["InVID / WeVerify plugin","https://www.invid-project.eu/tools-and-services/invid-verification-plugin/","Browser extension built for verifying social media video and images: keyframe extraction, reverse image search across engines, metadata inspection and magnification. The standard toolkit for open source verification work.","free",["any"],["web"],"tool","web"],
 ["Magnet Witness","https://www.magnetforensics.com/products/magnet-witness/","The successor to DVR Examiner. Acquires directly from surveillance and CCTV DVR hard drives including deleted or partially overwritten video, bypasses passwords, and now adds review and analysis so the whole video workflow sits in one tool. Generates auditable reports for every input and output.","com",["any"],["win"],"tool","cli"],
-["Amped FIVE / Authenticate","https://ampedsoftware.com/","Commercial video enhancement and image authentication with a fully documented processing chain, so every adjustment is reproducible and defensible in court. Widely used by law enforcement multimedia units.","com",["any"],["win"],"tool","gui"],
-["StegOnline","https://georgeom.net/StegOnline/","Browser tool for exploring bit planes, extracting LSB data and inspecting image structure. Practical for steganography questions and for CTF-style challenges.","oss",["any"],["web"],"tool","web gui"],
-["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool","cli"]
+["Amped FIVE / Authenticate","https://ampedsoftware.com/","Commercial video enhancement and image authentication with a fully documented processing chain, so every adjustment is reproducible and defensible in court. Widely used by law enforcement multimedia units.","com",["any"],["win"],"tool","gui"]
 ]],
 ["Logs & Data Processing",[
 ["SQLECmd","https://github.com/EricZimmerman/SQLECmd","Runs a library of community maps against SQLite databases found in an image, automatically identifying and parsing known application databases into CSV without writing queries yourself.","free",["any"],["win"],"tool","cli"],
@@ -1711,7 +1698,6 @@ const T=[
 ["GoAccess","https://goaccess.io/","Real-time log analyser for web server logs, producing terminal dashboards or standalone HTML reports on requests, hosts, referrers and status codes. Fast way to characterise traffic to a compromised site or find a webshell's callers.","oss",["net","nix"],["xplat"],"tool","cli"],
 ["Logstash","https://www.elastic.co/guide/en/logstash/current/input-plugins.html","Elastic's ingestion pipeline for parsing, normalising, enriching and routing logs. In DFIR it is how heterogeneous evidence gets into a searchable common schema.","oss",["any"],["nix"],"tool","cli"],
 ["Elastic Grok Debugger","https://www.elastic.co/guide/en/kibana/current/xpack-grokdebugger.html","Interactive tool for building and testing Grok patterns against real log lines. Saves considerable time when writing parsers for an unfamiliar log format mid-case.","free",["any"],["web"],"tool","web cli"],
-["Apache Kafka","https://kafka.apache.org/","Distributed event streaming platform, commonly the log broker buffering events during bursts or downstream outages. Worth knowing when tracing where logs went missing.","oss",["any"],["nix"],"tool","cli"],
 ["lnav","https://lnav.org/","Log file navigator that auto-detects formats, merges multiple logs into one chronological view, and lets you query them with SQL. Handles syslog, journald exports, web logs and more without preprocessing.","oss",["nix"],["nix"],"tool","cli"],
 ["Protobuf Decoder","https://protobuf-decoder.netlify.app/","Browser tool that decodes raw protobuf blobs field by field. Modern apps store increasing amounts of data as protobuf inside SQLite BLOBs, and this makes those values readable without writing a schema.","free",["any"],["web"],"tool","web"],
 ["protobuf-inspector","https://github.com/jmendeth/protobuf-inspector","CLI that reverse engineers unknown protobuf structures, inferring types and nesting. The scriptable option when you have many blobs to decode rather than one.","oss",["any"],["xplat"],"tool","cli"],
@@ -1720,11 +1706,10 @@ const T=[
 ["jq","https://jqlang.github.io/jq/","Command-line JSON processor for filtering and reshaping data. Cloud audit logs, EDR exports and API responses all arrive as JSON, and jq turns gigabytes of it into the handful of fields you need.","oss",["any"],["xplat"],"tool","cli"],
 ["ripgrep","https://github.com/BurntSushi/ripgrep","Extremely fast recursive search that respects encoding and handles binary files sensibly. Searching a mounted image for an indicator takes seconds rather than minutes.","oss",["any"],["xplat"],"tool","cli"],
 ["klogg","https://klogg.filimonov.dev/","GUI viewer designed for multi-gigabyte log files, with live filtering and regex highlighting that does not load the whole file into memory. Where general-purpose editors fail on large logs.","oss",["any"],["xplat"],"tool","gui"],
-["Notepad++","https://notepad-plus-plus.org/","Reliable text editor with encoding detection, regex find-and-replace across files, hex plugins and column editing. Still the fastest route to cleaning up messy artifact output.","oss",["any"],["win"],"tool","gui"],
-["Visual Studio Code","https://code.visualstudio.com/","Editor of choice for writing parsers and reviewing structured output, with extensions for hex viewing, SQLite browsing, CSV alignment and remote sessions on analysis machines.","free",["any"],["xplat"],"tool","cli"],
 ["bstrings","https://github.com/EricZimmerman/bstrings","Strings replacement with built-in regex patterns for emails, URLs, IP addresses, credit cards and GUIDs. Pull indicators out of memory dumps, pagefiles and unallocated space without writing expressions yourself.","free",["any"],["win"],"tool","cli"],
 ["Elastic Stack","https://www.elastic.co/elastic-stack","Indexing and search platform commonly used to host large DFIR datasets. Once artifacts are indexed, cross-source correlation and visualisation become interactive rather than a series of grep runs.","free",["any"],["nix"],"tool","gui"],
-["Splunk","https://www.splunk.com/en_us/download/splunk-enterprise.html","Log analytics platform whose free tier handles a daily ingest volume that fits most single-case datasets. Strong search language and a large library of existing DFIR content.","free",["any"],["win","nix"],"tool","gui cli"]
+["Splunk","https://www.splunk.com/en_us/download/splunk-enterprise.html","Log analytics platform whose free tier handles a daily ingest volume that fits most single-case datasets. Strong search language and a large library of existing DFIR content.","free",["any"],["win","nix"],"tool","gui cli"],
+["peach-forensics","https://github.com/kalink0/peach-forensics","Session-based log analysis workbench for Apple Unified Logs, EVTX, journald and text-based formats in one place, with persistent sessions, Splunk-style search, tagging rules declared in TOML, and direct handling of iOS full filesystem extractions. Built as an extension of the crush ecosystem — crush hands a log source across by right-click — and versioned rule packages ship through a separate peach-rules repository, downloadable manually for air-gapped work.","oss",["ios","mac","win","nix"],["win","mac","nix"],"tool","gui"]
 ]],
 ["Timelines",[
 ["Timestamped","https://thebinaryhick.blog/2026/08/16/timestamped/","Josh Hickman's macOS-native timestamp decoder — a faithful Swift equivalent of DCode for examiners who work primarily on Mac. Currently handles roughly 25 formats including Unix (seconds/ms/µs/ns), Mac Absolute, Apple Absolute, Windows FILETIME, Chromium, HFS+, APFS, .NET Ticks, DOS/FAT, UUID v1 timestamps and the Google URL ei parameter. Not the full ~69 formats DCode covers yet, but closes a real gap for Mac-based examiners who previously had to switch to a browser tool.","free",["mac"],["mac"],"tool","gui"],
@@ -1743,7 +1728,8 @@ const T=[
 ["dftimewolf","https://github.com/log2timeline/dftimewolf","Orchestrates multi-step DFIR workflows: collect with GRR, process with Plaso, load into Timesketch. Turns a repeatable investigation procedure into a single reproducible command.","oss",["any"],["nix","mac"],"tool","cli"],
 ["mactime (TSK)","https://www.sleuthkit.org/sleuthkit/","Builds MAC-time timelines from body files produced by fls and other tools. Lightweight and dependable when a full Plaso run is more than the question requires.","oss",["any"],["xplat"],"tool","cli"],
 ["DCode","https://www.digital-detective.net/dcode/","Converts the many timestamp encodings found in artifacts, from Windows FILETIME and Unix epoch to Chrome, Mac absolute time and dozens more. Indispensable when you find an unexplained 64-bit integer.","free",["any"],["win"],"tool","gui"],
-["EpochConverter","https://www.epochconverter.com/","Quick browser conversion between epoch variants and human-readable time, with timezone handling. Handy for sanity-checking a timestamp before it goes into a report.","free",["any"],["web"],"tool","web"]
+["EpochConverter","https://www.epochconverter.com/","Quick browser conversion between epoch variants and human-readable time, with timezone handling. Handy for sanity-checking a timestamp before it goes into a report.","free",["any"],["web"],"tool","web"],
+["ADTimeline","https://github.com/ANSSI-FR/ADTimeline","ANSSI tool that builds a timeline from Active Directory replication metadata, revealing when objects and attributes were changed even when event logs have rolled or been cleared.","oss",["win"],["win"],"tool","cli"]
 ]],
 ["Recovery & Carving",[
 ["bulk_extractor","https://github.com/simsong/bulk_extractor","Scans images, memory and files for emails, URLs, credit card numbers and other features without parsing file systems at all. Because it ignores structure, it recovers data from unallocated space, damaged images and swap that structured tools miss.","oss",["any"],["xplat"],"tool","cli"],
@@ -1787,7 +1773,12 @@ const T=[
 ["ssdeep","https://ssdeep-project.github.io/ssdeep/","Context-triggered piecewise hashing producing a similarity score rather than a binary match. Finds near-identical files: modified documents, recompiled malware variants, partially overwritten data.","oss",["any"],["xplat"],"tool","cli"],
 ["TLSH","https://github.com/trendmicro/tlsh","Trend Micro's locality-sensitive hash designed for clustering similar files at scale. More robust than ssdeep for grouping large malware collections into families.","oss",["any"],["xplat"],"tool","cli"],
 ["NIST NSRL","https://www.nist.gov/itl/ssd/software-quality-group/national-software-reference-library-nsrl","Reference hash sets for known operating system and application files. Filtering these out removes a large share of files from review so effort concentrates on what is unique to the case.","free",["any"],["web"],"reference",""],
-["Project VIC","https://www.projectvic.org/","Hash set and data model ecosystem supporting child exploitation investigations, enabling categorisation and deduplication across agencies. Access is restricted to vetted investigators.","free",["any"],["web"],"tool","web"]
+["Project VIC","https://www.projectvic.org/","Hash set and data model ecosystem supporting child exploitation investigations, enabling categorisation and deduplication across agencies. Access is restricted to vetted investigators.","free",["any"],["web"],"tool","web"],
+["AIDE","https://aide.github.io/","Advanced Intrusion Detection Environment: builds a baseline database of file hashes, permissions and inode data, then reports what changed. If a baseline predates the incident, this identifies every modified binary and config immediately.","oss",["nix"],["nix"],"tool","cli"],
+["Tripwire (Open Source)","https://github.com/Tripwire/tripwire-open-source","The original host-based file integrity monitor. Same role as AIDE and still deployed widely enough that you will meet its databases on compromised hosts.","oss",["nix"],["nix"],"tool","cli"],
+["hashlookup-forensic-analyser","https://github.com/hashlookup/hashlookup-forensic-analyser","Analyses a mounted filesystem against CIRCL's hashlookup service to separate known-good from unknown files, cutting review volume dramatically.","oss",["any"],["nix"],"tool","cli"],
+["debsums","https://www.kali.org/tools/debsums/","Verifies installed package files against the checksums shipped in their Debian packages, identifying binaries and configs that have been modified since installation. The fastest route to spotting a trojanised system binary on a Debian or Ubuntu host.","oss",["nix"],["nix"],"tool","cli"],
+["MD5_SHA1_Scraper","https://github.com/northloopforensics/MD5_SHA1_Scraper","Pulls MD5 and SHA1 hash values out of PDF files, for when hash lists arrive embedded in a report rather than as data.","oss",["any"],["xplat"],"tool","cli"]
 ]],
 ["Ciphers & Decoding",[
 ["decode-vbe","https://github.com/DidierStevens/DidierStevensSuite/blob/master/decode-vbe.py","Didier Stevens' decoder for Microsoft Script Encoding (VBE/JSE), the obfuscation layer attackers use to hide VBScript malware from casual inspection. Converts encoded scripts back to readable plaintext for analysis.","oss",["any"],["xplat"],"tool","cli"],
@@ -1807,7 +1798,9 @@ const T=[
 ["Cryptii","https://cryptii.com/","Modular encoding and decoding workbench where you chain conversions visually. Useful for layered encodings that need several passes to unwrap.","oss",["any"],["web"],"tool","web"],
 ["DenCode","https://dencode.com/","Wide-ranging encoder and decoder covering Base64, URL, Unicode, character sets, hashes and date formats in one interface.","free",["any"],["web"],"tool","web"],
 ["quipqiup","https://quipqiup.com/","Fast automated solver for substitution ciphers and cryptograms, including partial-clue solving where you already know some letters.","free",["any"],["web"],"tool","web"],
-["Rumkin Cipher Tools","https://rumkin.com/tools/cipher/","Long-standing collection of classical cipher encoders and decoders, still the quickest option for the traditional schemes.","free",["any"],["web"],"tool","web"]
+["Rumkin Cipher Tools","https://rumkin.com/tools/cipher/","Long-standing collection of classical cipher encoders and decoders, still the quickest option for the traditional schemes.","free",["any"],["web"],"tool","web"],
+["StegOnline","https://georgeom.net/StegOnline/","Browser tool for exploring bit planes, extracting LSB data and inspecting image structure. Practical for steganography questions and for CTF-style challenges.","oss",["any"],["web"],"tool","web gui"],
+["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool","cli"]
 ]],
 ["Malware Analysis & Sandboxes",[
 ["Valhalla","https://valhalla.nextron-systems.com/","Nextron's curated, quality-tested YARA rule feed — the rule source behind their THOR and LOKI scanners, with a free public tier searchable by hash, filename or rule name. Useful independent of Nextron's own tools: check a hash or sample against Valhalla's rule set even if you are running a different YARA-based scanner.","free",["any"],["web"],"intel",""],
@@ -1817,11 +1810,8 @@ const T=[
 ["FakeNet-NG","https://github.com/mandiant/flare-fakenet-ng","Simulates a network so malware detonating in an isolated lab still gets responses, revealing its C2 behaviour without letting it reach the internet.","oss",["win","nix"],["xplat"],"tool","cli"],
 ["INetSim","https://www.inetsim.org/","Internet services simulation suite for malware labs, answering DNS, HTTP, SMTP, FTP and more so samples behave as if online. The long-standing companion to an air-gapped analysis network.","oss",["nix"],["nix"],"tool","cli"],
 ["ProcDot","https://www.procdot.com/","Visualises Procmon logs and PCAP together as an interactive graph, turning tens of thousands of events into a readable picture of what a sample actually did.","free",["win"],["win"],"tool","gui"],
-["Malware Analysis start.me (Sighlent)","https://start.me/p/jj2KwQ/malware-analysis","A companion curated page dedicated to malware analysis, organised much like Kevin's forensics page. Useful cross-check when hunting for a tool the general indexes miss.","free",["any"],["web"],"reference",""],
-["FOR610 Malware Analysis Tips & Tricks Poster","https://www.sans.org/posters/malware-analysis-tips-tricks-poster/","SANS poster distilling the malware analysis workflow: triage order, useful commands per stage, and the indicators worth chasing first.","free",["win"],["web"],"reference",""],
 ["PDF Tools (pdf-parser, pdfid)","https://blog.didierstevens.com/programs/pdf-tools/","Didier Stevens' PDF analysis pair. pdfid triages a document for suspicious elements such as JavaScript, embedded files and auto-actions; pdf-parser then extracts and decompresses specific objects. Handles deliberately obfuscated and corrupt PDFs.","oss",["any"],["xplat"],"tool","cli"],
 ["oledump.py","https://blog.didierstevens.com/programs/oledump-py/","Analyses OLE compound files stream by stream, with plugins for macro extraction, heuristic URL detection and decoding. The precise instrument for malicious Office document analysis.","oss",["any"],["xplat"],"tool","cli"],
-["Didier Stevens: My Software","https://blog.didierstevens.com/my-software/","Cross-referenced index of every tool he has published with links to the explaining blog posts. Covers the dump family (zipdump, rtfdump, emldump, base64dump), Cobalt Strike tools, 1768.py and much more.","oss",["any"],["web"],"tool","web cli"],
 ["Segugio","https://github.com/reecdeep/segugio","Executes and tracks each step of malware detonation, from first-stage click through to final-stage config extraction. Gives a process tree with real-time per-process detail and runs YARA-matched config extractors automatically.","oss",["win"],["win"],"tool","gui"],
 ["maldump","https://github.com/NUKIB/maldump","Extracts quarantined files from a live system or mounted image across Defender, Avast, Avira, ESET, McAfee, Malwarebytes, Kaspersky, G Data, AVG and FortiClient. Quarantine is often the only surviving copy of the malware.","oss",["win"],["win","nix"],"tool","cli"],
 ["MalChela","https://github.com/dwmetz/MalChela","YARA and malware analysis toolkit written in Rust, bundling common triage workflows behind a single interface.","oss",["any"],["xplat"],"tool","gui"],
@@ -1830,10 +1820,7 @@ const T=[
 ["Qu1cksc0pe","https://github.com/CYB3RMX/Qu1cksc0pe","All-in-one static analyser covering Windows, Linux, macOS, Android and document files, reporting imports, capabilities and embedded indicators.","oss",["win","nix","and"],["win","nix"],"tool","cli"],
 ["FileScan.IO","https://www.filescan.io/","Free next-generation malware analysis service focused on rapid static analysis and indicator extraction rather than full detonation.","free",["any"],["web"],"tool","web"],
 ["EmailAnalyzer","https://github.com/keraattin/EmailAnalyzer","Analyses suspicious emails, extracting headers, links, attachments and indicators for phishing triage.","oss",["any"],["xplat"],"tool","cli"],
-["Unprotect Project","https://unprotect.it/","Searchable database of malware evasion techniques with code snippets and detection rules. Explains what an anti-analysis trick you have hit is actually doing.","free",["any"],["web"],"tool","web"],
 ["YARA Forge","https://yarahq.github.io/","Curated, quality-controlled public YARA rule collection packaged into ready-to-use rule sets, saving you from assembling and deduplicating feeds yourself.","oss",["any"],["web"],"tool","web"],
-["Awesome Malware Analysis","https://github.com/rshipp/awesome-malware-analysis","Long-running curated list of malware analysis tools, sandboxes, datasets and resources.","oss",["any"],["web"],"reference",""],
-["Analyzing Malicious Documents Cheat Sheet","https://zeltser.com/analyzing-malicious-documents","Lenny Zeltser's reference sheet covering the tools and steps for examining malicious PDFs and Office documents.","free",["any"],["web"],"tool","web"],
 ["YARA","https://virustotal.github.io/yara/","Pattern-matching engine for classifying files and scanning memory or disk for known families. Writing a rule from one confirmed sample and sweeping the estate for others is a core containment workflow.","oss",["any"],["xplat"],"tool","cli"],
 ["yarGen","https://github.com/Neo23x0/yarGen","Generates YARA rules from sample sets while filtering out strings common to legitimate software. Produces a solid draft rule in seconds, which you then tighten by hand before deployment.","oss",["any"],["xplat"],"tool","cli"],
 ["Didier Stevens Suite","https://blog.didierstevens.com/didier-stevens-suite/","Long-running collection of focused analysis scripts including pdf-parser, pdfid, oledump and numbers-to-string. The reference tooling for malicious document analysis, each script doing one job precisely.","oss",["win"],["xplat"],"tool","cli"],
@@ -1956,14 +1943,7 @@ const T=[
 ["ThreatFox","https://threatfox.abuse.ch/","Community IOC feed from abuse.ch focused on active malware infrastructure, with API access and family attribution. Good for quickly checking whether an observed C2 address is already known.","free",["any"],["web"],"intel",""],
 ["URLhaus","https://urlhaus.abuse.ch/","Database of URLs actively distributing malware payloads, with the associated samples. Helps establish what a download URL was serving at a given point in time.","free",["any"],["web"],"intel",""],
 ["AlienVault OTX","https://otx.alienvault.com/","Open threat exchange with community pulses grouping indicators by campaign. Quality varies with the contributor, so verify before acting on a match.","free",["any"],["web"],"intel",""],
-["Have I Been Pwned","https://haveibeenpwned.com/","Checks whether an account appears in known credential breaches. Useful for establishing plausible initial access when credential stuffing is suspected.","free",["any"],["web"],"intel",""],
-["Psychology of Intelligence Analysis","https://www.ialeia.org/docs/Psychology_of_Intelligence_Analysis.pdf","Richards Heuer's CIA classic on cognitive bias in analysis and how to counter it, including Analysis of Competing Hypotheses. The most useful thing on this list for avoiding a confidently wrong conclusion, and it applies directly to forensic reasoning.","free",["any"],["web"],"reference",""],
-["The Intelligence Cycle","https://sroberts.io/posts/intelligence-concepts-the-intelligence-cycle/","Scott Roberts on planning, collection, processing, analysis, dissemination and feedback — and why the cycle is iterative, since analysis usually exposes collection gaps you did not know you had.","free",["any"],["web"],"reference",""],
-["F3EAD","https://sroberts.io/posts/intelligence-concepts-f3ead/","Find, Fix, Finish, Exploit, Analyze, Disseminate — the targeting cycle adapted for intrusion response, and a better fit than the classic intelligence cycle when you are working an active incident.","free",["any"],["web"],"reference",""],
-["Getting Started with ATT&CK: Threat Intelligence","https://medium.com/mitre-attack/getting-started-with-attack-cti-4eb205be4b2f","MITRE's practical introduction to using ATT&CK for CTI: mapping reporting to techniques, and doing it consistently enough that the mapping is worth something.","free",["any"],["web"],"reference",""],
-["Using ATT&CK to Advance CTI","https://medium.com/mitre-attack/using-att-ck-to-advance-cyber-threat-intelligence-part-1-c5ad14d59724","How to map narrative threat reporting to ATT&CK techniques and produce comparable intelligence from unstructured sources.","free",["any"],["web"],"reference",""],
-["Joint Publication 2-0: Joint Intelligence","https://www.jcs.mil/Portals/36/Documents/Doctrine/pubs/jp2_0.pdf","US military joint intelligence doctrine. Dense, but it is where most of the intelligence vocabulary used in CTI originally comes from, including confidence language.","free",["any"],["web"],"reference",""],
-["How Intelligence Works","https://www.intel.gov/how-the-ic-works","Plain explanation of intelligence disciplines and the cycle from the US intelligence community, useful for grounding terminology used loosely in vendor reporting.","free",["any"],["web"],"reference",""]
+["Have I Been Pwned","https://haveibeenpwned.com/","Checks whether an account appears in known credential breaches. Useful for establishing plausible initial access when credential stuffing is suspected.","free",["any"],["web"],"intel",""]
 ]],
 ["Reporting & Case Management",[
 ["TheHive","https://strangebee.com/thehive/","Case management for security operations with tasks, observables, and integration with Cortex analysers and MISP. Keeps multi-analyst investigations coordinated and recorded.","free",["any"],["nix","web"],"tool","web"],
@@ -1988,7 +1968,11 @@ const T=[
 ["Zeltser Incident Survey Cheat Sheet","https://zeltser.com/security-incident-survey-cheat-sheet","Questions to ask when first assessing a suspected incident, so the initial scoping conversation captures what you will need later.","free",["any"],["web"],"reference",""],
 ["Monolith Forensics","https://monolithforensics.com/","Case management built for digital forensics labs, covering evidence tracking, chain of custody, storage and time recording. Purpose-built rather than a generic ticketing system bent to fit.","com",["any"],["web"],"tool","web"],
 ["draw.io","https://app.diagrams.net/","Free diagramming for attack paths, network maps and timeline figures. Runs offline as a desktop app, which matters when case material should not go through a browser service.","free",["any"],["web"],"tool","web gui"],
-["Obsidian","https://obsidian.md/","Local Markdown knowledge base widely used for case notes, with backlinks connecting findings, indicators and hosts. Files stay plain text on your own disk, which suits evidence handling and later conversion via Pandoc.","free",["any"],["xplat"],"tool","gui"]
+["Obsidian","https://obsidian.md/","Local Markdown knowledge base widely used for case notes, with backlinks connecting findings, indicators and hosts. Files stay plain text on your own disk, which suits evidence handling and later conversion via Pandoc.","free",["any"],["xplat"],"tool","gui"],
+["Writing DFIR Reports: A Primer","https://joshbrunty.github.io/2021/01/27/reporting.html","Josh Brunty's compendium on report writing, built from 15+ years of casework. Covers examination planning, case notes and their discoverability, the five-step report flow (what I was asked to do, why I am qualified, what I did, what I found, my conclusions), section-by-section guidance, figures, glossaries and the first-versus-third-person question. The single best starting point on this topic.","free",["any"],["web"],"blog",""],
+["Report Writing for Digital Forensics: Part I","https://www.bradgarnett.com/blog/2015/3/4/intro-to-report-writing-for-digital-forensics","Brad Garnett's 2010 primer (originally titled Intro to Report Writing for Digital Forensics), long used as a first reference for examiners writing their first serious report. Originally published on the SANS DFIR blog; that page no longer resolves, so this is the author's own hosted copy.","free",["any"],["web"],"blog",""],
+["Report Writing for Digital Forensics: Part II","https://www.sans.org/blog/report-writing-for-digital-forensics-part-ii/","The follow-up to Part I, on how a practitioner presents findings to the intended audience rather than just what sections a report needs. Still live on the SANS blog.","free",["any"],["web"],"blog",""],
+["Peer Review Checklist for Mobile Forensics","https://www.hexordia.com/blog-1-1/gc0vnvj80ogwx724ovu7avzwvjl742","Hexordia's checklist for peer-reviewing mobile examinations. Peer review is a requirement under most accreditation schemes and rarely has a written standard behind it; this gives one.","free",["ios","and"],["web"],"blog",""]
 ]],
 ["Command References & Playbooks",[
 ["Windows Forensic Analysis Playbook","https://sansorg.egnyte.com/dl/4b7gJt6Jq6Fy","SANS playbook poster walking the Windows analysis process end to end, from evidence of execution through to account and file activity.","free",["any"],["web"],"reference",""],
@@ -2024,25 +2008,26 @@ const T=[
 ["Interact with a Remote Machine","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/dfir-digital-forensics-and-incident-response/interact-with-remote-machine","Methods for reaching a remote host to run response commands: WinRM, PsExec, SSH and WMI, with the syntax for each.","free",["win","nix"],["web"],"reference",""],
 ["Windows Event ID Logging List","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide/blue-defense/event-detection/detection-use-cases/windows-event-id-logging-list","Comprehensive list of Windows event IDs worth logging, with what each indicates. Useful both for investigation and for arguing what audit policy should be enabled.","free",["win"],["web"],"reference",""],
 ["CISA Federal IR & Vulnerability Playbooks","https://www.cisa.gov/resources-tools/resources/federal-government-cybersecurity-incident-and-vulnerability-response-playbooks","Two playbooks, one for incident response and one for vulnerability response, giving a standard set of procedures to identify, coordinate, remediate, recover and track mitigations. Written for federal agencies but the structure transfers to any organisation, and it is aligned to NIST SP 800-61.","free",["any"],["web"],"reference",""],
-["CISA Planning: Response & Recovery","https://www.cisa.gov/planning-response-recovery","Hub of response and recovery planning resources including the IR and vulnerability playbooks, the Essential Elements crisis response toolkit, and SAFECOM's The First 48 on what to expect in the hours after an incident. Useful for setting realistic expectations with leadership.","free",["any"],["web"],"reference",""]
+["CISA Planning: Response & Recovery","https://www.cisa.gov/planning-response-recovery","Hub of response and recovery planning resources including the IR and vulnerability playbooks, the Essential Elements crisis response toolkit, and SAFECOM's The First 48 on what to expect in the hours after an incident. Useful for setting realistic expectations with leadership.","free",["any"],["web"],"reference",""],
+["RE&CT Framework","https://atc-project.github.io/atc-react/","ATT&CK for the response side: a knowledge base of incident response actions organised by IR stage, so you can map and measure your team's response capability the way ATT&CK maps detection coverage.","oss",["any"],["web"],"tool","web"],
+["CERT Societe Generale IRM","https://github.com/certsocietegenerale/IRM","Public incident response methodologies covering specific scenarios: ransomware, phishing, data leak, insider abuse. Concise, printable, and a solid basis for writing your own playbooks.","oss",["any"],["web"],"tool","web"],
+["Syntax IR Playbooks","https://gitlab.com/syntax-ir/playbooks","Detailed incident response playbooks broken down by phase with concrete commands and decision points.","oss",["any"],["web"],"tool","web"],
+["Microsoft Incident Response Playbooks","https://learn.microsoft.com/en-us/security/compass/incident-response-playbooks","Official playbooks for phishing, password spray and app consent grant attacks, with the exact queries and portal steps for Microsoft environments.","free",["cloud","win"],["web"],"reference",""],
+["Microsoft IR Ninja Hub","https://techcommunity.microsoft.com/blog/microsoftsecurityexperts/welcome-to-the-microsoft-incident-response-ninja-hub/4243594","Microsoft's curated learning path for incident response across their stack, gathering playbooks, hunting queries, tooling guidance and case studies into one structured route rather than scattered docs.","free",["cloud","win"],["web"],"tool","web"],
+["CISA Playbook-NG","https://www.cisa.gov/eviction-strategies-tool","Matches incident findings to countermeasures for adversary containment and eviction, backed by CISA's COUN7ER countermeasure database. Paste in a report containing ATT&CK TTP IDs and it generates a tailored eviction playbook. Curated incident templates cover known campaigns, and it works equally well for building realistic tabletop scenarios.","oss",["any"],["web"],"reference",""]
 ]],
 ["Artifact References",[
 ["OSSEM","https://github.com/OTRF/OSSEM","Open Source Security Events Metadata. Standardises how security event fields are named and described across log sources and platforms, so detection content written against OSSEM's schema stays portable rather than tied to one vendor's field names. From Open Threat Research Forge, the same group behind ThreatHunter Playbook and Security-Datasets.","oss",["any"],["web"],"reference",""],
 ["filesec.io","https://filesec.io/","Reference for attacker-abused file extensions — what each is, which OS it targets, how attackers use it and how to defend against it. Useful when investigating suspicious email attachments or building mail gateway rules.","free",["any"],["web"],"reference",""],
 ["KQL Search","https://www.kqlsearch.com/","Community aggregator for KQL (Kusto Query Language) queries shared on GitHub. Search by keyword to find pre-built hunting and detection queries for Azure Monitor, Microsoft Sentinel and Microsoft Defender. The fastest way to find a starting point for a new query.","free",["cloud"],["web"],"reference",""],
-["Notari on log Command Updates","https://www.ios-unifiedlogs.com/post/ios-unified-logs-log-command-major-updates-to-not-miss","Lionel Notari's coverage of significant changes to Apple's log command-line tool: log repack, filtering behaviour changes, and bounded log stats output. Worth checking against whatever macOS version your analysis machine is running — these changes affect command output you may be relying on.","free",["mac","ios"],["web"],"reference",""],
 ["Apple Logging Documentation","https://developer.apple.com/documentation/os/logging","Apple's own overview of the unified logging system: how it categorises and stores log messages, privacy redaction of dynamic values, and the levels (default, info, debug, error, fault) that control what actually gets persisted. The primary source everything else in this section is built on top of.","free",["mac","ios"],["web"],"reference",""],
 ["Apple OSLog Documentation","https://developer.apple.com/documentation/OSLog","Apple's reference for programmatic access to historical log data via the OSLogStore API. Useful for understanding what a native application or script can query directly, as distinct from the log command-line tool or a logarchive export.","free",["mac","ios"],["web"],"reference",""],
-["Info.plist Research for .logarchive","https://digital-forensics.polewczyk.fr/apple/unified-logs/info-plist/","Johann Polewczyk's research into the Info.plist metadata a reconstructed .logarchive needs to open correctly: OSArchiveVersion mapping to source OS version, the macOS 26.4 metadata requirements, and the reconstruction methodology in full. Read this before generating one by hand.","free",["mac","ios"],["web"],"reference",""],
 ["Apple Unified Log Repository (Ankan-42)","https://github.com/Ankan-42/Apple-Unified-Log","Tim Korver's collected material on the acquisition and preservation process for Apple Unified Logs, plus CLI reference content. A structured companion to his CLI cheatsheet, focused on the collection workflow itself.","oss",["mac","ios"],["web"],"reference",""],
 ["LEAPPs Guides","https://leapps.org/guides","Index of every LEAPPs guide — field guides for specific artifact types, contributor guides for writing your own modules, and community walkthroughs. All free PDFs. Start here rather than hunting individual downloads.","free",["ios","and"],["web"],"reference",""],
 ["Apple Unified Logs Field Guide","https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf","Ten-page field guide (August 2026) covering the whole Unified Log workflow on iOS: capturing a sysdiagnose, converting the logarchive, and running predicate queries against the results in iLEAPP and LAVA. The practical companion to the AUL parsers in this index.","free",["ios","mac"],["web"],"reference",""],
 ["Apple Unified Log Predicate Reference","https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-predicate-reference.pdf","Sixteen-page reference listing every Unified Log message predicate iLEAPP searches for, artifact by artifact: the processes involved, which iOS versions each pattern was observed on, the research that documented it, and the caveats. Unusually rigorous — it tells you where the evidence is thin.","free",["ios"],["web"],"reference",""],
 ["Telegram System Events Reference","https://leapps-api.4n6-198.workers.dev/downloads/telegram-system-events-reference.pdf","Every system event Telegram can record in a chat across iOS and Android, what each means, and the constructors behind them. Critically: the two clients name them differently and only about 27 of roughly seventy match, so cross-platform Telegram analysis needs this mapping.","free",["ios","and"],["web"],"reference",""],
 ["iLEAPP Module Contributor Guide","https://leapps-api.4n6-198.workers.dev/downloads/ileapp-module-contributor-guide.pdf","How to write your own artifact module: module structure and the v2 header, SQLite and plist parsing, timestamp handling, LAVA output including conversation view, and submitting the pull request. Applies across iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP.","free",["ios","and"],["web"],"reference",""],
-["Hexordia iLEAPP Walkthrough","https://www.hexordia.com/s/ILEAPP-Walkthrough.pdf","Step-by-step guide to iLEAPP: installation, running an iOS extraction, and interpreting the parsed artifact reports.","free",["ios"],["web"],"reference",""],
-["Hexordia ALEAPP Walkthrough","https://www.hexordia.com/s/ALEAPP_Walkthrough_Final.pdf","Step-by-step guide to ALEAPP: installation, running an Android extraction, and interpreting the parsed reports.","free",["and"],["web"],"reference",""],
-["Hexordia RLEAPP Walkthrough","https://www.hexordia.com/s/RLEAPP_Walkthrough.pdf","Step-by-step guide to RLEAPP: processing ISP and provider warrant returns and reviewing the parsed output.","free",["ios","and"],["web"],"reference",""],
 ["NirLauncher Utilities List","https://launcher.nirsoft.net/utilities_list.html","The full auto-updated index of every NirSoft utility with a one-line purpose for each. Around 250 tools, many with forensic value beyond the handful commonly cited. Search here before assuming a viewer does not exist.","free",["win"],["web"],"reference",""],
 ["EZ Tools Manuals","https://leanpub.com/eztoolsmanuals","Eric Zimmerman and Andrew Rathbun's full documentation for the EZ Tools suite. Most of these tools have far more capability than the command line hints at, and this is where it is written down.","free",["win"],["win","web"],"reference",""],
 ["KAPE Documentation","https://ericzimmerman.github.io/KapeDocs/","Official KAPE docs covering Targets, Modules, variables and batch mode. Essential reading before writing your own targets.","free",["win"],["win","web"],"reference",""],
@@ -2051,10 +2036,7 @@ const T=[
 ["Android Forensics References","https://github.com/RealityNet/Android-Forensics-References","RealityNet's collected references on Android internals and artifact locations, useful when you need to know where something lives rather than which tool parses it.","oss",["and"],["web"],"reference",""],
 ["LEAPPs Artifact Browser","https://leapps.org/artifacts","Searchable index of every artifact parsed across iLEAPP, ALEAPP, RLEAPP and VLEAPP, pulled live from the source code on each page load. Filter by tool, category, description or file path pattern and jump straight to the parser. Answers does any LEAPP tool handle this without trawling four repositories.","oss",["ios","and"],["web"],"reference",""],
 ["LEAPPs Docs","https://www.leapps.org/docs","Usage guidance for the LEAPP family: command-line options, how to point tools at an extraction source rather than individual files, report output structure, and how to load results into LAVA.","oss",["ios","and"],["web"],"reference",""],
-["Knowledge is Power (knowledgeC.db)","https://www.mac4n6.com/blog/2018/8/5/knowledge-is-power-using-the-knowledgecdb-database-on-macos-and-ios-to-determine-precise-user-and-application-usage","Sarah Edwards' foundational write-up on knowledgeC.db with the SQL queries to extract app focus, usage, device state and more. Explains the split between system context (/private/var/db/CoreDuet/Knowledge) and per-user context on macOS, and the single merged database on iOS. Note the schemas shift between OS versions, so verify the query against your evidence.","free",["mac","ios"],["web"],"reference",""],
-["Knowledge is Power II","https://www.mac4n6.com/blog/2018/9/12/knowledge-is-power-ii-a-day-in-the-life-of-my-iphone-using-knowledgecdb","The follow-up, reconstructing a full day from one iPhone using knowledgeC and interactionC together. The clearest worked example of what pattern-of-life analysis actually produces.","free",["ios"],["web"],"reference",""],
 ["iOS Forensics References","https://github.com/RealityNet/iOS-Forensics-References","Curated index of iOS forensic research organised by file and folder, pointing at the blog posts, papers and articles covering each artifact. When you find an unfamiliar database on an iOS extraction, look it up here first.","oss",["ios"],["web"],"reference",""],
-["Decoding the Newest iOS SEGB Format","https://cellebrite.com/en/blog/understanding-and-decoding-the-newest-ios-segb-format/","Cellebrite's breakdown of the structural differences between SEGB v1 and the v2 format introduced with iOS 17, which added a trailer section that must be parsed to read the file correctly. The reference the industry updated its parsers against.","free",["ios"],["web"],"reference",""],
 ["Windows Third Party Apps Forensics Poster","https://www.sans.org/posters/windows-third-party-apps-forensics-poster/","SANS poster covering artifacts left by third-party Windows applications — cloud sync clients, messaging apps, browsers and remote access tools. Fills the gap where OS-artifact references stop.","free",["win"],["web"],"reference",""],
 ["Android and iOS Acquisition Recommendations","https://smarterforensics.com/2021/12/android-and-ios-acquisition-recommendations/","Heather Mahalik's guidance on choosing an acquisition method by device, OS version and case need — which method to attempt first and what each one costs you in completeness.","free",["ios","and"],["web"],"reference",""],
 ["RegSeek","https://regseek.github.io/","Advanced Windows Registry forensics reference and search engine. Search by artifact, key path or investigative question rather than trawling a static cheat sheet, which is the difference between knowing a key exists and finding the one you need.","oss",["win"],["web"],"reference",""],
@@ -2066,30 +2048,59 @@ const T=[
 ["Digital Forensics Artifact Repository","https://github.com/ForensicArtifacts/artifacts","Machine-readable definitions of where forensic artifacts live on each operating system. Consumed by Plaso, Velociraptor and others, and a solid reference in its own right when scoping a collection.","oss",["any"],["web"],"reference",""],
 ["Artifact Genome Project","https://agp.newhaven.edu/","Academic repository documenting artifacts, their locations and their forensic significance. Requires registration; valuable for obscure or newly documented artifacts.","free",["any"],["web"],"reference",""],
 ["Malware Archaeology Cheat Sheets","https://www.malwarearchaeology.com/cheat-sheets","Windows logging and audit configuration guidance showing precisely which settings produce the events you need. Read before an incident, not during one.","free",["any"],["web"],"reference",""],
-["Gary Kessler File Signatures","https://www.garykessler.net/library/file_sigs.html","Long-standing reference table of file headers and trailers. The starting point for building carving configurations or identifying an unknown file type by hand.","free",["any"],["web"],"reference",""]
+["Gary Kessler File Signatures","https://www.garykessler.net/library/file_sigs.html","Long-standing reference table of file headers and trailers. The starting point for building carving configurations or identifying an unknown file type by hand.","free",["any"],["web"],"reference",""],
+["Ultimate Windows Security Encyclopedia","https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/","Searchable reference explaining every Windows security event ID, its fields and what actually triggers it. The fastest way to settle what an event genuinely means before it goes in a report.","free",["win"],["web","win"],"tool","web"],
+["LOLBAS","https://lolbas-project.github.io/","Catalogue of signed Microsoft binaries that can execute code, download files or bypass controls. Attackers prefer these because they are already present and trusted; the site documents the exact command lines to hunt for.","oss",["win"],["web","win"],"tool","web gui cli"],
+["GTFOBins","https://gtfobins.github.io/","The Unix counterpart to LOLBAS, listing standard binaries abusable for privilege escalation, file access and data exfiltration. Explains suspicious command lines found in bash history and auditd logs.","oss",["nix"],["web","nix"],"tool","web cli"],
+["LOLDrivers","https://www.loldrivers.io/","Index of vulnerable and malicious signed drivers used to disable security tooling from kernel space. Provides hashes and YARA rules for hunting bring-your-own-vulnerable-driver activity.","oss",["win"],["web","win"],"tool","web"],
+["bootloaders.io","https://github.com/magicsword-io/bootloaders","Curated list of known malicious and vulnerable bootloaders across operating systems, in the same spirit as LOLDrivers but one layer lower in the boot chain. From the magicsword-io team.","free",["win","nix"],["web"],"intel",""],
+["MalAPI.io","https://malapi.io/","Reference mapping Windows API calls to the malicious techniques that use them. When capa or an import table shows an unfamiliar function, this explains why malware would call it.","free",["win"],["web"],"tool","web cli"],
+["LOLRMM","https://lolrmm.io/","The RMM equivalent of LOLBAS — a structured, community-driven catalogue of legitimate remote monitoring and management software that attackers routinely abuse to blend in with normal IT operations (ScreenConnect, AnyDesk and similar have all shown up in real ransomware deployments). Each entry documents installation paths, PE metadata, on-disk and event log artifacts, and includes Sigma detection rules. Searchable site, plus a JSON/CSV API for pulling the whole catalogue into your own tooling. From the magicsword-io team, who also maintain LOLDrivers.","free",["win"],["web"],"intel",""],
+["LOLBASline","https://github.com/magicsword-io/LOLBASline","PowerShell tool that tests which LOLBAS binaries are actually present on a system and whether they can execute their documented technique, rather than just telling you the binary exists. Clones the current LOLBAS repository automatically if you don't point it at a local copy. Turns a static reference list into a live assessment of what LOLBAS-based abuse is genuinely possible on the box in front of you.","oss",["win"],["win"],"tool","gui cli"],
+["FOR610 Malware Analysis Tips & Tricks Poster","https://www.sans.org/posters/malware-analysis-tips-tricks-poster/","SANS poster distilling the malware analysis workflow: triage order, useful commands per stage, and the indicators worth chasing first.","free",["win"],["web"],"reference",""],
+["Analyzing Malicious Documents Cheat Sheet","https://zeltser.com/analyzing-malicious-documents","Lenny Zeltser's reference sheet covering the tools and steps for examining malicious PDFs and Office documents.","free",["any"],["web"],"tool","web"],
+["Unprotect Project","https://unprotect.it/","Searchable database of malware evasion techniques with code snippets and detection rules. Explains what an anti-analysis trick you have hit is actually doing.","free",["any"],["web"],"tool","web"],
+["What Hides in the WAL — SQLite Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/what-hides-in-wal-sqlite-forensics-with.html","What the write-ahead log holds after a transaction commits, and why examining the database file alone loses records that are still sitting in the WAL. Walks the forensic background before showing the workflow in crush.","free",["any"],["web"],"reference",""],
+["Object by Object — RealmDB Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/object-by-object-realmdb-forensics-with.html","Realm internals for examiners: how the header, schema and class definitions are laid out, how top-ref comparison exposes earlier states of the database, and what that means when an app stores its data in Realm rather than SQLite.","free",["any"],["web"],"reference",""],
+["Reading the CURRENT — LevelDB Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/reading-current-leveldb-forensics-with.html","LevelDB is a folder, not a file — .log and .ldb files alongside MANIFEST, CURRENT and LOG — which is why tools built around single-file signatures walk straight past it. Covers tombstones, compaction and what survives deletion in Chrome, Electron apps, iOS and Android.","free",["any"],["web"],"reference",""],
+["Beyond the C — SEGB and Biome Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/beyond-c-segb-and-biome-forensics-with.html","SEGB v1 and v2 structure, the trailer section iOS 17 added, and how Apple Biome records decode once the protobuf payloads are unpacked — including the nested and repeated fields most viewers flatten or drop.","free",["ios","mac"],["web"],"reference",""],
+["Reading Protobuf Wire Format Without a Map","https://bebinary4n6.blogspot.com/2026/06/reading-wire-protobuf-without-map.html","How to read protobuf when you have no .proto schema: field numbers, wire types, and what can and cannot be recovered from the bytes alone. The reference for every BLOB in a mobile database that turns out to be protobuf.","free",["any"],["web"],"reference",""]
 ]],
 ["Standards & Methodology",[
-["A-poc BlueTeam-Tools","https://github.com/A-poc/BlueTeam-Tools","Curated collection of 70+ blue team tools and techniques covering network discovery, vulnerability management, security monitoring, threat intelligence, incident response, malware analysis and digital forensics. A well-organised reference for building or evaluating a blue team toolkit.","free",["any"],["web"],"reference",""],
 ["Blue Team Handbook: Incident Response Edition","https://www.amazon.com/Blue-Team-Handbook-Incident-Response/dp/1500734756","Don Murdoch's zero-fluff field reference for incident responders covering the IR process, attacker methodology, common tools, network analysis methodology, IOC identification, Windows and Linux analysis, tcpdump and Snort usage. Designed to sit on the desk during an active incident.","com",["any"],["web"],"reference",""],
-["Cybersecurity Stash","https://cybersecuritystash.com/","Curated directory of security tools spanning DFIR, red team, blue team and general security tooling. Useful as a second-opinion index when looking for a tool the main DFIR lists don't cover.","free",["any"],["web"],"reference",""],
 ["OWASP Logging Cheat Sheet","https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html","OWASP guidance on what applications should log and how, including what must never be written to a log. Useful when assessing whether an application's logs will support an investigation.","free",["any"],["web"],"reference",""],
 ["OWASP Logging Vocabulary Cheat Sheet","https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html","A standard vocabulary for application security logging, so events are named consistently enough to be searched and correlated across systems.","free",["any"],["web"],"reference",""],
 ["JSCU-NL Logging Essentials","https://github.com/JSCU-NL/logging-essentials","Dutch intelligence service's Windows event logging and collection baseline, explicitly balancing forensic value against retention cost. A defensible starting configuration rather than log-everything.","oss",["win"],["web"],"reference",""],
-["Security Reference Guide (source repo)","https://github.com/s0cm0nkey/Security-Reference-Guide","The Markdown source behind the GitBook. Worth having separately: you can clone it for offline use, grep the whole guide at once rather than paging through the web version, and read the commit history to see what changed and when. Same content, more usable when you are working without connectivity.","oss",["any"],["web"],"reference",""],
-["Digital Forensics Guide","https://github.com/mikeroyal/Digital-Forensics-Guide","Broad guide covering forensic concepts, tooling and learning paths across disciplines, useful for orienting someone new or filling a gap outside your usual area.","oss",["any"],["web"],"reference",""],
-["DFIRDetective Start.Me Pages","https://start.me/u/aLm6jm/dfirdetective","Another practitioner's curated DFIR bookmark collection, organised differently to Kevin's. Worth checking when something is missing from the usual indexes.","free",["any"],["web"],"reference",""],
 ["NIST SP 800-86","https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-86.pdf","Guide to Integrating Forensic Techniques into Incident Response. Defines the four-stage model (collection, examination, analysis, reporting) that most examination planning is built on, and is frequently the framework cited in reports and policy.","free",["any"],["web"],"reference",""],
 ["SWGDE Glossary of Terms","https://www.swgde.org/documents/published-complete-listing/05-f-001-swgde-digital-multimedia-evidence-glossary/","SWGDE 05-F-001. Definitions spanning digital forensics, image analysis, video analysis and forensic audio. Use it for report glossaries: these definitions are defensible in court in a way that ad-hoc wording is not. Links to SWGDE's own listing page rather than a mirror, since the PDF filename changes with each version.","free",["any"],["web"],"reference",""],
 ["NIST OSAC Lexicon","https://www.nist.gov/organization-scientific-area-committees-forensic-science/osac-lexicon","Over 4,000 forensic terms organised by discipline, each with its source document. Aggregates SWGDE, ASTM and other authorities, so you can cite where a definition came from.","free",["any"],["web"],"reference",""],
 ["ASTM E2916","https://www.astm.org/Standards/E2916.htm","Standard Terminology for Digital and Multimedia Evidence Examination. The formal terminology standard, paid but sometimes required by accreditation.","com",["any"],["web"],"reference",""],
 ["NIST SP 800-61r3 Incident Response Recommendations","https://doi.org/10.6028/NIST.SP.800-61r3","Finalised April 2025, superseding the 2012 Rev 2 Computer Security Incident Handling Guide. Reframes incident response as a CSF 2.0 Community Profile across all six CSF Functions rather than the old four-phase lifecycle. Frequently the document policies and contracts are written against, so worth citing directly in reports.","free",["any"],["web"],"reference",""],
+["CASE / UCO Ontology","https://caseontology.org/","Standard for representing and exchanging cyber-investigation data between tools, so evidence can move between platforms without losing meaning. Increasingly relevant for multi-agency and multi-tool workflows.","oss",["any"],["web"],"reference",""],
+["Psychology of Intelligence Analysis","https://www.ialeia.org/docs/Psychology_of_Intelligence_Analysis.pdf","Richards Heuer's CIA classic on cognitive bias in analysis and how to counter it, including Analysis of Competing Hypotheses. The most useful thing on this list for avoiding a confidently wrong conclusion, and it applies directly to forensic reasoning.","free",["any"],["web"],"reference",""],
+["The Intelligence Cycle","https://sroberts.io/posts/intelligence-concepts-the-intelligence-cycle/","Scott Roberts on planning, collection, processing, analysis, dissemination and feedback — and why the cycle is iterative, since analysis usually exposes collection gaps you did not know you had.","free",["any"],["web"],"reference",""],
+["F3EAD","https://sroberts.io/posts/intelligence-concepts-f3ead/","Find, Fix, Finish, Exploit, Analyze, Disseminate — the targeting cycle adapted for intrusion response, and a better fit than the classic intelligence cycle when you are working an active incident.","free",["any"],["web"],"reference",""],
+["Joint Publication 2-0: Joint Intelligence","https://www.jcs.mil/Portals/36/Documents/Doctrine/pubs/jp2_0.pdf","US military joint intelligence doctrine. Dense, but it is where most of the intelligence vocabulary used in CTI originally comes from, including confidence language.","free",["any"],["web"],"reference",""],
+["How Intelligence Works","https://www.intel.gov/how-the-ic-works","Plain explanation of intelligence disciplines and the cycle from the US intelligence community, useful for grounding terminology used loosely in vendor reporting.","free",["any"],["web"],"reference",""],
+["Getting Started with ATT&CK: Threat Intelligence","https://medium.com/mitre-attack/getting-started-with-attack-cti-4eb205be4b2f","MITRE's practical introduction to using ATT&CK for CTI: mapping reporting to techniques, and doing it consistently enough that the mapping is worth something.","free",["any"],["web"],"reference",""],
+["Using ATT&CK to Advance CTI","https://medium.com/mitre-attack/using-att-ck-to-advance-cyber-threat-intelligence-part-1-c5ad14d59724","How to map narrative threat reporting to ATT&CK techniques and produce comparable intelligence from unstructured sources.","free",["any"],["web"],"reference",""]
+]],
+["Awesome Lists & Collections",[
+["Didier Stevens: My Software","https://blog.didierstevens.com/my-software/","Cross-referenced index of every tool he has published with links to the explaining blog posts. Covers the dump family (zipdump, rtfdump, emldump, base64dump), Cobalt Strike tools, 1768.py and much more.","oss",["any"],["web"],"tool","web cli"],
+["Awesome Malware Analysis","https://github.com/rshipp/awesome-malware-analysis","Long-running curated list of malware analysis tools, sandboxes, datasets and resources.","oss",["any"],["web"],"reference",""],
+["Malware Analysis start.me (Sighlent)","https://start.me/p/jj2KwQ/malware-analysis","A companion curated page dedicated to malware analysis, organised much like Kevin's forensics page. Useful cross-check when hunting for a tool the general indexes miss.","free",["any"],["web"],"reference",""],
+["ICS Security Tools","https://github.com/ITI/ICS-Security-Tools","Curated collection of ICS security tools, protocol references, sample packet captures and scripts, maintained by the ICS community.","oss",["net"],["web"],"tool","web cli"],
+["A-poc BlueTeam-Tools","https://github.com/A-poc/BlueTeam-Tools","Curated collection of 70+ blue team tools and techniques covering network discovery, vulnerability management, security monitoring, threat intelligence, incident response, malware analysis and digital forensics. A well-organised reference for building or evaluating a blue team toolkit.","free",["any"],["web"],"reference",""],
+["Cybersecurity Stash","https://cybersecuritystash.com/","Curated directory of security tools spanning DFIR, red team, blue team and general security tooling. Useful as a second-opinion index when looking for a tool the main DFIR lists don't cover.","free",["any"],["web"],"reference",""],
 ["Awesome Incident Response","https://github.com/meirwah/awesome-incident-response","Curated list of IR tools and resources organised by function: acquisition, analysis, memory, timeline and playbooks.","oss",["any"],["web"],"reference",""],
 ["Awesome KAPE","https://github.com/AndrewRathbun/Awesome-KAPE","Andrew Rathbun's curated collection of KAPE targets, modules, guides and community resources. The place to look before writing your own target.","oss",["win"],["web"],"reference",""],
+["Awesome Forensics","https://github.com/cugu/awesome-forensics","Community-maintained list of forensic tools, libraries and resources. A good cross-check that you have not missed an obvious option for a given task.","oss",["any"],["web"],"reference",""],
 ["Infosec Reference: DFIR","https://github.com/rmusser01/Infosec_Reference/blob/master/Draft/DFIR.md","Very large annotated collection of DFIR guides, papers and tools, part of a broader security reference repository.","oss",["any"],["web"],"reference",""],
 ["DFIR start.me (jj0B26)","https://start.me/p/jj0B26/dfir","A second curated DFIR bookmark collection, useful as a cross-check against gaps in any single index.","free",["any"],["web"],"reference",""],
 ["s0cm0nkey's Security Reference Guide","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide","An enormous linked reference spanning every security discipline, heavily annotated with why each tool matters. Excellent for discovering tooling outside your usual area.","free",["any"],["web"],"reference",""],
-["Awesome Forensics","https://github.com/cugu/awesome-forensics","Community-maintained list of forensic tools, libraries and resources. A good cross-check that you have not missed an obvious option for a given task.","oss",["any"],["web"],"reference",""],
-["CASE / UCO Ontology","https://caseontology.org/","Standard for representing and exchanging cyber-investigation data between tools, so evidence can move between platforms without losing meaning. Increasingly relevant for multi-agency and multi-tool workflows.","oss",["any"],["web"],"reference",""]
+["DFIRDetective Start.Me Pages","https://start.me/u/aLm6jm/dfirdetective","Another practitioner's curated DFIR bookmark collection, organised differently to Kevin's. Worth checking when something is missing from the usual indexes.","free",["any"],["web"],"reference",""],
+["Digital Forensics Guide","https://github.com/mikeroyal/Digital-Forensics-Guide","Broad guide covering forensic concepts, tooling and learning paths across disciplines, useful for orienting someone new or filling a gap outside your usual area.","oss",["any"],["web"],"reference",""],
+["Security Reference Guide (source repo)","https://github.com/s0cm0nkey/Security-Reference-Guide","The Markdown source behind the GitBook. Worth having separately: you can clone it for offline use, grep the whole guide at once rather than paging through the web version, and read the commit history to see what changed and when. Same content, more usable when you are working without connectivity.","oss",["any"],["web"],"reference",""]
 ]],
 ["Utilities",[
 ["WalletSleuth","https://github.com/CH-CLARK/WalletSleuth","Identifies cryptocurrency addresses and transaction data left behind by wallet applications during a triage pass. Cryptocurrency involvement turns up across ransomware, fraud and money-laundering cases, and wallet artifacts are easy to miss if you are not specifically looking for them.","oss",["any"],["xplat"],"tool","cli"],
@@ -2110,22 +2121,27 @@ const T=[
 ["ITIT","https://github.com/northloopforensics/ITIT","Is This In That: string matching tool for checking whether a set of terms appears across a body of files.","oss",["any"],["xplat"],"tool","cli"],
 ["Dumbo ForensicImageDeflator","https://github.com/northloopforensics/Dumbo_ForensicImageDeflator","Truncates files based on hash ID, for reducing dataset size while preserving identifiable content.","oss",["any"],["xplat"],"tool","cli"],
 ["Clean_Autopsy_Exports","https://github.com/northloopforensics/Clean_Autopsy_Exports","Tidies Autopsy export output into a more workable structure for downstream processing or review.","oss",["any"],["xplat"],"tool","cli"],
-["MD5_SHA1_Scraper","https://github.com/northloopforensics/MD5_SHA1_Scraper","Pulls MD5 and SHA1 hash values out of PDF files, for when hash lists arrive embedded in a report rather than as data.","oss",["any"],["xplat"],"tool","cli"],
 ["North Loop Consulting Tools","https://northloopconsulting.com/products","Catalogue of their free forensic utilities beyond the ones listed individually here: a CashApp legal production processor with financial analysis in an interactive HTML report, a tool that restores correct extensions to bulk file productions that arrived without them, a byte trimmer for social media legal productions with extraneous leading or trailing bytes, a nested zip extractor, a KAPE module for Freenet artifacts, a VLC recent-activity parser, and a Python script pulling image categorisation from Apple Photos.sqlite. Test and validate before use, as they state.","free",["any"],["win"],"tool","cli"],
-["DFIR Community Hardware Fund","https://github.com/DFIRScience/DFIRCommunityHardwareFund","DFIR Science initiative pooling hardware for researchers who need devices to test against but cannot fund them. Worth knowing if you need a specific handset for validation work.","oss",["any"],["web"],"reference",""],
-["pyenv-win","https://github.com/pyenv-win/pyenv-win","Python version manager for Windows. Genuinely useful in DFIR because forensic scripts frequently pin to specific Python versions, and this keeps several installed side by side without breaking each other.","oss",["any"],["win"],"tool","gui cli"],
 ["Tool Fetcher","https://github.com/kev365/ToolFetcher","Fetches and updates DFIR tools from GitHub and other sources in bulk, keeping a workstation's toolset current without visiting dozens of repos by hand. Useful when rebuilding an analysis VM.","oss",["any"],["xplat"],"tool","cli"],
-["MultiDrive","https://multidrive.io/","Free utility for backing up, cloning and erasing drives, handling several drives at once. Useful for the routine media handling around a case rather than acquisition itself.","free",["any"],["win"],"tool","gui"],
 ["Lumyx Path Builder","https://lumyx-inc.github.io/path-builder/","Builds and validates artifact file paths for collection targets, saving the error-prone job of typing long Windows and mobile paths by hand.","free",["any"],["web"],"tool","web"],
 ["ZipWalker","https://github.com/stark4n6/ZipWalker","Kevin Pagano's utility that walks a directory tree, inventories every archive it finds and hashes the contents without extracting them.","oss",["any"],["xplat"],"tool","cli"],
-["TeraCopy","https://www.codesector.com/teracopy","File copy utility with hash verification on transfer, so you can prove the copy matches the source. Its own logs are also a forensic artifact worth parsing on a suspect system.","free",["any"],["win"],"tool","gui"],
-["Everything","https://www.voidtools.com/","Instant filename search across NTFS volumes using the MFT directly. Locating a filename across a mounted image takes under a second.","free",["any"],["win"],"tool","gui"],
-["7-Zip","https://www.7-zip.org/","Archive tool handling essentially every container format you will meet in evidence, including split archives and unusual compression.","oss",["any"],["win","nix"],"tool","gui cli"],
-["WinMerge","https://winmerge.org/","Visual file and folder comparison with binary mode. Diffing a suspect configuration or binary against a known-good baseline makes the change obvious.","oss",["any"],["win"],"tool","gui"],
-["Bulk Rename Utility","https://www.bulkrenameutility.co.uk/","Batch renaming with regex and metadata-driven rules, for imposing order on exported files before review or production.","free",["any"],["win"],"tool","gui"],
 ["VeraCrypt","https://www.veracrypt.fr/","Disk encryption software you will encounter on evidence and can also use to protect working copies of case data at rest.","oss",["any"],["xplat"],"tool","gui"],
 ["USB Detective","https://usbdetective.com/","Correlates USB device artifacts across registry, event logs and setupapi into a single verified connection history. The free Community Edition covers manual artifact analysis; live system scanning and key-artifact automation (logs, shortcuts) are paid-edition only.","free",["any"],["win"],"tool","cli"],
 ["Stark 4N6 GitHub","https://github.com/stark4n6","Kevin Pagano's tool repository, home to SQLiteWalker, ZipWalker, DirListHash and other utilities that appear across this index.","oss",["any"],["web"],"tool","web"]
+]],
+["Workstation & General",[
+["Ventoy","https://www.ventoy.net/","Bootable USB creator that lets you drop multiple ISO files onto one stick and pick at boot. One USB carries SIFT, CAINE, PALADIN and Tsurugi at once.","oss",["any"],["win","nix"],"tool","gui"],
+["Apache Kafka","https://kafka.apache.org/","Distributed event streaming platform, commonly the log broker buffering events during bursts or downstream outages. Worth knowing when tracing where logs went missing.","oss",["any"],["nix"],"tool","cli"],
+["Notepad++","https://notepad-plus-plus.org/","Reliable text editor with encoding detection, regex find-and-replace across files, hex plugins and column editing. Still the fastest route to cleaning up messy artifact output.","oss",["any"],["win"],"tool","gui"],
+["Visual Studio Code","https://code.visualstudio.com/","Editor of choice for writing parsers and reviewing structured output, with extensions for hex viewing, SQLite browsing, CSV alignment and remote sessions on analysis machines.","free",["any"],["xplat"],"tool","cli"],
+["Everything","https://www.voidtools.com/","Instant filename search across NTFS volumes using the MFT directly. Locating a filename across a mounted image takes under a second.","free",["any"],["win"],"tool","gui"],
+["7-Zip","https://www.7-zip.org/","Archive tool handling essentially every container format you will meet in evidence, including split archives and unusual compression.","oss",["any"],["win","nix"],"tool","gui cli"],
+["TeraCopy","https://www.codesector.com/teracopy","File copy utility with hash verification on transfer, so you can prove the copy matches the source. Its own logs are also a forensic artifact worth parsing on a suspect system.","free",["any"],["win"],"tool","gui"],
+["WinMerge","https://winmerge.org/","Visual file and folder comparison with binary mode. Diffing a suspect configuration or binary against a known-good baseline makes the change obvious.","oss",["any"],["win"],"tool","gui"],
+["Bulk Rename Utility","https://www.bulkrenameutility.co.uk/","Batch renaming with regex and metadata-driven rules, for imposing order on exported files before review or production.","free",["any"],["win"],"tool","gui"],
+["MultiDrive","https://multidrive.io/","Free utility for backing up, cloning and erasing drives, handling several drives at once. Useful for the routine media handling around a case rather than acquisition itself.","free",["any"],["win"],"tool","gui"],
+["pyenv-win","https://github.com/pyenv-win/pyenv-win","Python version manager for Windows. Genuinely useful in DFIR because forensic scripts frequently pin to specific Python versions, and this keeps several installed side by side without breaking each other.","oss",["any"],["win"],"tool","gui cli"],
+["DFIR Community Hardware Fund","https://github.com/DFIRScience/DFIRCommunityHardwareFund","DFIR Science initiative pooling hardware for researchers who need devices to test against but cannot fund them. Worth knowing if you need a specific handset for validation work.","oss",["any"],["web"],"reference",""]
 ]],
 ["Blogs",[
 ["Josh Brunty's Blog","https://joshbrunty.github.io/","Marshall University DFIR faculty blog covering report writing, Base64 as a forensic artifact, teaching material and analysis technique. Written to explain rather than to announce.","free",["any"],["web"],"blog",""],
@@ -2187,10 +2203,12 @@ const T=[
 ["Hexordia","https://www.hexordia.com/blog","Mobile forensics research and training material from Jessica Hyde and team, covering iOS and Android artifacts in technical depth.","free",["any"],["web"],"blog",""],
 ["DFIR Review","https://dfrws.org/dfir-review/","Peer-reviewed practitioner research published through DFRWS, sitting between a blog post and an academic paper. Worth citing when a report needs a defensible source.","free",["any"],["web"],"reference",""],
 ["Magnet Forensics Blog","https://www.magnetforensics.com/blog/","Vendor research covering newly discovered artifacts and analysis techniques. Product-adjacent, but the underlying artifact research is usually tool-agnostic and useful.","free",["any"],["web"],"blog",""],
-["Peer Review Checklist for Mobile Forensics","https://www.hexordia.com/blog-1-1/gc0vnvj80ogwx724ovu7avzwvjl742","Hexordia's checklist for peer-reviewing mobile examinations. Peer review is a requirement under most accreditation schemes and rarely has a written standard behind it; this gives one.","free",["ios","and"],["web"],"blog",""],
-["Writing DFIR Reports: A Primer","https://joshbrunty.github.io/2021/01/27/reporting.html","Josh Brunty's compendium on report writing, built from 15+ years of casework. Covers examination planning, case notes and their discoverability, the five-step report flow (what I was asked to do, why I am qualified, what I did, what I found, my conclusions), section-by-section guidance, figures, glossaries and the first-versus-third-person question. The single best starting point on this topic.","free",["any"],["web"],"blog",""],
-["Report Writing for Digital Forensics: Part I","https://www.bradgarnett.com/blog/2015/3/4/intro-to-report-writing-for-digital-forensics","Brad Garnett's 2010 primer (originally titled Intro to Report Writing for Digital Forensics), long used as a first reference for examiners writing their first serious report. Originally published on the SANS DFIR blog; that page no longer resolves, so this is the author's own hosted copy.","free",["any"],["web"],"blog",""],
-["Report Writing for Digital Forensics: Part II","https://www.sans.org/blog/report-writing-for-digital-forensics-part-ii/","The follow-up to Part I, on how a practitioner presents findings to the intended audience rather than just what sections a report needs. Still live on the SANS blog.","free",["any"],["web"],"blog",""]
+["Dragos Blog","https://www.dragos.com/blog/","OT threat intelligence and incident research from the leading ICS security vendor, including named threat group profiles and analysis of real industrial intrusions.","free",["net"],["web"],"blog",""],
+["Notari on log Command Updates","https://www.ios-unifiedlogs.com/post/ios-unified-logs-log-command-major-updates-to-not-miss","Lionel Notari's coverage of significant changes to Apple's log command-line tool: log repack, filtering behaviour changes, and bounded log stats output. Worth checking against whatever macOS version your analysis machine is running — these changes affect command output you may be relying on.","free",["mac","ios"],["web"],"reference",""],
+["Info.plist Research for .logarchive","https://digital-forensics.polewczyk.fr/apple/unified-logs/info-plist/","Johann Polewczyk's research into the Info.plist metadata a reconstructed .logarchive needs to open correctly: OSArchiveVersion mapping to source OS version, the macOS 26.4 metadata requirements, and the reconstruction methodology in full. Read this before generating one by hand.","free",["mac","ios"],["web"],"reference",""],
+["Knowledge is Power (knowledgeC.db)","https://www.mac4n6.com/blog/2018/8/5/knowledge-is-power-using-the-knowledgecdb-database-on-macos-and-ios-to-determine-precise-user-and-application-usage","Sarah Edwards' foundational write-up on knowledgeC.db with the SQL queries to extract app focus, usage, device state and more. Explains the split between system context (/private/var/db/CoreDuet/Knowledge) and per-user context on macOS, and the single merged database on iOS. Note the schemas shift between OS versions, so verify the query against your evidence.","free",["mac","ios"],["web"],"reference",""],
+["Knowledge is Power II","https://www.mac4n6.com/blog/2018/9/12/knowledge-is-power-ii-a-day-in-the-life-of-my-iphone-using-knowledgecdb","The follow-up, reconstructing a full day from one iPhone using knowledgeC and interactionC together. The clearest worked example of what pattern-of-life analysis actually produces.","free",["ios"],["web"],"reference",""],
+["Decoding the Newest iOS SEGB Format","https://cellebrite.com/en/blog/understanding-and-decoding-the-newest-ios-segb-format/","Cellebrite's breakdown of the structural differences between SEGB v1 and the v2 format introduced with iOS 17, which added a trailer section that must be parsed to read the file correctly. The reference the industry updated its parsers against.","free",["ios"],["web"],"reference",""]
 ]],
 ["Podcasts & Video",[
 ["DFIRScience","https://www.dfir.science","Josh Brunty and the DFIRScience team — research, tool development and practitioner guidance across DFIR disciplines.","free",["any"],["web"],"blog",""],
@@ -2211,7 +2229,10 @@ const T=[
 ["IACIS Podcast","https://www.youtube.com/@iacispodcast/videos","Podcast from the International Association of Computer Investigative Specialists, covering casework and certification topics.","free",["any"],["web"],"blog",""],
 ["AI Unpacked","https://www.magnetforensics.com/ai-unpacked/","Brandon Epstein's webinar series on AI in digital forensics, now in its second season. Notably candid: episodes cover why AI-detection tools often fall short of their claims and create admissibility problems, and how to rebut AI-generated defences in exploitation cases. More useful than most vendor content.","free",["any"],["web"],"blog",""],
 ["Cyber Unpacked","https://www.magnetforensics.com/cyber-unpacked/","Magnet series hosted by Doug Metz and Jeff Rutherford covering enterprise DFIR: integrating YARA, Sigma and ATT&CK into investigations, insider IP theft, supply chain compromise, and collecting evidence before it disappears in hybrid environments.","free",["any"],["web"],"blog",""],
-["Learn Forensics (Forensic Lunch)","https://www.youtube.com/@LearnForensics","David Cowen's long-running show and teaching series, including guest interviews and extended walkthroughs of research and tooling.","free",["any"],["web"],"blog",""]
+["Learn Forensics (Forensic Lunch)","https://www.youtube.com/@LearnForensics","David Cowen's long-running show and teaching series, including guest interviews and extended walkthroughs of research and tooling.","free",["any"],["web"],"blog",""],
+["Hexordia iLEAPP Walkthrough","https://www.hexordia.com/s/ILEAPP-Walkthrough.pdf","Step-by-step guide to iLEAPP: installation, running an iOS extraction, and interpreting the parsed artifact reports.","free",["ios"],["web"],"reference",""],
+["Hexordia ALEAPP Walkthrough","https://www.hexordia.com/s/ALEAPP_Walkthrough_Final.pdf","Step-by-step guide to ALEAPP: installation, running an Android extraction, and interpreting the parsed reports.","free",["and"],["web"],"reference",""],
+["Hexordia RLEAPP Walkthrough","https://www.hexordia.com/s/RLEAPP_Walkthrough.pdf","Step-by-step guide to RLEAPP: processing ISP and provider warrant returns and reviewing the parsed output.","free",["ios","and"],["web"],"reference",""]
 ]],
 ["Training & CTFs",[
 ["KC7 Cyber","https://kc7cyber.com/","Free gamified cybersecurity training platform where participants act as digital detectives investigating simulated attacks against realistic-looking organisations. Uses real-world log formats and KQL queries. No prior experience required — good for onboarding analysts new to threat hunting.","free",["any"],["web"],"training",""],
@@ -2243,7 +2264,6 @@ const T=[
 ["Commando VM","https://github.com/mandiant/commando-vm","Mandiant's Windows-based offensive VM, the red team counterpart to FLARE VM. Useful for understanding attacker tooling and reproducing observed techniques.","oss",["any"],["win"],"tool","cli"],
 ["WinFE","https://www.winfe.net/","Home of the Windows Forensic Environment, a bootable Windows build that write-protects attached media so you can run Windows tools on a live-booted suspect machine.","free",["any"],["win"],"tool","gui"],
 ["Predator-OS","https://predator-os.ir/","Debian 12 based distribution on the 6.6.15 LTS kernel with roughly 1,200 pre-installed tools across 40 categories and nine security modes, including a forensic mode that leaves attached media untouched. Primarily a penetration testing and privacy distribution rather than a DFIR one, so treat the forensic capability as a bonus rather than the reason to choose it.","oss",["any"],["nix"],"tool","gui cli"],
-["Ventoy","https://www.ventoy.net/","Bootable USB creator that lets you drop multiple ISO files onto one stick and pick at boot. One USB carries SIFT, CAINE, PALADIN and Tsurugi at once.","oss",["any"],["win","nix"],"tool","gui"],
 ["GreymHatter","https://github.com/jknyght9/greymhatter","RHEL and Fedora-based DFIR distribution, useful where the lab standardises on Red Hat rather than Debian derivatives and SIFT or CAINE do not fit the estate.","oss",["any"],["nix"],"tool","cli"],
 ["DRIFT Linux","https://www.driftlinux.org/","DFIR-focused Linux distribution bundling response and analysis tooling in a ready-to-run environment.","oss",["any"],["nix"],"tool","gui cli"],
 ["SIFT Workstation","https://www.sans.org/tools/sift-workstation/","SANS' free Ubuntu-based forensic workstation with the open source DFIR stack preinstalled and configured. Saves days of dependency work and matches the environment used across SANS courses.","free",["any"],["nix"],"tool","gui cli"],
@@ -2265,7 +2285,8 @@ const T=[
 ["Network Forensics Puzzle Contest","https://forensicscontest.com/","Classic packet analysis puzzles with detailed walkthroughs. Older material, but the analytical methods remain entirely current.","free",["any"],["web"],"tool","web"],
 ["Honeynet Project Challenges","https://www.honeynet.org/challenges/","Long-running challenge archive covering memory, network, disk and log analysis, with community submissions and official solutions for comparison.","free",["any"],["web"],"tool","web"],
 ["Ali Hadi DFIR datasets","https://www.ashemery.com/dfir.html","Case-based Windows and Linux challenge images built around defined scenarios, well suited to structured practice or teaching.","free",["any"],["web"],"tool","web"],
-["AboutDFIR test images","https://aboutdfir.com/education/test-images-challenges/","Maintained index of publicly available images and challenges across the field. Start here rather than searching individually.","free",["any"],["web"],"tool","web"]
+["AboutDFIR test images","https://aboutdfir.com/education/test-images-challenges/","Maintained index of publicly available images and challenges across the field. Start here rather than searching individually.","free",["any"],["web"],"tool","web"],
+["OTRF Security Datasets","https://github.com/OTRF/Security-Datasets","Open Threat Research's library of pre-recorded telemetry from simulated attacks. Develop and test detections against real malicious activity without building a lab first.","oss",["win","nix"],["web"],"tool","web cli"]
 ]]
 ];
 
@@ -2281,14 +2302,14 @@ const EVID = ["win","mac","nix","ios","and","cloud","net","any"];
    called stages or phases — those name the response process (NIST SP 800-61,
    SP 800-86), not a shelf in a tool index. */
 const GROUPS = [
-  ["Collect", ["Acquisition & Imaging","Mobile Suites & Cross-Platform","Live Response","Endpoint & EDR","Cloud, SaaS & Container"]],
+  ["Collect", ["Acquisition & Imaging","Memory Acquisition","Mobile Suites & Cross-Platform","Live Response","Endpoint & EDR","Cloud, SaaS & Container"]],
   ["Examine by platform", ["Disk & File System","Windows","macOS","Linux","iOS","Android","ICS, Vehicle & Embedded"]],
-  ["Analyse", ["Memory","Event Logs","Detection Rules & Hunting","Network","Browser & Internet","Email & Messaging","Image & Video","Logs & Data Processing","Timelines"]],
+  ["Analyse", ["Memory Analysis","Event Logs","Detection Rules & Hunting","Network","Browser & Internet","Email & Messaging","Image & Video","Logs & Data Processing","Timelines"]],
   ["Recover & decrypt", ["Recovery & Carving","Passwords & Decryption","Hashing & Verification","Ciphers & Decoding"]],
   ["Threats & intel", ["Malware Analysis & Sandboxes","Reverse Engineering & Debugging","Ransomware","OSINT & Recon","Threat Intel & Reputation Lookups"]],
-  ["Report & reference", ["Reporting & Case Management","Command References & Playbooks","Artifact References","Standards & Methodology","Utilities"]],
+  ["Report & reference", ["Reporting & Case Management","Command References & Playbooks","Artifact References","Standards & Methodology","Awesome Lists & Collections","Utilities"]],
   ["Learn", ["Blogs","Podcasts & Video","Training & CTFs"]],
-  ["Environment", ["Distros & VMs","Test Images & Datasets"]]
+  ["Environment", ["Distros & VMs","Workstation & General","Test Images & Datasets"]]
 ];
 const HOST = {win:"Windows", mac:"macOS", nix:"Linux", xplat:"Cross-platform", web:"Browser"};
 const RUNS = ["win","mac","nix","xplat","web"];
@@ -2418,6 +2439,44 @@ const ORDER = GROUPS.flatMap(g=>g[1]);
    appear when browsing the listed categories, marked as a cross-reference.
    It is not duplicated: counts, exports, pins and A-Z all use the canonical one. */
 const ALSO_IN={
+ /* audit 2026-09: cross-lists added for tools that genuinely serve two categories */
+ "EmailAnalyzer":["Email & Messaging"],
+ "Stratus Red Team":["Detection Rules & Hunting"],
+ "WhatsApp Viewer":["Email & Messaging"],
+ "WhatsApp Chat Exporter":["Email & Messaging"],
+ "MITRE ATT&CK for ICS":["Threat Intel & Reputation Lookups"],
+ "Angry IP Scanner":["OSINT & Recon"],
+ "Zenmap":["OSINT & Recon"],
+ "RustScan":["OSINT & Recon"],
+ "Smap":["OSINT & Recon"],
+ "dirsearch":["OSINT & Recon"],
+ "Feroxbuster":["OSINT & Recon"],
+ "osxcollector":["Live Response"],
+ "macosac":["Live Response"],
+ "triagectl":["Live Response"],
+ "HunterM":["Live Response"],
+ "Mac-Triage":["Live Response"],
+ "Aftermath":["Live Response"],
+ "AutoMacTC-NG":["Live Response"],
+ "Linux CatScale":["Live Response"],
+ "EAL (Extract Artefacts Linux)":["Live Response"],
+ "ios_triage":["Live Response"],
+ "Hexordia Syslog Monitor":["Live Response"],
+ "androidqf":["Live Response"],
+ "PowerForensics":["Windows"],
+ "debsums":["Linux"],
+ "chkrootkit":["Linux"],
+ "rkhunter":["Linux"],
+ "unhide":["Linux"],
+ "Lynis":["Linux"],
+ "Zircolite":["Linux"],
+ "GRR Rapid Response":["Linux"],
+ "artemis":["Linux"],
+ "ChopChopGo":["Event Logs","Detection Rules & Hunting"],
+ "unix_collector":["Live Response","macOS"],
+ "mac-robber":["Timelines"],
+ "dwarf2json":["Memory Analysis"],
+ "audit-userspace (ausearch, aureport)":["Event Logs"],
  "Volatility 3":["Windows","macOS","Linux"],
  "Volatility 2":["Windows","Linux"],
  "MemProcFS":["Windows"],
@@ -2425,7 +2484,7 @@ const ALSO_IN={
  "MemNixFS":["Linux"],
  "AVML":["Linux"],
  "LiME":["Linux"],
- "bulk_extractor":["Memory"],
+ "bulk_extractor":["Memory Analysis"],
  "KAPE":["Windows"],
  "KapeFiles":["Windows"],
  "KAPE Add-ons":["Windows"],
@@ -2461,15 +2520,18 @@ const ALSO_IN={
  "DLEAPP":["Windows","macOS","Linux"],
  "Velociraptor":["Live Response","Endpoint & EDR"],
  "UAC":["Linux","macOS"],
- "CyLR":["Linux","Windows"],
+ "CyLR":["Windows"],
  "Fennec":["Linux"],
  "LEAF":["Linux"],
  "varc":["Linux","Live Response"],
- "Crush":["iOS"],
+ "bubbly":["Mobile Suites & Cross-Platform"],
+ "peach-forensics":["Event Logs","macOS","iOS"],
+ "Beyond the C — SEGB and Biome Forensics with crush":["iOS","macOS"],
+ "Crush":["iOS","Android","Mobile Suites & Cross-Platform","Logs & Data Processing"],
  "Autopsy":["Recovery & Carving","Timelines","Linux"],
  "The Sleuth Kit":["Recovery & Carving","Timelines","Linux"],
  "Magnet AXIOM":["Mobile Suites & Cross-Platform","Cloud, SaaS & Container"],
- "Belkasoft X":["Mobile Suites & Cross-Platform","Memory"],
+ "Belkasoft X":["Mobile Suites & Cross-Platform","Memory Analysis"],
  "IPED":["Recovery & Carving","Image & Video","Linux"],
  "X-Ways Forensics":["Recovery & Carving"],
  "CyberChef":["Ciphers & Decoding"],
@@ -2519,6 +2581,7 @@ const ALSO_IN={
  "artifactcollector":["Linux","Windows"],
  "Sigma":["Detection Rules & Hunting"],
  "ccl-segb":["macOS"],
+ "Lionel Notari's Parsing Tool":["iOS"],
  "Microsoft-Extractor-Suite":["Email & Messaging"],
  "DB Browser for SQLite":["iOS","Android"],
  "ccl_chromium_reader":["Android"],
@@ -2832,7 +2895,15 @@ const ALIASES={
    actually type it to the phrase that is really in the text, both for
    live search and for suggestions. */
 function expand(t){ return ALIASES[t] ? [t, ALIASES[t]] : [t]; }
-const hit=(hay,t)=>expand(t).some(a=>variants(a).some(v=>v.length>2&&hay.includes(v)));
+/* Short terms (1-2 chars) cannot be substring-matched without matching inside
+   unrelated words, but they are meaningful here — jq, DB, IP, ID, Volatility 3,
+   Part I, "&". Match those on a word boundary instead of dropping them; a term
+   that can never hit would otherwise make its whole group unsatisfiable. */
+const esc4re=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+const hitShort=(hay,a)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(a)+"(?:[^a-z0-9]|$)").test(hay);
+const hit=(hay,t)=>expand(t).some(a=>a.length<3
+  ? hitShort(hay,a)
+  : variants(a).some(v=>v.length>2&&hay.includes(v)));
 function match(it){
   if(state.pinnedOnly && !state.pins.has(it.k)) return false;
   if(state.cat && it.cat!==state.cat && !(ALSO_IN[it.n]||[]).includes(state.cat)) return false;
@@ -2849,9 +2920,21 @@ function hl(text){
   const ts=terms(); let out=esc(text);
   if(!ts.length) return out;
   const esc2=x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-  const pats=[...new Set(ts.flatMap(t=>variants(t).filter(v=>v.length>2)))]
+  const long=[...new Set(ts.flatMap(t=>variants(t).filter(v=>v.length>2)))]
     .sort((a,b)=>b.length-a.length).map(esc2);
-  const re=new RegExp("("+pats.join("|")+")","ig");
+  /* Short terms match on a word boundary in hit(), so highlight them the same
+     way — an unbounded substring would mark the "ip" inside "script". Never let
+     pats end up empty: new RegExp("()") matches at every position and wraps a
+     <mark> around every character in the card. */
+  const short=[...new Set(ts.filter(t=>t.length<3))].map(esc2);
+  let re=null;
+  if(long.length||short.length){
+    try{
+      const bounded=short.map(a=>"(?<![a-z0-9])"+a+"(?![a-z0-9])");
+      re=new RegExp("("+long.concat(bounded).join("|")+")","ig");
+    }catch(e){ re=long.length?new RegExp("("+long.join("|")+")","ig"):null; }
+  }
+  if(!re) return out;
   return out.replace(re,"<mark>$1</mark>");
 }
 function card(it){
@@ -3099,7 +3182,7 @@ const CAT_ICON={
  "Endpoint & EDR":"shield","Cloud, SaaS & Container":"cloud",
  "Disk & File System":"file","Windows":"win","macOS":"apple","Linux":"linux",
  "iOS":"apple","Android":"robot","ICS, Vehicle & Embedded":"factory",
- "Memory":"chip","Event Logs":"list","Detection Rules & Hunting":"radar","Network":"network",
+ "Memory Analysis":"chip","Memory Acquisition":"pulse","Event Logs":"list","Detection Rules & Hunting":"radar","Network":"network",
  "Browser & Internet":"globe","Email & Messaging":"mail","Image & Video":"image",
  "Logs & Data Processing":"text","Timelines":"clock",
  "Recovery & Carving":"recover","Passwords & Decryption":"key","Hashing & Verification":"hash",
@@ -3107,7 +3190,8 @@ const CAT_ICON={
  "Malware Analysis & Sandboxes":"bug","Reverse Engineering & Debugging":"binary",
  "Ransomware":"lock","OSINT & Recon":"search","Threat Intel & Reputation Lookups":"target",
  "Reporting & Case Management":"doc","Command References & Playbooks":"terminal",
- "Artifact References":"book","Standards & Methodology":"scale","Utilities":"wrench",
+ "Artifact References":"book","Standards & Methodology":"scale",
+ "Awesome Lists & Collections":"list","Utilities":"wrench","Workstation & General":"box",
  "Blogs":"rss","Podcasts & Video":"play","Training & CTFs":"school",
  "Distros & VMs":"box","Test Images & Datasets":"flask","My Tools":"pin"
 };
@@ -3583,22 +3667,78 @@ function suggestions(q){
   });
   return out.slice(0,8);
 }
+/* Keyboard-navigable suggestions. suggSel is the highlighted row, -1 for none,
+   so Enter accepts a suggestion when one is highlighted and otherwise leaves the
+   typed query alone. */
+let suggList=[], suggSel=-1;
+function paintSugg(){
+  const btns=[...$("#sugg").querySelectorAll("button")];
+  btns.forEach((b,i)=>{
+    const on=i===suggSel;
+    b.classList.toggle("hot",on);
+    b.setAttribute("aria-selected",on?"true":"false");
+  });
+  /* Keep the highlighted row visible by scrolling the dropdown itself. Element
+     scrollIntoView resolves against the page scroller here and drags the whole
+     document away from the search bar. */
+  const box=$("#sugg"), b=btns[suggSel];
+  if(b){
+    const top=b.offsetTop, bot=top+b.offsetHeight;
+    if(top<box.scrollTop) box.scrollTop=top;
+    else if(bot>box.scrollTop+box.clientHeight) box.scrollTop=bot-box.clientHeight;
+  }
+  const inp=$("#q");
+  if(suggSel>=0 && btns[suggSel]) inp.setAttribute("aria-activedescendant","sugg-"+suggSel);
+  else inp.removeAttribute("aria-activedescendant");
+}
+function applySugg(x){
+  const box=$("#sugg");
+  if(x.cat){ state.cat=x.cat; state.q=""; $("#q").value=""; }
+  else { state.q=x.q; $("#q").value=x.q; }
+  box.classList.remove("open"); $("#q").setAttribute("aria-expanded","false"); suggSel=-1; suggList=[];
+  render();
+}
+function closeSugg(){ $("#sugg").classList.remove("open"); $("#q").setAttribute("aria-expanded","false"); suggSel=-1; paintSugg(); }
 function renderSuggestions(){
   const box=$("#sugg"), list=suggestions(state.q);
-  if(!list.length){ box.classList.remove("open"); box.innerHTML=""; return; }
+  suggList=list; suggSel=-1;
+  if(!list.length){ box.classList.remove("open"); $("#q").setAttribute("aria-expanded","false"); box.innerHTML=""; return; }
   box.innerHTML=list.map((x,i)=>
-    `<button data-si="${i}">${esc(x.label)}${x.n>1?` <span class="cnt">${x.n}</span>`:""}<span class="kind">${x.kind}</span></button>`).join("");
-  box.classList.add("open");
+    `<button id="sugg-${i}" role="option" aria-selected="false" data-si="${i}">${esc(x.label)}${x.n>1?` <span class="cnt">${x.n}</span>`:""}<span class="kind">${x.kind}</span></button>`).join("");
+  box.classList.add("open"); $("#q").setAttribute("aria-expanded","true");
   [...box.querySelectorAll("button")].forEach((b,i)=>{
-    b.onclick=e=>{
-      e.stopPropagation();
-      const x=list[i];
-      if(x.cat){ state.cat=x.cat; state.q=""; $("#q").value=""; }
-      else { state.q=x.q; $("#q").value=x.q; }
-      box.classList.remove("open"); render();
-    };
+    b.onmouseenter=()=>{ suggSel=i; paintSugg(); };
+    b.onclick=e=>{ e.stopPropagation(); applySugg(list[i]); };
   });
+  paintSugg();
 }
+/* Runs before the document-level shortcut handler, so arrow keys drive the
+   suggestion list rather than card selection while the list is open. */
+$("#q").addEventListener("keydown",e=>{
+  const open=$("#sugg").classList.contains("open") && suggList.length;
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+    if(!open) return;
+    e.preventDefault(); e.stopPropagation();
+    const d=e.key==="ArrowDown"?1:-1, n=suggList.length+1;
+    /* States are -1 (nothing highlighted) then 0..len-1, so cycle over n slots
+       with the index shifted up by one and shift back down after the wrap. */
+    suggSel=((suggSel+1+d+n)%n)-1;
+    paintSugg(); return;
+  }
+  if(e.key==="Enter"){
+    e.preventDefault(); e.stopPropagation();
+    /* Standard combobox semantics: Enter commits what was typed unless a row is
+       explicitly highlighted. Taking the top suggestion unconditionally throws
+       away complete queries — "windows" would collapse 434 results to one. */
+    if(open && suggSel>=0) applySugg(suggList[suggSel]);
+    else { closeSugg(); $("#q").blur(); }
+    return;
+  }
+  if(e.key==="Tab" && open && suggSel>=0){
+    e.preventDefault(); applySugg(suggList[suggSel]); return;
+  }
+  if(e.key==="Escape" && open){ e.preventDefault(); e.stopPropagation(); closeSugg(); }
+});
 
 /* ============================ ADD TOOL ============================ */
 const aPlat=new Set(), aRuns=new Set();
@@ -4285,11 +4425,27 @@ document.addEventListener("keydown",e=>{
   const log = (...a) => { if(DEBUG) console.log("[gc]", ...a); };
   log("active, endpoint https://" + SITE + ".goatcounter.com/count");
 
-  window.goatcounter = { endpoint: "https://" + SITE + ".goatcounter.com/count" };
+  const ENDPOINT = "https://" + SITE + ".goatcounter.com/count";
+  window.goatcounter = { endpoint: ENDPOINT };
   const s = document.createElement("script");
-  s.async = true; s.src = "//gc.zgo.at/count.js";
-  s.setAttribute("data-goatcounter", window.goatcounter.endpoint);
+  /* Explicit https: a protocol-relative src resolves to file:// on a local copy
+     and fails before it starts. */
+  s.async = true; s.src = "https://gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", ENDPOINT);
   document.head.appendChild(s);
+
+  /* Debug-only endpoint probe. count.js loads from gc.zgo.at whether or not the
+     site code is real, so a wrong SITE looks identical to a working one: the
+     script loads, events "send", and nothing is ever recorded. /count returns a
+     1x1 GIF when it accepts a hit and HTML when the subdomain does not exist,
+     so an image load tells the two apart. Fires only under ?gcdebug=1 and is
+     tagged so it is easy to ignore in the dashboard. */
+  if(DEBUG){
+    const probe = new Image();
+    probe.onload  = () => log("endpoint accepted the request — SITE '" + SITE + "' is live. If the dashboard is still empty, look at date range and timezone.");
+    probe.onerror = () => console.warn("[gc] endpoint did NOT accept the request. Either SITE is wrong (currently '" + SITE + "' → " + ENDPOINT + ") or something is blocking gc.zgo.at. Open " + ENDPOINT.replace("/count","") + " in a tab: if it 404s, the site code is not registered under that name.");
+    probe.src = ENDPOINT + "?p=/gcdebug-probe&t=gcdebug%20probe&rnd=" + Math.random().toString(36).slice(2);
+  }
 
   /* count.js loads async, so gc.count does not exist for the first few hundred
      milliseconds. Anything fired in that window is buffered and flushed on
@@ -4306,7 +4462,7 @@ document.addEventListener("keydown",e=>{
     if(!ready()) return;
     queue.splice(0).forEach(([p, t]) => window.goatcounter.count({path:p, title:t, event:true}));
   });
-  s.addEventListener("error", () => console.warn("[gc] count.js blocked or unreachable"));
+  s.addEventListener("error", () => console.warn("[gc] count.js blocked or unreachable — almost always an ad blocker or a privacy extension. Disable it for this site to test."));
 
   if(TRACK_OUTBOUND){
     document.addEventListener("click", e => {
