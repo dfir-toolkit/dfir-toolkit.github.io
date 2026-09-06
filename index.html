@@ -9,24 +9,24 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 990 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 998 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 
 <!-- Open Graph / LinkedIn / Facebook preview card -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dfir-toolkit.github.io/">
 <meta property="og:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta property="og:description" content="A curated, searchable index of 990 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
+<meta property="og:description" content="A curated, searchable index of 998 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
 <meta property="og:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DFIR Toolkit — 990 tools indexed across 43 categories">
+<meta property="og:image:alt" content="DFIR Toolkit — 998 tools indexed across 43 categories">
 <meta property="og:site_name" content="DFIR Toolkit">
 
 <!-- Twitter/X card (falls back to the same og:image) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta name="twitter:description" content="A curated, searchable index of 990 digital forensics and incident response tools, references and research.">
+<meta name="twitter:description" content="A curated, searchable index of 998 digital forensics and incident response tools, references and research.">
 <meta name="twitter:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1182,7 +1182,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">990</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">998</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1535,7 +1535,8 @@ const T=[
 ["Hollows Hunter","https://github.com/hasherezade/hollows_hunter","Wraps PE-sieve to scan every running process at once and report implants system-wide. The practical entry point for triaging a machine suspected of in-memory malware.","oss",["win"],["win"],"tool","cli"],
 ["Rekall","https://github.com/google/rekall","Archived Google memory framework. No longer maintained, but its plugin design and documentation remain a useful reference, and some historic case material depends on it.","oss",["win","mac","nix"],["xplat"],"tool","cli"],
 ["volatility3-symbols","https://github.com/Abyss-W4tcher/volatility3-symbols","Prebuilt Linux symbol tables for Volatility 3 covering thousands of distribution kernels. Linux memory analysis normally stalls on building an ISF for the exact running kernel; this removes that step, which is the single biggest practical blocker in Linux memory forensics.","oss",["nix"],["xplat"],"tool","cli"],
-["CobaltStrikeScan","https://github.com/Apr4h/CobaltStrikeScan","Scans process memory and files for Cobalt Strike beacons and extracts their configuration, giving you C2 servers, sleep intervals and watermarks.","oss",["win"],["win"],"tool","cli"]
+["CobaltStrikeScan","https://github.com/Apr4h/CobaltStrikeScan","Scans process memory and files for Cobalt Strike beacons and extracts their configuration, giving you C2 servers, sleep intervals and watermarks.","oss",["win"],["win"],"tool","cli"],
+["VolGolangWrapper","https://github.com/BeanBagKing/VolGolangWrapper","Go wrapper that runs a newline-delimited list of Volatility 3 plugins in parallel across goroutines and writes one CSV per plugin to an output directory. Ships a plugins.txt of Windows plugins that need no extra arguments, sorted longest-runtime first to cut total wall time.","oss",["win","nix"],["xplat"],"tool","cli"]
 ]],
 ["Memory Acquisition",[
 ["Linux Memory Grabber (lmg)","https://github.com/halpomeranz/lmg","Hal Pomeranz's script for dumping Linux memory and building a matching Volatility profile in one pass, designed to be as easy to use as DumpIt. Runs from a portable USB device, using AVML or LiME to acquire the image depending on what the target supports. The author is upfront that plugging in a USB device and compiling a profile on the target machine both touch it — not zero-footprint, but a fast, well-documented, and widely cited path when a matching precompiled Volatility profile does not already exist.","free",["nix"],["nix"],"tool","cli"],
@@ -1547,7 +1548,8 @@ const T=[
 ["LiME","https://github.com/504ensicsLabs/LiME","Loadable kernel module that captures volatile memory on Linux and Android with minimal process interference. The original standard for Linux memory acquisition; needs a module built against the running kernel.","oss",["nix","and"],["nix"],"tool","cli"],
 ["Magnet DumpIt","https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/","Single-executable memory dumper descended from Comae DumpIt. Run it from a USB stick with no installation and get a raw dump or Microsoft crash dump. Ideal for first responders who need memory before pulling the plug.","free",["win"],["win"],"tool","cli"],
 ["Collect-MemoryDump","https://github.com/evild3ad/Collect-MemoryDump","Automated creation of Windows memory dumps for incident response, wrapping the acquisition tools with consistent naming, hashing and logging.","oss",["win"],["win"],"tool","cli"],
-["MAGNET RAM Capture","https://www.magnetforensics.com/resources/magnet-ram-capture/","Free lightweight memory acquisition tool with a small footprint, minimising the amount of evidence overwritten during capture.","free",["win"],["win"],"tool","gui"]
+["MAGNET RAM Capture","https://www.magnetforensics.com/resources/magnet-ram-capture/","Free lightweight memory acquisition tool with a small footprint, minimising the amount of evidence overwritten during capture.","free",["win"],["win"],"tool","gui"],
+["Linpmem","https://github.com/Velocidex/Linpmem","Linux x64 kernel driver for reading physical memory, and the counterpart to WinPmem. Reads any physical address including reserved memory and memory holes, and offers CR3 lookup and virtual-to-physical translation alongside plain dumping. Needs compiling against the target kernel headers, and signing in advance where Secure Boot is enforced — do that before you need it, since enrolling a key reboots the machine.","oss",["nix"],["nix"],"tool","cli"]
 ]],
 ["Event Logs",[
 ["Event Log Explorer","https://eventlogxp.com/","Windows event log viewer from FSPro Labs that opens live logs and saved EVT/EVTX files, with tabbed multi-log views, colour-coded filtering, saved filter presets and cross-log correlation. Reads logs from remote machines and from offline exports, so it suits triage where you want to read events directly rather than convert them to CSV first. Commercial, with a free licence for personal, non-commercial use.","com",["win"],["win"],"tool","gui"],
@@ -1800,7 +1802,8 @@ const T=[
 ["quipqiup","https://quipqiup.com/","Fast automated solver for substitution ciphers and cryptograms, including partial-clue solving where you already know some letters.","free",["any"],["web"],"tool","web"],
 ["Rumkin Cipher Tools","https://rumkin.com/tools/cipher/","Long-standing collection of classical cipher encoders and decoders, still the quickest option for the traditional schemes.","free",["any"],["web"],"tool","web"],
 ["StegOnline","https://georgeom.net/StegOnline/","Browser tool for exploring bit planes, extracting LSB data and inspecting image structure. Practical for steganography questions and for CTF-style challenges.","oss",["any"],["web"],"tool","web gui"],
-["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool","cli"]
+["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool","cli"],
+["Aletheia","https://github.com/daniellerch/aletheia","Steganalysis by machine learning rather than signature — detects F5, Steghide, Outguess, nsF5, J-UNIWARD, LSB replacement and matching, and adaptive schemes in JPEG and uncompressed images, reporting a probability per method with a confidence figure. Answers whether a picture is carrying a payload, which the stego extraction tools cannot.","oss",["any"],["xplat"],"tool","cli"]
 ]],
 ["Malware Analysis & Sandboxes",[
 ["Valhalla","https://valhalla.nextron-systems.com/","Nextron's curated, quality-tested YARA rule feed — the rule source behind their THOR and LOKI scanners, with a free public tier searchable by hash, filename or rule name. Useful independent of Nextron's own tools: check a hash or sample against Valhalla's rule set even if you are running a different YARA-based scanner.","free",["any"],["web"],"intel",""],
@@ -1832,7 +1835,8 @@ const T=[
 ["Triage (tria.ge)","https://tria.ge/","Fast public sandbox with strong family identification and configuration extraction, plus a searchable corpus of prior submissions. Frequently names the family within a minute of upload.","free",["win"],["web"],"tool","web"],
 ["Sysinternals Suite","https://learn.microsoft.com/en-us/sysinternals/","Procmon, Process Explorer, Autoruns, Handle, TCPView and the rest. Procmon captures every file, registry and process operation during detonation; Autoruns enumerates every persistence location Windows offers.","free",["win"],["win"],"tool","gui"],
 ["System Informer","https://systeminformer.sourceforge.io/","Advanced process, handle, token and service inspection for live systems, formerly Process Hacker. Shows detail Task Manager hides, including memory regions and loaded modules per process.","oss",["win"],["win"],"tool","gui"],
-["Regshot","https://sourceforge.net/projects/regshot/","Takes registry and file system snapshots before and after execution, then diffs them. A simple, dependable way to establish exactly what an installer or sample changed.","oss",["win"],["win"],"tool","gui"]
+["Regshot","https://sourceforge.net/projects/regshot/","Takes registry and file system snapshots before and after execution, then diffs them. A simple, dependable way to establish exactly what an installer or sample changed.","oss",["win"],["win"],"tool","gui"],
+["quark-engine","https://github.com/quark-engine/quark-engine","Scores Android malware by weighted behaviour rather than signature, so obfuscation and repackaging do not defeat it — matches rules describing what an app does (intercept SMS, overlay a screen, exfiltrate call logs) and reports the behaviours found with a summary per sample. Ships analysis reports for known families including Anubis, Cerberus, SharkBot and TrickMo.","oss",["and"],["xplat"],"tool","cli"]
 ]],
 ["Reverse Engineering & Debugging",[
 ["dnSpyEx","https://github.com/dnSpyEx/dnSpy",".NET assembly editor, decompiler and debugger, the maintained fork of dnSpy. Decompiles managed binaries to readable C# or IL, sets breakpoints in code with no source available and edits assemblies in place, which suits .NET loaders and ransomware.","oss",["win"],["win"],"tool","gui"],
@@ -1860,7 +1864,11 @@ const T=[
 ["capa","https://github.com/mandiant/capa","Identifies what a program can do by matching rules against its disassembly, reporting capabilities like keylogging, process injection or C2 communication mapped to ATT&CK. Produces a usable behavioural summary without running the sample.","oss",["win"],["xplat"],"tool","cli"],
 ["FLOSS","https://github.com/mandiant/flare-floss","Automatically extracts obfuscated, stack and tight strings that ordinary strings misses. Recovers C2 domains, file paths and mutex names that malware authors deliberately hid from static extraction.","oss",["win"],["xplat"],"tool","cli"],
 ["UnpacMe","https://www.unpac.me/","Automated unpacking service that returns the unpacked payload rather than just a report. Saves considerable manual effort when facing a commercially packed sample.","free",["win"],["web"],"tool","web"],
-["Speakeasy","https://github.com/mandiant/speakeasy","Emulation framework that runs Windows user-mode and kernel-mode malware safely without a full VM, logging API calls along the way. Well suited to bulk automated analysis of shellcode and drivers.","oss",["win"],["win","nix"],"tool","cli"]
+["Speakeasy","https://github.com/mandiant/speakeasy","Emulation framework that runs Windows user-mode and kernel-mode malware safely without a full VM, logging API calls along the way. Well suited to bulk automated analysis of shellcode and drivers.","oss",["win"],["win","nix"],"tool","cli"],
+["Apktool","https://apktool.org/","Decodes an APK back to near-original form — resources to readable XML, AndroidManifest.xml out of binary encoding, code to smali — then rebuilds and resigns it. The first step in almost any APK examination, since a packaged manifest tells you nothing until it is decoded.","oss",["and"],["xplat"],"tool","cli"],
+["Androguard","https://github.com/androguard/androguard","Python library and CLI for dissecting APK, DEX and ODEX: permissions, activities, receivers, certificates, strings, and call graphs you can query programmatically. The engine several other Android analysis tools are built on, and the right choice when you need to script across a corpus of apps rather than examine one.","oss",["and"],["xplat"],"tool","cli"],
+["MobSF (Mobile Security Framework)","https://github.com/MobSF/Mobile-Security-Framework-MobSF","Static and dynamic analysis of mobile app binaries — APK, IPA, APPX and source — through a web UI: permissions, hardcoded secrets, certificate details, trackers, network calls, and an instrumented runtime for Android and iOS. Runs in Docker, so a suspect app can be examined without installing an analysis stack on the host.","oss",["and","ios"],["xplat"],"tool","gui web"],
+["objection","https://github.com/sensepost/objection","Frida-powered runtime exploration of a mobile app without jailbreaking or rooting: browse the app sandbox, dump keychain and shared preferences, inspect classes and invoke methods on a live process. Useful when an app holds evidence only in memory or decrypts it on demand.","oss",["and","ios"],["xplat"],"tool","cli"]
 ]],
 ["Ransomware",[
 ["ID Ransomware","https://id-ransomware.malwarehunterteam.com/","Identifies which ransomware family hit you from a ransom note, a sample encrypted file, or the attacker contact details. Covers 1,000+ families. The first thing to run, because family identification determines whether a free decryptor exists.","free",["any"],["web"],"tool","web"],
@@ -2585,6 +2593,13 @@ const ALSO_IN={
  "Microsoft-Extractor-Suite":["Email & Messaging"],
  "DB Browser for SQLite":["iOS","Android"],
  "ccl_chromium_reader":["Android"],
+ "Apktool":["Android"],
+ "Androguard":["Android"],
+ "MobSF (Mobile Security Framework)":["Android","iOS"],
+ "objection":["Android","iOS"],
+ "quark-engine":["Android","Reverse Engineering & Debugging"],
+ "Linpmem":["Linux"],
+ "Aletheia":["Image & Video"]
 };
 const ACCENT={};
 GROUPS.forEach(([label,list],i)=>list.forEach(c=>ACCENT[c]="var(--g"+(i+1)+")"));
