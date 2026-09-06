@@ -972,6 +972,19 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
   </div>
 </div></footer>
 
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+    <rect width="600" height="600" fill="#0F1317"/>
+    <g fill="none" stroke="#4ADE80" stroke-width="22" stroke-linecap="round">
+      <circle cx="265" cy="265" r="105"/>
+      <path d="M342 342 L432 432"/>
+    </g>
+    <g fill="#E8EDF2" font-family="monospace" font-size="86" font-weight="700" text-anchor="middle">
+      <text x="300" y="520">DFIR</text>
+    </g>
+  </svg>
+</template>
+
 <script type="text/xml" id="opml-data">
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
@@ -2917,15 +2930,70 @@ const ALIASES={
    actually type it to the phrase that is really in the text, both for
    live search and for suggestions. */
 function expand(t){ return ALIASES[t] ? [t, ALIASES[t]] : [t]; }
+/* File-extension and filename lookup. An examiner arrives holding a file, not a
+   category: ".evtx", "$MFT", "knowledgeC.db", ".ab". The bare token is matched on
+   a word boundary rather than as a substring — ".tar" must not hit "startup" and
+   ".elf" must not hit "self" — and each mapping lists wording that genuinely
+   appears in the entries, so a lookup either finds real tools or honestly finds
+   none. Keys are written the way they are typed; the leading dot is optional. */
+const EXT={
+ "evtx":"evtx,event log","evt":"evt,event log","pf":"prefetch",
+ "lnk":"lnk,shortcut,jumplist","job":"scheduled task","hve":"registry hive,hives",
+ "sqlite":"sqlite","sqlite3":"sqlite","db":"sqlite","wal":"sqlite,wal","shm":"sqlite",
+ "db-wal":"sqlite,wal","db-shm":"sqlite",
+ "plist":"plist,bplist,property list","bplist":"bplist,plist","abx":"abx,android binary xml",
+ "apk":"apk,android package,apktool,androguard,jadx","dex":"dex,jadx,apktool",
+ "ipa":"ipa,mobsf,ios app","ab":"android backup,adb backup",
+ "tar":"tar","zip":"zip","7z":"7z","gz":"gzip","rar":"rar",
+ "e01":"e01,ewf,expert witness","ex01":"ex01,ewf","l01":"l01,logical evidence",
+ "aff4":"aff4","aff":"aff","dd":"dd,raw image","img":"disk image","iso":"iso",
+ "vhd":"vhd,virtual hard","vhdx":"vhdx","vmdk":"vmdk","dmg":"dmg",
+ "mem":"memory dump,memory image","dmp":"memory dump,crash dump","vmem":"vmem,memory image",
+ "lime":"lime","hiberfil.sys":"hiberfil,hibernation","pagefile.sys":"pagefile","swapfile.sys":"swap",
+ "pcap":"pcap,packet capture","pcapng":"pcapng,pcap,packet capture","cap":"packet capture",
+ "pst":"pst,outlook","ost":"ost,outlook","msg":"msg,outlook","eml":"eml,email",
+ "mbox":"mbox,mailbox","olm":"olm,outlook","edb":"edb,windows.edb",
+ "segb":"segb,biome","mmkv":"mmkv","realm":"realm","leveldb":"leveldb","ldb":"leveldb",
+ "idb":"indexeddb","har":"har","yar":"yara","yara":"yara","yml":"sigma,yaml",
+ "ps1":"powershell","jar":"java","class":"java","tracev3":"tracev3,unified log",
+ "logarchive":"logarchive,unified log","asl":"asl","ips":"ips,crash",
+ "utmp":"utmp","wtmp":"wtmp","btmp":"btmp","journal":"journald,systemd",
+ "mft":"mft,$mft,master file","usnjrnl":"usn journal,usnjrnl","logfile":"$logfile",
+ "ntuser.dat":"ntuser","usrclass.dat":"usrclass,shellbag",
+ "amcache.hve":"amcache","srudb.dat":"srum,srudb","windows.edb":"windows.edb",
+ "knowledgec.db":"knowledgec","interactionc.db":"interactionc",
+ "manifest.db":"manifest,itunes backup","places.sqlite":"places,firefox",
+ "index.dat":"index.dat,internet explorer","webcachev01.dat":"webcache,internet explorer",
+ "cache.db":"cache.db","store.db":"spotlight","proto":"protobuf","pb":"protobuf"
+};
+/* An extension query is answered only through EXT, never by falling back to
+   substring matching — the fallback is what made ".exe" match "executable
+   summary" and ".har" match "hardware". */
+function extQuery(t){
+  const bare=t.replace(/^\./,"");
+  if(!t.startsWith(".") && !EXT[bare]) return null;
+  return {bare, phrases:(EXT[bare]||"").split(",").filter(Boolean)};
+}
+
 /* Short terms (1-2 chars) cannot be substring-matched without matching inside
    unrelated words, but they are meaningful here — jq, DB, IP, ID, Volatility 3,
    Part I, "&". Match those on a word boundary instead of dropping them; a term
    that can never hit would otherwise make its whole group unsatisfiable. */
 const esc4re=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 const hitShort=(hay,a)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(a)+"(?:[^a-z0-9]|$)").test(hay);
-const hit=(hay,t)=>expand(t).some(a=>a.length<3
-  ? hitShort(hay,a)
-  : variants(a).some(v=>v.length>2&&hay.includes(v)));
+const hitExt=(hay,a)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(a)+"s?(?:[^a-z0-9]|$)").test(hay);
+const hitPhrase=(hay,a)=>a.length<3?hitShort(hay,a)
+  :variants(a).some(v=>v.length>2&&hay.includes(v));
+function hit(hay,t){
+  const ex=extQuery(t);
+  /* Single-word mappings are boundary-matched for the same reason the bare token
+     is: "hive" as a substring matches "archive", "tar" matches "startup". Only
+     multi-word phrases are safe to match as plain substrings. The optional
+     trailing s keeps plurals — descriptions say "plists", "hives", "jumplists". */
+  if(ex) return (ex.bare?hitExt(hay,ex.bare):false)
+    || ex.phrases.some(p=>p.includes(" ")?hay.includes(p):hitExt(hay,p));
+  return expand(t).some(a=>hitPhrase(hay,a));
+}
 function match(it){
   if(state.pinnedOnly && !state.pins.has(it.k)) return false;
   if(state.cat && it.cat!==state.cat && !(ALSO_IN[it.n]||[]).includes(state.cat)) return false;
@@ -3686,6 +3754,15 @@ function suggestions(q){
       const n=ITEMS.filter(i=>hit(i.hay,term)).length;
       if(n) out.push({label:term,kind:"term",q:term,n});
     }
+  });
+  /* File types, so an extension is discoverable by typing the first letters of
+     it rather than having to know the artifact's proper name. */
+  const bare=t.replace(/^\./,"");
+  Object.keys(EXT).forEach(k=>{
+    if(!k.includes(bare)) return;
+    const label=k.includes(".")?k:"."+k;
+    const n=ITEMS.filter(i=>hit(i.hay,label)).length;
+    if(n) out.push({label,kind:"file type",q:label,n});
   });
   return out.slice(0,8);
 }
