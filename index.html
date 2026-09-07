@@ -9,24 +9,24 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 1,007 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 1,024 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 
 <!-- Open Graph / LinkedIn / Facebook preview card -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dfir-toolkit.github.io/">
 <meta property="og:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta property="og:description" content="A curated, searchable index of 1,007 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
+<meta property="og:description" content="A curated, searchable index of 1,024 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
 <meta property="og:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DFIR Toolkit — 1,007 tools indexed across 43 categories">
+<meta property="og:image:alt" content="DFIR Toolkit — 1,024 tools indexed across 43 categories">
 <meta property="og:site_name" content="DFIR Toolkit">
 
 <!-- Twitter/X card (falls back to the same og:image) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta name="twitter:description" content="A curated, searchable index of 1,007 digital forensics and incident response tools, references and research.">
+<meta name="twitter:description" content="A curated, searchable index of 1,024 digital forensics and incident response tools, references and research.">
 <meta name="twitter:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1202,7 +1202,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">1007</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">1024</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1660,7 +1660,8 @@ const T=[
 ["Xplico","https://www.xplico.org/","Reconstructs application-layer content from captures: emails, HTTP objects, VoIP calls and chat sessions. Dated in places, but still effective at turning packets into recognisable communications. Development has been quiet for years; keep it for reconstruction jobs other tools cannot do rather than as a first choice.","oss",["net"],["nix"],"tool","web"],
 ["CapAnalysis","http://www.capanalysis.net/","Web-based PCAP visualiser for exploring flows, geolocation and protocol distribution across large capture sets. Good for the initial shape of a dataset before detailed analysis.","oss",["net"],["nix"],"tool","gui"],
 ["nfdump","https://github.com/phaag/nfdump","Collects and processes NetFlow, sFlow and IPFIX records from the command line. Flow data lacks payload but usually covers a far longer retention window than packet capture, which matters for older intrusions.","oss",["net"],["nix"],"tool","gui cli"],
-["JA4+","https://github.com/FoxIO-LLC/ja4","Fingerprinting suite covering TLS, HTTP, SSH and more. Lets you track a specific client implementation across captures even when IP addresses and domains change, and successor to the widely used JA3.","oss",["net"],["xplat"],"tool","cli"]
+["JA4+","https://github.com/FoxIO-LLC/ja4","Fingerprinting suite covering TLS, HTTP, SSH and more. Lets you track a specific client implementation across captures even when IP addresses and domains change, and successor to the widely used JA3.","oss",["net"],["xplat"],"tool","cli"],
+["Network DDoS Incident Response Cheat Sheet","https://zeltser.com/ddos-incident-cheat-sheet","DDoS response weighted towards what has to exist before an attack: ISP contacts, allowlists of critical source addresses, lowered DNS TTLs, documented infrastructure. Then separating malicious from legitimate traffic during the event and throttling as close to the network edge as possible.","free",["net"],["web"],"reference","web"]
 ]],
 ["Browser & Internet",[
 ["Foxton Browser History Examiner","https://www.foxtonforensics.com/","Extracts, analyses and reports internet history from Chrome, Edge, Firefox, Internet Explorer and Safari, including deleted history recovered from Volume Shadow Copies. Remote capture over a network, cached image gallery, and full web page reconstruction as originally seen. Commercial with a free trial.","com",["any"],["win"],"tool","gui"],
@@ -1861,7 +1862,10 @@ const T=[
 ["Sysinternals Suite","https://learn.microsoft.com/en-us/sysinternals/","Procmon, Process Explorer, Autoruns, Handle, TCPView and the rest. Procmon captures every file, registry and process operation during detonation; Autoruns enumerates every persistence location Windows offers.","free",["win"],["win"],"tool","gui"],
 ["System Informer","https://systeminformer.sourceforge.io/","Advanced process, handle, token and service inspection for live systems, formerly Process Hacker. Shows detail Task Manager hides, including memory regions and loaded modules per process.","oss",["win"],["win"],"tool","gui"],
 ["Regshot","https://sourceforge.net/projects/regshot/","Takes registry and file system snapshots before and after execution, then diffs them. A simple, dependable way to establish exactly what an installer or sample changed.","oss",["win"],["win"],"tool","gui"],
-["quark-engine","https://github.com/quark-engine/quark-engine","Scores Android malware by weighted behaviour rather than signature, so obfuscation and repackaging do not defeat it — matches rules describing what an app does (intercept SMS, overlay a screen, exfiltrate call logs) and reports the behaviours found with a summary per sample. Ships analysis reports for known families including Anubis, Cerberus, SharkBot and TrickMo.","oss",["and"],["xplat"],"tool","cli"]
+["quark-engine","https://github.com/quark-engine/quark-engine","Scores Android malware by weighted behaviour rather than signature, so obfuscation and repackaging do not defeat it — matches rules describing what an app does (intercept SMS, overlay a screen, exfiltrate call logs) and reports the behaviours found with a summary per sample. Ships analysis reports for known families including Anubis, Cerberus, SharkBot and TrickMo.","oss",["and"],["xplat"],"tool","cli"],
+["Malware Analysis and Reverse-Engineering Cheat Sheet","https://zeltser.com/malware-analysis-cheat-sheet","Zeltser's one-page map of the whole process: automated sandbox triage first, then behavioural monitoring of system and network interactions, then static and dynamic code examination with Ghidra and x64dbg, and unpacking protected specimens. Useful as a checklist when a sample arrives and the order of work matters.","free",["any"],["web"],"reference","web"],
+["REMnux Usage Tips for Malware Analysis on Linux","https://zeltser.com/remnux-malware-analysis-tips","What is actually inside REMnux, organised by the task rather than the tool name: Windows PE analysis, Linux binaries, documents, network interactions, memory forensics and data gathering, plus the Docker containers that extend it for Thug, RetDec and Radare2. The index lists the distribution; this is the map to what it holds.","free",["any"],["web"],"reference","web"],
+["REMnux MCP Server","https://github.com/REMnux/remnux-mcp-server","Exposes REMnux tooling over the Model Context Protocol so an AI agent can invoke the distribution's analysis tools directly. Early and worth understanding rather than adopting blindly, since anything driving analysis on your behalf still has to be verified in the tool itself.","oss",["any"],["nix"],"tool","cli"]
 ]],
 ["Reverse Engineering & Debugging",[
 ["dnSpyEx","https://github.com/dnSpyEx/dnSpy",".NET assembly editor, decompiler and debugger, the maintained fork of dnSpy. Decompiles managed binaries to readable C# or IL, sets breakpoints in code with no source available and edits assemblies in place, which suits .NET loaders and ransomware.","oss",["win"],["win"],"tool","gui"],
@@ -1894,7 +1898,8 @@ const T=[
 ["Androguard","https://github.com/androguard/androguard","Python library and CLI for dissecting APK, DEX and ODEX: permissions, activities, receivers, certificates, strings, and call graphs you can query programmatically. The engine several other Android analysis tools are built on, and the right choice when you need to script across a corpus of apps rather than examine one.","oss",["and"],["xplat"],"tool","cli"],
 ["MobSF (Mobile Security Framework)","https://github.com/MobSF/Mobile-Security-Framework-MobSF","Static and dynamic analysis of mobile app binaries — APK, IPA, APPX and source — through a web UI: permissions, hardcoded secrets, certificate details, trackers, network calls, and an instrumented runtime for Android and iOS. Runs in Docker, so a suspect app can be examined without installing an analysis stack on the host.","oss",["and","ios"],["xplat"],"tool","gui web"],
 ["objection","https://github.com/sensepost/objection","Frida-powered runtime exploration of a mobile app without jailbreaking or rooting: browse the app sandbox, dump keychain and shared preferences, inspect classes and invoke methods on a live process. Useful when an app holds evidence only in memory or decrypts it on demand.","oss",["and","ios"],["xplat"],"tool","cli"],
-["Kaitai Struct","https://kaitai.io/","Declarative language for describing binary formats, which then compiles into parsing code for a dozen languages — describe a structure once instead of writing a parser per language. The web IDE parses a file against a definition and shows the hex alongside the resolved tree, which is a fast way to work out an undocumented format.","oss",["any"],["xplat","web"],"tool","gui cli"]
+["Kaitai Struct","https://kaitai.io/","Declarative language for describing binary formats, which then compiles into parsing code for a dozen languages — describe a structure once instead of writing a parser per language. The web IDE parses a file against a definition and shows the hex alongside the resolved tree, which is a fast way to work out an undocumented format.","oss",["any"],["xplat","web"],"tool","gui cli"],
+["Tips for Reverse-Engineering Malicious Code","https://zeltser.com/reverse-engineering-malicious-code-tips","One page on reversing Windows executables: static properties, suspicious strings and API calls, behavioural analysis, then disassembler and debugger work. Includes the x86 and x64 registers, the assembly instructions that actually come up, and the API calls that signal code injection, DLL loading and keylogging.","free",["win"],["web"],"reference","web"]
 ]],
 ["Ransomware",[
 ["ID Ransomware","https://id-ransomware.malwarehunterteam.com/","Identifies which ransomware family hit you from a ransom note, a sample encrypted file, or the attacker contact details. Covers 1,000+ families. The first thing to run, because family identification determines whether a free decryptor exists.","free",["any"],["web"],"tool","web"],
@@ -2006,7 +2011,11 @@ const T=[
 ["Writing DFIR Reports: A Primer","https://joshbrunty.github.io/2021/01/27/reporting.html","Josh Brunty's compendium on report writing, built from 15+ years of casework. Covers examination planning, case notes and their discoverability, the five-step report flow (what I was asked to do, why I am qualified, what I did, what I found, my conclusions), section-by-section guidance, figures, glossaries and the first-versus-third-person question. The single best starting point on this topic.","free",["any"],["web"],"blog",""],
 ["Report Writing for Digital Forensics: Part I","https://www.bradgarnett.com/blog/2015/3/4/intro-to-report-writing-for-digital-forensics","Brad Garnett's 2010 primer (originally titled Intro to Report Writing for Digital Forensics), long used as a first reference for examiners writing their first serious report. Originally published on the SANS DFIR blog; that page no longer resolves, so this is the author's own hosted copy.","free",["any"],["web"],"blog",""],
 ["Report Writing for Digital Forensics: Part II","https://www.sans.org/blog/report-writing-for-digital-forensics-part-ii/","The follow-up to Part I, on how a practitioner presents findings to the intended audience rather than just what sections a report needs. Still live on the SANS blog.","free",["any"],["web"],"blog",""],
-["Peer Review Checklist for Mobile Forensics","https://www.hexordia.com/blog-1-1/gc0vnvj80ogwx724ovu7avzwvjl742","Hexordia's checklist for peer-reviewing mobile examinations. Peer review is a requirement under most accreditation schemes and rarely has a written standard behind it; this gives one.","free",["ios","and"],["web"],"blog",""]
+["Peer Review Checklist for Mobile Forensics","https://www.hexordia.com/blog-1-1/gc0vnvj80ogwx724ovu7avzwvjl742","Hexordia's checklist for peer-reviewing mobile examinations. Peer review is a requirement under most accreditation schemes and rarely has a written standard behind it; this gives one.","free",["ios","and"],["web"],"blog",""],
+["Tips for Creating a Strong Cybersecurity Assessment Report","https://zeltser.com/security-assessment-report-cheat-sheet","What separates a report that gets acted on from a dump of tool output: analysis beyond the findings, prioritising by risk, documenting methodology and scope, concrete remediation guidance, and avoiding passive voice. Written for assessment reports, and the structural advice carries straight over to forensic reporting.","free",["any"],["web"],"reference","web"],
+["Zeltser Malware Analysis Report Template","https://zeltser.com/malware-analysis-report","Structure for reporting on a specimen: summary, identification, characteristics, dependencies, behavioural and code analysis findings, supporting figures. The index already carries his incident response and CTI templates; this is the one for malware work.","free",["any"],["web"],"tool","web"],
+["Zeltser Security Assessment Report Template","https://zeltser.com/security-assessment-report-template","Report skeleton for an assessment engagement, the companion to his cheat sheet on what makes such a report strong. Useful when findings have to be prioritised by risk and tied to methodology and scope rather than listed as tool output.","free",["any"],["web"],"tool","web"],
+["Cyber Briefing Templates for Decision Makers","https://zeltser.com/cyber-brief-templates-for-decision-makers","Templates for briefing executives while an incident is running, when the audience needs a decision rather than the evidence. Solves the other half of reporting: the short update that goes upward, not the record that goes in the case file.","free",["any"],["web"],"tool","web"]
 ]],
 ["Command References & Playbooks",[
 ["Windows Forensic Analysis Playbook","https://sansorg.egnyte.com/dl/4b7gJt6Jq6Fy","SANS playbook poster walking the Windows analysis process end to end, from evidence of execution through to account and file activity.","free",["any"],["web"],"reference",""],
@@ -2048,7 +2057,9 @@ const T=[
 ["Syntax IR Playbooks","https://gitlab.com/syntax-ir/playbooks","Detailed incident response playbooks broken down by phase with concrete commands and decision points.","oss",["any"],["web"],"tool","web"],
 ["Microsoft Incident Response Playbooks","https://learn.microsoft.com/en-us/security/compass/incident-response-playbooks","Official playbooks for phishing, password spray and app consent grant attacks, with the exact queries and portal steps for Microsoft environments.","free",["cloud","win"],["web"],"reference",""],
 ["Microsoft IR Ninja Hub","https://techcommunity.microsoft.com/blog/microsoftsecurityexperts/welcome-to-the-microsoft-incident-response-ninja-hub/4243594","Microsoft's curated learning path for incident response across their stack, gathering playbooks, hunting queries, tooling guidance and case studies into one structured route rather than scattered docs.","free",["cloud","win"],["web"],"tool","web"],
-["CISA Playbook-NG","https://www.cisa.gov/eviction-strategies-tool","Matches incident findings to countermeasures for adversary containment and eviction, backed by CISA's COUN7ER countermeasure database. Paste in a report containing ATT&CK TTP IDs and it generates a tailored eviction playbook. Curated incident templates cover known campaigns, and it works equally well for building realistic tabletop scenarios.","oss",["any"],["web"],"reference",""]
+["CISA Playbook-NG","https://www.cisa.gov/eviction-strategies-tool","Matches incident findings to countermeasures for adversary containment and eviction, backed by CISA's COUN7ER countermeasure database. Paste in a report containing ATT&CK TTP IDs and it generates a tailored eviction playbook. Curated incident templates cover known campaigns, and it works equally well for building realistic tabletop scenarios.","oss",["any"],["web"],"reference",""],
+["Critical Log Review Checklist for Security Incidents","https://zeltser.com/security-incident-log-review-checklist","Checklist for reviewing logs under incident conditions: centralise copies, strip benign noise, verify timestamps, focus on changes and failures, work backwards in time, correlate across sources. Lists the specific entries worth hunting on Linux, Windows, network devices and web servers.","free",["any"],["web"],"reference","web"],
+["Initial Security Incident Questionnaire for Responders","https://zeltser.com/security-incident-questionnaire-cheat-sheet","The questions to ask when first handed an incident: how it was detected, who coordinates and who decides, how to communicate securely, which systems and compliance obligations are in scope, and what the initial survey actually found. Stops the first hour going in the wrong direction.","free",["any"],["web"],"reference","web"]
 ]],
 ["Artifact References",[
 ["OSSEM","https://github.com/OTRF/OSSEM","Open Source Security Events Metadata. Standardises how security event fields are named and described across log sources and platforms, so detection content written against OSSEM's schema stays portable rather than tied to one vendor's field names. From Open Threat Research Forge, the same group behind ThreatHunter Playbook and Security-Datasets.","oss",["any"],["web"],"reference",""],
@@ -2100,7 +2111,7 @@ const T=[
 ["Beyond the C — SEGB and Biome Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/beyond-c-segb-and-biome-forensics-with.html","SEGB v1 and v2 structure, the trailer section iOS 17 added, and how Apple Biome records decode once the protobuf payloads are unpacked — including the nested and repeated fields most viewers flatten or drop.","free",["ios","mac"],["web"],"reference",""],
 ["Reading Protobuf Wire Format Without a Map","https://bebinary4n6.blogspot.com/2026/06/reading-wire-protobuf-without-map.html","How to read protobuf when you have no .proto schema: field numbers, wire types, and what can and cannot be recovered from the bytes alone. The reference for every BLOB in a mobile database that turns out to be protobuf.","free",["any"],["web"],"reference",""],
 ["ImHex Pattern Library","https://github.com/WerWolv/ImHex-Patterns","Community database of format definitions for ImHex, including a DFIR set: NTFS, exFAT and FAT32 with a recursive disk and volume parser, plus $I Recycle Bin records, prefetch, Shell Link (.lnk), EVTX, thumbcache, the shim database and Notepad cache and state files. Load one and the raw bytes resolve into named fields, which is the fastest way to see how an artifact is really built. Also ships custom character encodings including EBCDIC and Shift-JIS.","oss",["any"],["xplat"],"tool","gui"],
-["Kaitai Struct Format Gallery","https://formats.kaitai.io/","Machine-readable specifications for a few hundred file formats and network protocols, each with the field layout, types and offsets. Useful as documentation even when you never run the compiler: it answers what byte 8 of a header means.","oss",["any"],["web"],"reading","web"]
+["Kaitai Struct Format Gallery","https://formats.kaitai.io/","Machine-readable specifications for a few hundred file formats and network protocols, each with the field layout, types and offsets. Useful as documentation even when you never run the compiler: it answers what byte 8 of a header means.","oss",["any"],["web"],"reference","web"]
 ]],
 ["Standards & Methodology",[
 ["Blue Team Handbook: Incident Response Edition","https://www.amazon.com/Blue-Team-Handbook-Incident-Response/dp/1500734756","Don Murdoch's zero-fluff field reference for incident responders covering the IR process, attacker methodology, common tools, network analysis methodology, IOC identification, Windows and Linux analysis, tcpdump and Snort usage. Designed to sit on the desk during an active incident.","com",["any"],["web"],"reference",""],
@@ -2119,7 +2130,8 @@ const T=[
 ["Joint Publication 2-0: Joint Intelligence","https://www.jcs.mil/Portals/36/Documents/Doctrine/pubs/jp2_0.pdf","US military joint intelligence doctrine. Dense, but it is where most of the intelligence vocabulary used in CTI originally comes from, including confidence language.","free",["any"],["web"],"reference",""],
 ["How Intelligence Works","https://www.intel.gov/how-the-ic-works","Plain explanation of intelligence disciplines and the cycle from the US intelligence community, useful for grounding terminology used loosely in vendor reporting.","free",["any"],["web"],"reference",""],
 ["Getting Started with ATT&CK: Threat Intelligence","https://medium.com/mitre-attack/getting-started-with-attack-cti-4eb205be4b2f","MITRE's practical introduction to using ATT&CK for CTI: mapping reporting to techniques, and doing it consistently enough that the mapping is worth something.","free",["any"],["web"],"reference",""],
-["Using ATT&CK to Advance CTI","https://medium.com/mitre-attack/using-att-ck-to-advance-cyber-threat-intelligence-part-1-c5ad14d59724","How to map narrative threat reporting to ATT&CK techniques and produce comparable intelligence from unstructured sources.","free",["any"],["web"],"reference",""]
+["Using ATT&CK to Advance CTI","https://medium.com/mitre-attack/using-att-ck-to-advance-cyber-threat-intelligence-part-1-c5ad14d59724","How to map narrative threat reporting to ATT&CK techniques and produce comparable intelligence from unstructured sources.","free",["any"],["web"],"reference",""],
+["Reverse-Engineering Malware: A Methodology","https://zeltser.com/reverse-engineering-malware-methodology","The 2001 paper that systematised the malware analysis process and became the basis of the SANS FOR610 course. Worth reading as the origin of the behavioural-then-static-then-dynamic order most analysts still follow.","free",["any"],["web"],"reference","web"]
 ]],
 ["Awesome Lists & Collections",[
 ["Didier Stevens: My Software","https://blog.didierstevens.com/my-software/","Cross-referenced index of every tool he has published with links to the explaining blog posts. Covers the dump family (zipdump, rtfdump, emldump, base64dump), Cobalt Strike tools, 1768.py and much more.","oss",["any"],["web"],"tool","web cli"],
@@ -2136,7 +2148,8 @@ const T=[
 ["s0cm0nkey's Security Reference Guide","https://s0cm0nkey.gitbook.io/s0cm0nkeys-security-reference-guide","An enormous linked reference spanning every security discipline, heavily annotated with why each tool matters. Excellent for discovering tooling outside your usual area.","free",["any"],["web"],"reference",""],
 ["DFIRDetective Start.Me Pages","https://start.me/u/aLm6jm/dfirdetective","Another practitioner's curated DFIR bookmark collection, organised differently to Kevin's. Worth checking when something is missing from the usual indexes.","free",["any"],["web"],"reference",""],
 ["Digital Forensics Guide","https://github.com/mikeroyal/Digital-Forensics-Guide","Broad guide covering forensic concepts, tooling and learning paths across disciplines, useful for orienting someone new or filling a gap outside your usual area.","oss",["any"],["web"],"reference",""],
-["Security Reference Guide (source repo)","https://github.com/s0cm0nkey/Security-Reference-Guide","The Markdown source behind the GitBook. Worth having separately: you can clone it for offline use, grep the whole guide at once rather than paging through the web version, and read the commit history to see what changed and when. Same content, more usable when you are working without connectivity.","oss",["any"],["web"],"reference",""]
+["Security Reference Guide (source repo)","https://github.com/s0cm0nkey/Security-Reference-Guide","The Markdown source behind the GitBook. Worth having separately: you can clone it for offline use, grep the whole guide at once rather than paging through the web version, and read the commit history to see what changed and when. Same content, more usable when you are working without connectivity.","oss",["any"],["web"],"reference",""],
+["Zeltser Cheat Sheets","https://zeltser.com/cheat-sheets","Lenny Zeltser's full set of one-page checklists, spanning malware analysis, reverse engineering, log review, incident questioning, DDoS response and report writing, alongside sheets on technical writing and communicating with executives. Several are indexed individually here; this is the whole collection.","free",["any"],["web"],"reference","web"]
 ]],
 ["Utilities",[
 ["WalletSleuth","https://github.com/CH-CLARK/WalletSleuth","Identifies cryptocurrency addresses and transaction data left behind by wallet applications during a triage pass. Cryptocurrency involvement turns up across ransomware, fraud and money-laundering cases, and wallet artifacts are easy to miss if you are not specifically looking for them.","oss",["any"],["xplat"],"tool","cli"],
@@ -2268,7 +2281,9 @@ const T=[
 ["Learn Forensics (Forensic Lunch)","https://www.youtube.com/@LearnForensics","David Cowen's long-running show and teaching series, including guest interviews and extended walkthroughs of research and tooling.","free",["any"],["web"],"blog",""],
 ["Hexordia iLEAPP Walkthrough","https://www.hexordia.com/s/ILEAPP-Walkthrough.pdf","Step-by-step guide to iLEAPP: installation, running an iOS extraction, and interpreting the parsed artifact reports.","free",["ios"],["web"],"reference",""],
 ["Hexordia ALEAPP Walkthrough","https://www.hexordia.com/s/ALEAPP_Walkthrough_Final.pdf","Step-by-step guide to ALEAPP: installation, running an Android extraction, and interpreting the parsed reports.","free",["and"],["web"],"reference",""],
-["Hexordia RLEAPP Walkthrough","https://www.hexordia.com/s/RLEAPP_Walkthrough.pdf","Step-by-step guide to RLEAPP: processing ISP and provider warrant returns and reviewing the parsed output.","free",["ios","and"],["web"],"reference",""]
+["Hexordia RLEAPP Walkthrough","https://www.hexordia.com/s/RLEAPP_Walkthrough.pdf","Step-by-step guide to RLEAPP: processing ISP and provider warrant returns and reviewing the parsed output.","free",["ios","and"],["web"],"reference",""],
+["How to Keep Your Cool and Write Powerful Incident Response Reports","https://zeltser.com/good-incident-reports","RSA Conference talk on the frameworks and checklists that hold a report together while the incident is still chaotic. Pairs with the report templates and the reporting cheat sheets indexed here.","free",["any"],["web"],"reference","web"],
+["Writing Effective Threat Reports","https://zeltser.com/write-better-threat-reports","SANS Summit talk on writing threat reports for a mixed audience, where the same findings have to serve analysts, responders and executives at once.","free",["any"],["web"],"reference","web"]
 ]],
 ["Training & CTFs",[
 ["KC7 Cyber","https://kc7cyber.com/","Free gamified cybersecurity training platform where participants act as digital detectives investigating simulated attacks against realistic-looking organisations. Uses real-world log formats and KQL queries. No prior experience required — good for onboarding analysts new to threat hunting.","free",["any"],["web"],"training",""],
@@ -2288,7 +2303,9 @@ const T=[
 ["The DFIR Report Labs","https://thedfirreport.com/services/dfir-labs/","Hands-on labs built from the real intrusion data behind their public reports. Practising against genuine attacker activity rather than synthetic scenarios is the differentiator.","com",["any"],["web"],"training",""],
 ["Cellebrite CTF","https://cellebrite.com/en/ctf/","Annual mobile-focused capture the flag whose images remain publicly useful afterwards. The community write-ups afterwards are a substantial learning resource in their own right.","free",["any"],["web"],"training",""],
 ["13Cubed","https://www.youtube.com/@13Cubed","Richard Davis' video series covering Windows artifacts, memory and network forensics with unusual clarity and rigour. Consistently accurate and well produced.","free",["any"],["web"],"training",""],
-["DFIR Diva","https://dfirdiva.com/","Curated listings of free and affordable training, written for people entering the field without an employer training budget.","free",["any"],["web"],"training",""]
+["DFIR Diva","https://dfirdiva.com/","Curated listings of free and affordable training, written for people entering the field without an employer training budget.","free",["any"],["web"],"training",""],
+["SANS FOR610: Reverse-Engineering Malware","https://www.sans.org/cyber-security-courses/reverse-engineering-malware-malware-analysis-tools-techniques/","The long-running malware analysis course, written and still maintained by Lenny Zeltser. The index already carries its cheat sheets and poster; this is the course they come from.","com",["win"],["web"],"training","web"],
+["SANS: Cybersecurity Writing — Hack the Reader","https://www.sans.org/cyber-security-courses/cyber-security-writing-hack-the-reader/","Course on writing security content that gets acted on, aimed at the gap between doing the analysis and being understood. Relevant here because a forensic finding that nobody reads changes nothing.","com",["any"],["web"],"training","web"]
 ]],
 ["Distros & VMs",[
 ["Blacksmith","https://github.com/OTRF/Blacksmith","Builds small replica network environments and deploys applications into them for detection testing and research, from Open Threat Research Forge. Useful for standing up a repeatable lab to validate a hunting analytic or detection rule before trusting it in production.","oss",["win"],["win"],"tool","cli"],
@@ -2654,7 +2671,23 @@ const ALSO_IN={
  "Kaitai Struct":["Ciphers & Decoding","Artifact References"],
  "ImHex Pattern Library":["Disk & File System","Windows"],
  "Kaitai Struct Format Gallery":["Standards & Methodology"],
- "Win-FOR":["Workstation & General","Windows"]
+ "Win-FOR":["Workstation & General","Windows"],
+ "Malware Analysis and Reverse-Engineering Cheat Sheet":["Reverse Engineering & Debugging"],
+ "REMnux Usage Tips for Malware Analysis on Linux":["Distros & VMs","Linux"],
+ "Tips for Reverse-Engineering Malicious Code":["Malware Analysis & Sandboxes","Windows"],
+ "Critical Log Review Checklist for Security Incidents":["Logs & Data Processing","Event Logs"],
+ "Initial Security Incident Questionnaire for Responders":["Live Response","Reporting & Case Management"],
+ "Network DDoS Incident Response Cheat Sheet":["Command References & Playbooks"],
+ "Tips for Creating a Strong Cybersecurity Assessment Report":["Standards & Methodology"],
+ "Zeltser Cheat Sheets":["Command References & Playbooks"],
+ "Zeltser Malware Analysis Report Template":["Malware Analysis & Sandboxes"],
+ "Cyber Briefing Templates for Decision Makers":["Standards & Methodology"],
+ "REMnux MCP Server":["Distros & VMs","Linux"],
+ "Reverse-Engineering Malware: A Methodology":["Reverse Engineering & Debugging","Malware Analysis & Sandboxes"],
+ "SANS FOR610: Reverse-Engineering Malware":["Malware Analysis & Sandboxes","Reverse Engineering & Debugging"],
+ "SANS: Cybersecurity Writing — Hack the Reader":["Reporting & Case Management"],
+ "How to Keep Your Cool and Write Powerful Incident Response Reports":["Reporting & Case Management"],
+ "Writing Effective Threat Reports":["Reporting & Case Management","Threat Intel & Reputation Lookups"]
 };
 const ACCENT={};
 GROUPS.forEach(([label,list],i)=>list.forEach(c=>ACCENT[c]="var(--g"+(i+1)+")"));
