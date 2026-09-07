@@ -9,24 +9,24 @@
 <meta name="author" content="dfir-rick">
 <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-<meta name="description" content="DFIR Toolkit — a curated, searchable index of 998 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
+<meta name="description" content="DFIR Toolkit — a curated, searchable index of 1,007 digital forensics and incident response tools, resources and references. Curated by dfir-rick.">
 <title>DFIR Toolkit — Digital Forensics &amp; Incident Response</title>
 
 <!-- Open Graph / LinkedIn / Facebook preview card -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dfir-toolkit.github.io/">
 <meta property="og:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta property="og:description" content="A curated, searchable index of 998 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
+<meta property="og:description" content="A curated, searchable index of 1,007 digital forensics and incident response tools, references and research. Free, no login, updated continuously.">
 <meta property="og:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DFIR Toolkit — 998 tools indexed across 43 categories">
+<meta property="og:image:alt" content="DFIR Toolkit — 1,007 tools indexed across 43 categories">
 <meta property="og:site_name" content="DFIR Toolkit">
 
 <!-- Twitter/X card (falls back to the same og:image) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DFIR Toolkit — Digital Forensics &amp; Incident Response">
-<meta name="twitter:description" content="A curated, searchable index of 998 digital forensics and incident response tools, references and research.">
+<meta name="twitter:description" content="A curated, searchable index of 1,007 digital forensics and incident response tools, references and research.">
 <meta name="twitter:image" content="https://dfir-toolkit.github.io/og-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1202,7 +1202,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <dt><a href="https://www.sans.org/posters/" data-ext="1" target="_blank" rel="noopener">SANS</a>, <a href="https://www.cisa.gov/" data-ext="1" target="_blank" rel="noopener">CISA</a> &amp; <a href="https://www.nist.gov/" data-ext="1" target="_blank" rel="noopener">NIST</a></dt>
     <dd>Posters, playbooks, reference data and the standards this field is measured against.</dd>
   </dl>
-  <p class="cnote">And to every author of the <span id="creditsCount">998</span> tools listed here. Each remains the property of its
+  <p class="cnote">And to every author of the <span id="creditsCount">1007</span> tools listed here. Each remains the property of its
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
@@ -1401,7 +1401,9 @@ const T=[
 ["MFTExplorer","https://ericzimmerman.github.io/","GUI for exploring the $MFT as a live folder tree, letting you click through directories and inspect individual file records with all attributes decoded.","free",["win"],["win"],"tool","gui"],
 ["RustyUsn","https://github.com/forensicmatt/RustyUsn","Fast Rust parser for the NTFS USN journal, built for very large journals where Python parsers become impractical.","oss",["win"],["xplat"],"tool","cli"],
 ["INDXParse","https://github.com/williballenthin/INDXParse","Willi Ballenthin's suite for inspecting NTFS INDX records, recovering entries for files deleted from a directory but still present in slack within the index.","oss",["win"],["xplat"],"tool","gui"],
-["Usnjrnl Rewind","https://github.com/CyberCX-DFIR/usnjrnl_rewind","CyberCX script that rewinds the USN journal to rebuild the true full path of every entry, eliminating the Unknown paths that MFTECmd leaves when parent records were reused.","oss",["win"],["win"],"tool","cli"]
+["Usnjrnl Rewind","https://github.com/CyberCX-DFIR/usnjrnl_rewind","CyberCX script that rewinds the USN journal to rebuild the true full path of every entry, eliminating the Unknown paths that MFTECmd leaves when parent records were reused.","oss",["win"],["win"],"tool","cli"],
+["Hex Fiend","https://github.com/HexFiend/HexFiend","macOS hex editor that inserts, deletes and rearranges rather than only overwriting in place, and works on files far larger than RAM — tested past 118 GB, with nothing held in memory. Includes a data inspector that reads a selection as signed or unsigned integer or float in either endianness, binary templates for mapping structure, and a binary diff that accounts for insertions.","oss",["any"],["mac"],"tool","gui"],
+["GNU poke","https://www.jemarch.net/poke","Extensible editor for structured binary data, built around its own domain-specific language for describing formats. Where a hex editor shows bytes, poke lets you define what those bytes mean and then read and edit through that definition.","oss",["any"],["nix","mac"],"tool","cli"]
 ]],
 ["Windows",[
 ["ArtifactExtractor","https://github.com/Silv3rHorn/ArtifactExtractor","Extracts common Windows artifacts from forensic images and volume shadow copies, hashing artifacts in each VSC so only versions that differ from a later copy are pulled. Saves the manual work of mounting each shadow copy in turn.","oss",["win"],["win"],"tool","cli"],
@@ -1644,7 +1646,7 @@ const T=[
 ["Smap","https://github.com/s0md3v/Smap","Drop-in Nmap replacement that queries Shodan's data instead of scanning, giving port and service information without touching the target.","oss",["net"],["xplat"],"tool","cli"],
 ["dirsearch","https://github.com/maurosoria/dirsearch","Web path discovery tool for enumerating directories and files on a web server, useful when reconstructing what an attacker probed or what was exposed.","oss",["net"],["web"],"tool","web"],
 ["Feroxbuster","https://github.com/epi052/feroxbuster","Fast recursive content discovery tool for web servers, written in Rust with sensible defaults for deep enumeration.","oss",["net"],["xplat"],"tool","cli"],
-["SO-CRATES","https://github.com/dougburks/so-crates","Security Onion Containerized Rapid Analysis of Threats, Evil, and Sus. Spins up containerised Security Onion analysis for fast triage of a capture without standing up the full platform.","oss",["net"],["nix"],"tool","cli"],
+["SO-CRATES","https://github.com/dougburks/so-crates","Security Onion Containerized Rapid Analysis of Threats, Evil, and Sus. Standalone web application that takes a pcap, a log file or a binary and analyses it in place: Suricata for network traffic, YARA against binaries, Sigma rules over logs, with one page for browsing the resulting alerts, metadata, transcripts and hexdumps. Runs under Docker or Podman, so a capture gets triaged without standing up the full platform.","oss",["any"],["nix"],"tool","web"],
 ["Wireshark","https://www.wireshark.org/","The reference packet analyser, with dissectors for thousands of protocols. Follow streams, export objects, and build display filters that isolate exactly the traffic in question. tshark handles the same work on captures too large for the GUI.","oss",["net"],["xplat"],"tool","gui"],
 ["tcpdump","https://www.tcpdump.org/","Portable libpcap capture tool present on nearly every Unix system. When you need packets from a server right now with nothing installed, this is what is already there.","oss",["net"],["nix"],"tool","cli"],
 ["NetworkMiner","https://www.netresec.com/?page=NetworkMiner","Passive analysis tool that reorganises a capture by host rather than by packet, extracting transferred files, images, credentials and certificates automatically. Often answers what was taken faster than filtering packets by hand.","free",["net"],["win"],"tool","gui"],
@@ -1823,7 +1825,10 @@ const T=[
 ["Rumkin Cipher Tools","https://rumkin.com/tools/cipher/","Long-standing collection of classical cipher encoders and decoders, still the quickest option for the traditional schemes.","free",["any"],["web"],"tool","web"],
 ["StegOnline","https://georgeom.net/StegOnline/","Browser tool for exploring bit planes, extracting LSB data and inspecting image structure. Practical for steganography questions and for CTF-style challenges.","oss",["any"],["web"],"tool","web gui"],
 ["zsteg","https://github.com/zed-0xff/zsteg","Detects LSB steganography and hidden data in PNG and BMP files, testing many bit-order and channel combinations automatically rather than requiring you to guess.","oss",["any"],["nix","mac"],"tool","cli"],
-["Aletheia","https://github.com/daniellerch/aletheia","Steganalysis by machine learning rather than signature — detects F5, Steghide, Outguess, nsF5, J-UNIWARD, LSB replacement and matching, and adaptive schemes in JPEG and uncompressed images, reporting a probability per method with a confidence figure. Answers whether a picture is carrying a payload, which the stego extraction tools cannot.","oss",["any"],["xplat"],"tool","cli"]
+["Aletheia","https://github.com/daniellerch/aletheia","Steganalysis by machine learning rather than signature — detects F5, Steghide, Outguess, nsF5, J-UNIWARD, LSB replacement and matching, and adaptive schemes in JPEG and uncompressed images, reporting a probability per method with a confidence figure. Answers whether a picture is carrying a payload, which the stego extraction tools cannot.","oss",["any"],["xplat"],"tool","cli"],
+["fq","https://github.com/wader/fq","jq for binary formats: a structural hex viewer with a query language, so you interrogate bytes instead of counting them by eye. Decodes nested formats down to bit level and slices binary data, covering bplist, apple_bookmark, protobuf, leveldb, pcap, mach-o, elf and around 150 others. The interactive REPL makes it a good way to learn how a format is actually laid out.","oss",["any"],["xplat"],"tool","cli"],
+["hexyl","https://github.com/sharkdp/hexyl","Terminal hex viewer that colours bytes by category — nulls, printable ASCII, whitespace, other ASCII, non-ASCII — so structure and padding are visible at a glance rather than inferred from a wall of digits. Packaged for most distributions, macOS and Windows.","oss",["any"],["xplat"],"tool","cli"],
+["xxd","https://man7.org/linux/man-pages/man1/xxd.1.html","Makes a hex dump, and reverses one back into binary — the second half being what turns it into a patching tool. Ships with vim, so it is present on almost any Linux or macOS host without installing anything.","oss",["any"],["nix","mac"],"tool","cli"]
 ]],
 ["Malware Analysis & Sandboxes",[
 ["Valhalla","https://valhalla.nextron-systems.com/","Nextron's curated, quality-tested YARA rule feed — the rule source behind their THOR and LOKI scanners, with a free public tier searchable by hash, filename or rule name. Useful independent of Nextron's own tools: check a hash or sample against Valhalla's rule set even if you are running a different YARA-based scanner.","free",["any"],["web"],"intel",""],
@@ -1888,7 +1893,8 @@ const T=[
 ["Apktool","https://apktool.org/","Decodes an APK back to near-original form — resources to readable XML, AndroidManifest.xml out of binary encoding, code to smali — then rebuilds and resigns it. The first step in almost any APK examination, since a packaged manifest tells you nothing until it is decoded.","oss",["and"],["xplat"],"tool","cli"],
 ["Androguard","https://github.com/androguard/androguard","Python library and CLI for dissecting APK, DEX and ODEX: permissions, activities, receivers, certificates, strings, and call graphs you can query programmatically. The engine several other Android analysis tools are built on, and the right choice when you need to script across a corpus of apps rather than examine one.","oss",["and"],["xplat"],"tool","cli"],
 ["MobSF (Mobile Security Framework)","https://github.com/MobSF/Mobile-Security-Framework-MobSF","Static and dynamic analysis of mobile app binaries — APK, IPA, APPX and source — through a web UI: permissions, hardcoded secrets, certificate details, trackers, network calls, and an instrumented runtime for Android and iOS. Runs in Docker, so a suspect app can be examined without installing an analysis stack on the host.","oss",["and","ios"],["xplat"],"tool","gui web"],
-["objection","https://github.com/sensepost/objection","Frida-powered runtime exploration of a mobile app without jailbreaking or rooting: browse the app sandbox, dump keychain and shared preferences, inspect classes and invoke methods on a live process. Useful when an app holds evidence only in memory or decrypts it on demand.","oss",["and","ios"],["xplat"],"tool","cli"]
+["objection","https://github.com/sensepost/objection","Frida-powered runtime exploration of a mobile app without jailbreaking or rooting: browse the app sandbox, dump keychain and shared preferences, inspect classes and invoke methods on a live process. Useful when an app holds evidence only in memory or decrypts it on demand.","oss",["and","ios"],["xplat"],"tool","cli"],
+["Kaitai Struct","https://kaitai.io/","Declarative language for describing binary formats, which then compiles into parsing code for a dozen languages — describe a structure once instead of writing a parser per language. The web IDE parses a file against a definition and shows the hex alongside the resolved tree, which is a fast way to work out an undocumented format.","oss",["any"],["xplat","web"],"tool","gui cli"]
 ]],
 ["Ransomware",[
 ["ID Ransomware","https://id-ransomware.malwarehunterteam.com/","Identifies which ransomware family hit you from a ransom note, a sample encrypted file, or the attacker contact details. Covers 1,000+ families. The first thing to run, because family identification determines whether a free decryptor exists.","free",["any"],["web"],"tool","web"],
@@ -2092,7 +2098,9 @@ const T=[
 ["Object by Object — RealmDB Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/object-by-object-realmdb-forensics-with.html","Realm internals for examiners: how the header, schema and class definitions are laid out, how top-ref comparison exposes earlier states of the database, and what that means when an app stores its data in Realm rather than SQLite.","free",["any"],["web"],"reference",""],
 ["Reading the CURRENT — LevelDB Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/reading-current-leveldb-forensics-with.html","LevelDB is a folder, not a file — .log and .ldb files alongside MANIFEST, CURRENT and LOG — which is why tools built around single-file signatures walk straight past it. Covers tombstones, compaction and what survives deletion in Chrome, Electron apps, iOS and Android.","free",["any"],["web"],"reference",""],
 ["Beyond the C — SEGB and Biome Forensics with crush","https://bebinary4n6.blogspot.com/2026/05/beyond-c-segb-and-biome-forensics-with.html","SEGB v1 and v2 structure, the trailer section iOS 17 added, and how Apple Biome records decode once the protobuf payloads are unpacked — including the nested and repeated fields most viewers flatten or drop.","free",["ios","mac"],["web"],"reference",""],
-["Reading Protobuf Wire Format Without a Map","https://bebinary4n6.blogspot.com/2026/06/reading-wire-protobuf-without-map.html","How to read protobuf when you have no .proto schema: field numbers, wire types, and what can and cannot be recovered from the bytes alone. The reference for every BLOB in a mobile database that turns out to be protobuf.","free",["any"],["web"],"reference",""]
+["Reading Protobuf Wire Format Without a Map","https://bebinary4n6.blogspot.com/2026/06/reading-wire-protobuf-without-map.html","How to read protobuf when you have no .proto schema: field numbers, wire types, and what can and cannot be recovered from the bytes alone. The reference for every BLOB in a mobile database that turns out to be protobuf.","free",["any"],["web"],"reference",""],
+["ImHex Pattern Library","https://github.com/WerWolv/ImHex-Patterns","Community database of format definitions for ImHex, including a DFIR set: NTFS, exFAT and FAT32 with a recursive disk and volume parser, plus $I Recycle Bin records, prefetch, Shell Link (.lnk), EVTX, thumbcache, the shim database and Notepad cache and state files. Load one and the raw bytes resolve into named fields, which is the fastest way to see how an artifact is really built. Also ships custom character encodings including EBCDIC and Shift-JIS.","oss",["any"],["xplat"],"tool","gui"],
+["Kaitai Struct Format Gallery","https://formats.kaitai.io/","Machine-readable specifications for a few hundred file formats and network protocols, each with the field layout, types and offsets. Useful as documentation even when you never run the compiler: it answers what byte 8 of a header means.","oss",["any"],["web"],"reading","web"]
 ]],
 ["Standards & Methodology",[
 ["Blue Team Handbook: Incident Response Edition","https://www.amazon.com/Blue-Team-Handbook-Incident-Response/dp/1500734756","Don Murdoch's zero-fluff field reference for incident responders covering the IR process, attacker methodology, common tools, network analysis methodology, IOC identification, Windows and Linux analysis, tcpdump and Snort usage. Designed to sit on the desk during an active incident.","com",["any"],["web"],"reference",""],
@@ -2299,7 +2307,8 @@ const T=[
 ["CAINE","https://www.caine-live.net/","Italian live forensic distribution with write-blocking enabled by default and a coherent GUI over the underlying tools. Popular for on-scene work where booting the suspect machine is unavoidable.","oss",["any"],["nix"],"tool","gui cli"],
 ["Tsurugi Linux","https://tsurugi-linux.org/","DFIR and OSINT distribution shipping in lab, acquisition and bento editions. Includes tooling other distributions omit, particularly for OSINT and malware analysis.","free",["any"],["nix"],"tool","gui cli"],
 ["Kali Linux","https://www.kali.org/","Primarily an offensive security distribution, but its forensic boot mode disables swap and auto-mounting for safe examination, and it carries a substantial forensic tool set.","oss",["any"],["nix"],"tool","gui cli"],
-["FLARE VM","https://github.com/mandiant/flare-vm","Mandiant's install script that converts a clean Windows VM into a fully equipped malware analysis workstation. Package-based, so you can update the toolset without rebuilding the machine.","oss",["any"],["win"],"tool","cli"]
+["FLARE VM","https://github.com/mandiant/flare-vm","Mandiant's install script that converts a clean Windows VM into a fully equipped malware analysis workstation. Package-based, so you can update the toolset without rebuilding the machine.","oss",["any"],["win"],"tool","cli"],
+["Win-FOR","https://github.com/digitalsleuth/WIN-FOR","Turns a bare Windows 11 VM into a forensic workstation through a graphical installer: tick the tools you want rather than taking all of them, and optionally install WSLv2 with SIFT, REMnux, Kali or all three alongside. Selections save to a SaltStack state file, so a lab build is reproducible and documented rather than remembered. An offline mode downloads the packages first for transfer to an air-gapped machine.","oss",["any"],["win"],"tool","gui"]
 ]],
 ["Test Images & Datasets",[
 ["DFIR Artifact Museum","https://github.com/AndrewRathbun/DFIRArtifactMuseum","Community archive of real artifacts collected from many operating system versions and sorted by type, so a parser can be written or validated against known data without generating it first. Useful for tool validation and for seeing what an artifact looks like on a platform you do not run.","oss",["win","mac","nix","ios","and"],["xplat"],"reference",""],
@@ -2370,7 +2379,17 @@ const CAPS = {
  "Hayabusa":"evtx event logs sigma detection rules timeline windows",
  "Zircolite":"evtx event logs sigma detection rules auditd",
  "KStrike":"user access logging ual windows server",
- "Timesketch":"plaso timeline supertimeline collaboration analysis"
+ "Timesketch":"plaso timeline supertimeline collaboration analysis",
+ "fq":"hex hexadecimal binary structure endianness bit offset byte order structural hex viewer bplist protobuf leveldb pcap",
+ "hexyl":"hex hexadecimal hex dump byte offset ascii null byte",
+ "xxd":"hex hexadecimal hex dump byte offset patching",
+ "Hex Fiend":"hex hexadecimal hex editor endianness big endian little endian data inspector binary template byte offset binary diff",
+ "GNU poke":"hex hexadecimal binary structure byte offset endianness",
+ "Kaitai Struct":"hex hexadecimal binary structure file format specification offset endianness magic byte file signature header",
+ "ImHex Pattern Library":"hex hexadecimal binary template pattern file signature magic byte header offset ntfs exfat fat32 prefetch lnk evtx thumbcache recycle bin shim database encoding ebcdic",
+ "Kaitai Struct Format Gallery":"hex hexadecimal file format specification header offset endianness magic byte file signature",
+ "Win-FOR":"forensic workstation lab build sift remnux kali wsl saltstack provisioning offline install",
+ "SO-CRATES":"pcap packet capture suricata yara sigma hexdump transcript alert triage"
 };
 
 /* Interface: GUI, command line, or runs in a browser. Not a field in the data,
@@ -2450,6 +2469,13 @@ function buildItems(){
                                          : ifaceOf(n, d, runs, type, u, c);
     ITEMS.push({i:ID++, n, u, d, c, p, runs, cat, custom:!!isCustom,
       orig:orig||null, k:n+"|"+cat, type, caps, iface,
+      /* Per-field lowercase copies so relevance can tell WHERE a term matched,
+         not just whether it did. */
+      nl:n.toLowerCase(), dl:d.toLowerCase(), catl:cat.toLowerCase(),
+      /* The opening of a description is where a tool states its purpose, so a
+         term appearing there outranks the same term mentioned in passing. */
+      dl0:d.slice(0,90).toLowerCase(),
+      capl:(caps||"").toLowerCase(),
       hay:(n+" "+d+" "+cat+" "+p.map(x=>PLAT[x]).join(" ")+" "
            +runs.map(x=>HOST[x]).join(" ")+" "+COST[c][0]+" "+type+" "+caps+" "+[...iface].map(x=>IFACE[x]).join(" ")+" "+[...iface].join(" ")).toLowerCase()});
   };
@@ -2619,7 +2645,16 @@ const ALSO_IN={
  "objection":["Android","iOS"],
  "quark-engine":["Android","Reverse Engineering & Debugging"],
  "Linpmem":["Linux"],
- "Aletheia":["Image & Video"]
+ "Aletheia":["Image & Video"],
+ "fq":["Logs & Data Processing","Reverse Engineering & Debugging"],
+ "hexyl":["Linux"],
+ "xxd":["Linux","macOS"],
+ "Hex Fiend":["macOS"],
+ "GNU poke":["Linux"],
+ "Kaitai Struct":["Ciphers & Decoding","Artifact References"],
+ "ImHex Pattern Library":["Disk & File System","Windows"],
+ "Kaitai Struct Format Gallery":["Standards & Methodology"],
+ "Win-FOR":["Workstation & General","Windows"]
 };
 const ACCENT={};
 GROUPS.forEach(([label,list],i)=>list.forEach(c=>ACCENT[c]="var(--g"+(i+1)+")"));
@@ -2982,8 +3017,19 @@ function extQuery(t){
 const esc4re=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 const hitShort=(hay,a)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(a)+"(?:[^a-z0-9]|$)").test(hay);
 const hitExt=(hay,a)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(a)+"s?(?:[^a-z0-9]|$)").test(hay);
-const hitPhrase=(hay,a)=>a.length<3?hitShort(hay,a)
-  :variants(a).some(v=>v.length>2&&hay.includes(v));
+/* The term as typed is matched as a substring, so "prefetch" still finds
+   WinPrefetchView. Generated stems are NOT: stemming "carving" yields "carv",
+   and a raw substring match on that hits "Harlan Carvey's", which put a registry
+   parser in the top tier of a carving search. Stems instead match on a word
+   boundary with a controlled set of inflectional endings, so "carv" reaches
+   carve, carved, carver and carving but never Carvey. */
+const STEM_SUF="(?:e|es|ed|s|ing|ings|er|ers|ion|ions)?";
+const hitStem=(hay,s)=>new RegExp("(?:^|[^a-z0-9])"+esc4re(s)+STEM_SUF+"(?:[^a-z0-9]|$)").test(hay);
+const hitPhrase=(hay,a)=>{
+  if(a.length<3) return hitShort(hay,a);
+  if(hay.includes(a)) return true;
+  return variants(a).slice(1).some(v=>v.length>2&&hitStem(hay,v));
+};
 function hit(hay,t){
   const ex=extQuery(t);
   /* Single-word mappings are boundary-matched for the same reason the bare token
@@ -3010,17 +3056,23 @@ function hl(text){
   const ts=terms(); let out=esc(text);
   if(!ts.length) return out;
   const esc2=x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-  const long=[...new Set(ts.flatMap(t=>variants(t).filter(v=>v.length>2)))]
+  /* Terms as typed highlight as plain substrings; generated stems get the same
+     bounded treatment hit() gives them, so a "carving" search does not mark
+     "Carv" inside "Carvey". */
+  const long=[...new Set(ts.filter(t=>t.length>2))]
     .sort((a,b)=>b.length-a.length).map(esc2);
+  const stems=[...new Set(ts.flatMap(t=>variants(t).slice(1).filter(v=>v.length>2)))]
+    .filter(v=>!long.includes(v)).sort((a,b)=>b.length-a.length).map(esc2);
   /* Short terms match on a word boundary in hit(), so highlight them the same
      way — an unbounded substring would mark the "ip" inside "script". Never let
      pats end up empty: new RegExp("()") matches at every position and wraps a
      <mark> around every character in the card. */
   const short=[...new Set(ts.filter(t=>t.length<3))].map(esc2);
   let re=null;
-  if(long.length||short.length){
+  if(long.length||short.length||stems.length){
     try{
-      const bounded=short.map(a=>"(?<![a-z0-9])"+a+"(?![a-z0-9])");
+      const bounded=short.map(a=>"(?<![a-z0-9])"+a+"(?![a-z0-9])")
+        .concat(stems.map(a=>"(?<![a-z0-9])"+a+STEM_SUF+"(?![a-z0-9])"));
       re=new RegExp("("+long.concat(bounded).join("|")+")","ig");
     }catch(e){ re=long.length?new RegExp("("+long.join("|")+")","ig"):null; }
   }
@@ -3070,11 +3122,41 @@ function capTags(it){
   if(!found.length) return "";
   return found.slice(0,3).map(t=>'<span class="tag cap" title="Handles this artifact — not named in the description above">\u25C6 '+esc(t)+'</span>').join("");
 }
+/* Relevance. A broad collection suite matches an artifact only through the
+   capability index — KAPE, FTK Imager and Autopsy never say "prefetch" in their
+   own description — while a dedicated parser names it outright. Weighting the
+   field a term matched in therefore separates the tool that answers the query
+   from the tool that merely bags the file, without needing a hand-maintained
+   list of which is which. Zero when nothing is typed, so browsing keeps its
+   normal order. */
+/* A tool sitting in the category named for the query is a stronger signal than
+   a suite that mentions the word once in passing, so catl outranks dl. */
+const FIELD_W=[["nl",100],["dl0",45],["catl",35],["dl",30],["capl",4]];
+function matchScore(it){
+  const gs=groups();
+  if(!gs.length) return 0;
+  let best=0;
+  for(const g of gs){
+    let sum=0, ok=true;
+    for(const t of g){
+      let w=0;
+      for(const fw of FIELD_W) if(hit(it[fw[0]],t)){ w=fw[1]; break; }
+      /* Matched only on platform, cost or interface metadata. */
+      if(!w) w = hit(it.hay,t) ? 1 : 0;
+      if(!w){ ok=false; break; }
+      sum+=w;
+    }
+    if(ok && sum>best) best=sum;
+  }
+  return best;
+}
+
 const visible=()=>ITEMS.filter(match);
 const pinnedItems=()=>[...state.pins].map(k=>ITEMS.find(x=>x.k===k)).filter(Boolean);
 
 function render(){
   const vis=visible(), R=$("#results");
+  syncSortLabel();
   /* A query runs across every entry, so a tool search drags in every blog
      post and cheat sheet that merely mentions the artifact. Tools answer the
      query; the reading material collapses underneath rather than disappearing,
@@ -3116,11 +3198,38 @@ function render(){
       });
     });
     const keys=new Set([...byCat.keys(),...xtra.keys()]);
-    const ordered=cats().filter(c=>keys.has(c)).map(c=>{
-      const own=(byCat.get(c)||[]).slice().sort(byName);
-      const alt=(xtra.get(c)||[]).slice().sort(byName);
+    /* While searching, order by relevance instead of taxonomy: strongest match
+       first within a category, and categories themselves ranked by their best
+       match, so searching an artifact leads with the tools built for it rather
+       than whichever category happens to come first in the taxonomy. Without a
+       query this is inert and the normal category order and A-Z hold. */
+    const ranked = !!state.q.trim();
+    const score=new Map();
+    const sc=it=>{ const k=it.k+"|"+(it.xref||""); if(!score.has(k)) score.set(k,matchScore(it)); return score.get(k); };
+    const byRank=(a,b)=>sc(b)-sc(a)||byName(a,b);
+    const cmp = ranked?byRank:byName;
+    let ordered=cats().filter(c=>keys.has(c)).map(c=>{
+      const own=(byCat.get(c)||[]).slice().sort(cmp);
+      const alt=(xtra.get(c)||[]).slice().sort(cmp);
       return [c,own.concat(alt)];
     });
+    /* Ordering categories by their single best match ties too easily — six
+       categories peaked at 45 for "carving", so taxonomy order decided it and
+       the category actually named "Recovery & Carving" came fourth. Rank by the
+       depth of strong matches (top three scores summed), and lift a category
+       whose own name answers the query above every category that merely
+       contains a match. */
+    if(ranked){
+      const gs=groups();
+      const nameMatch=c=>{ const cl=c.toLowerCase(); return gs.length&&gs.some(g=>g.every(t=>hit(cl,t))); };
+      ordered=ordered
+        .map(e=>{
+          const top=e[1].map(sc).sort((x,y)=>y-x).slice(0,3).reduce((x,y)=>x+y,0);
+          return [e[0],e[1],(nameMatch(e[0])?1000:0)+top];
+        })
+        .sort((a,b)=>b[2]-a[2])
+        .map(e=>[e[0],e[1]]);
+    }
     R.innerHTML=ordered.map(([cat,rows])=>`
       <section class="sec" id="${slug(cat)}" style="--acc:${accOf(cat)}">
         <div class="sechead"><span class="ico">${iconFor(cat)}</span><h3>${cat}</h3><span class="n">${rows.length}</span>
@@ -4131,10 +4240,21 @@ function setDense(v){
   state.dense=v; document.body.classList.toggle("list",v);
   $("#densityBtn").setAttribute("aria-pressed",v); saveState();
 }
-$("#sortBtn").onclick=e=>{
+/* While searching, the default order is relevance rather than taxonomy, so the
+   control has to say so — a button reading "Category" above a relevance-ordered
+   list is simply wrong. Driven from render() so it also tracks typing. */
+function syncSortLabel(){
+  const b=$("#sortBtn"); if(!b) return;
+  const searching=!!state.q.trim();
+  b.textContent = state.sort==="cat" ? (searching?"Sort: Relevance":"Sort: Category") : "Sort: A\u2013Z";
+  b.title = state.sort==="cat"
+    ? (searching ? "Best matches first, then by category. Click for one flat A\u2013Z list."
+                 : "Grouped by category, A\u2013Z within each. Click for one flat A\u2013Z list.")
+    : "One flat A\u2013Z list. Click to group by category.";
+}
+$("#sortBtn").onclick=()=>{
   state.sort = state.sort==="cat" ? "az" : "cat";
-  e.target.textContent = state.sort==="cat" ? "Sort: Category" : "Sort: A–Z";
-  render();
+  syncSortLabel(); render();
 };
 $("#expBtn").onclick=()=>copy(md(visible(),"DFIR Toolkit — selected tools"),
   `Copied ${visible().length} tools (full detail)`);
