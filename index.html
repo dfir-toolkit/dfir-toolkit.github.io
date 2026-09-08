@@ -458,8 +458,14 @@ footer a{color:var(--verd)}
 .help{position:fixed;inset:0;background:rgba(10,14,18,.6);display:none;
   align-items:center;justify-content:center;z-index:95;backdrop-filter:blur(2px)}
 .help.show{display:flex}
+/* The overlay centres with align-items:center, so anything taller than the
+   viewport overflows in both directions and the top is unreachable — no amount
+   of page scrolling brings back content above y=0. The panel therefore caps its
+   own height and scrolls internally. */
 .help-in{background:var(--panel);border:1px solid var(--rule);border-top:3px solid var(--tape);
   border-radius:var(--r);padding:24px 28px;max-width:440px;width:calc(100% - 40px);
+  max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);overflow-y:auto;
+  overscroll-behavior:contain;
   box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
 .help-in h3{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 104,"wght" 700;
   font-size:14px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 14px}
@@ -546,7 +552,7 @@ footer .privnote{color:var(--steel);font-size:12px;margin-top:10px}
   .list .crow{order:3;margin-left:0;width:100%;padding-top:6px}
 
   .pinned{padding:12px 13px}
-  .creditbox,.help-in{padding:20px 18px;max-height:86vh}
+  .creditbox,.help-in{padding:20px 18px;max-height:86vh;overflow-y:auto}
   footer{padding:20px 16px 60px}
   footer .in{gap:16px}
 }
@@ -802,7 +808,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <form class="op-search" id="opSearch" role="search">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
       <input id="opQ" type="search" autocomplete="off" spellcheck="false"
-             placeholder="Search the index &mdash; prefetch, APFS, memory, timeline">
+             placeholder="Search the index &mdash; prefetch, .evtx, memory -windows">
       <button type="submit" class="op-go">Search</button>
     </form>
     <div class="op-chips" id="opChips">
@@ -810,9 +816,9 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
       <button type="button" data-opq="prefetch">prefetch</button>
       <button type="button" data-opq="APFS">APFS</button>
       <button type="button" data-opq="memory">memory</button>
-      <button type="button" data-opq="event log">event log</button>
-      <button type="button" data-opq="timeline">timeline</button>
-      <button type="button" data-opq="ransomware">ransomware</button>
+      <button type="button" data-opq="&quot;event log&quot;">"event log"</button>
+      <button type="button" data-opq=".evtx">.evtx</button>
+      <button type="button" data-opq="memory -windows">memory -windows</button>
       <button type="button" data-opq="OSINT">OSINT</button>
     </div>
     <div class="op-stats">
@@ -862,7 +868,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
       <input id="q" type="search" autocomplete="off" spellcheck="false"
              role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"
-             placeholder="Search tools — prefetch, APFS  (comma = or, space = and)">
+             placeholder="Search tools — prefetch, .evtx, memory -windows  (? for syntax)">
       <span class="kbd">/</span>
       <div class="sugg" id="sugg" role="listbox" aria-label="Search suggestions"></div>
     </label>
@@ -886,7 +892,7 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
           <button class="mi" id="saveCopyBtn">Save copy of this page</button>
           <button class="mi" id="creditsBtn">Credits &amp; sources</button>
           <button class="mi" id="rndBtn">Show me a random tool</button>
-          <button class="mi" id="helpBtn">Keyboard shortcuts</button>
+          <button class="mi" id="helpBtn">Search syntax &amp; shortcuts</button>
         </div>
       </div>
     </div>
@@ -1206,7 +1212,16 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
   creator under its own licence. If your work is described wrongly, that is my error, not theirs.</p>
 </div></div>
 <div class="help" id="help"><div class="help-in">
-  <h3>Keyboard shortcuts</h3>
+  <h3>Search syntax</h3>
+  <dl>
+    <dt>windows memory</dt><dd>Both words must match</dd>
+    <dt>prefetch, APFS</dt><dd>Either one — comma means or</dd>
+    <dt>iOS or Android</dt><dd>Same thing, written out</dd>
+    <dt>"event log"</dt><dd>Quotes match the exact phrase</dd>
+    <dt>memory -windows</dt><dd>Minus excludes — anything mentioning Windows drops out</dd>
+    <dt>.evtx</dt><dd>File extensions work — .apk, $MFT, knowledgeC.db</dd>
+  </dl>
+  <h3 style="margin:20px 0 12px">Keyboard shortcuts</h3>
   <dl>
     <dt>/</dt><dd>Focus search</dd>
     <dt>↑ ↓</dt><dd>Move through results</dd>
@@ -1216,12 +1231,6 @@ body:has(#opening) .mast{box-shadow:none;border-bottom:none}
     <dt>r</dt><dd>Random tool — surprise me</dd>
     <dt>Esc</dt><dd>Clear search / close</dd>
     <dt>?</dt><dd>This panel</dd>
-  </dl>
-  <h3 style="margin:20px 0 12px">Search syntax</h3>
-  <dl>
-    <dt>windows memory</dt><dd>Both words must match</dd>
-    <dt>prefetch, APFS</dt><dd>Either one — comma means or</dd>
-    <dt>iOS or Android</dt><dd>Same thing, written out</dd>
   </dl>
 </div></div>
 <div class="help setsmodal" id="setsModal"><div class="help-in" id="setsModalIn">
@@ -2929,14 +2938,45 @@ function closeMenus(){
 /* Query grammar: commas (or " OR ") separate alternatives; spaces within an
    alternative all have to match. "prefetch, APFS" => either. "windows memory" => both. */
 const clean=t=>t.replace(/^[.;:!?()\[\]]+|[.;:!?()\[\]]+$/g,"");
-function groups(){
-  return state.q.toLowerCase()
-    .replace(/[\u201C\u201D\u2018\u2019"'`]/g," ")
-    .split(/\s*(?:,|\|+|\bor\b)\s*/)
-    .map(g=>g.split(/\s+/).map(clean).filter(Boolean))
-    .filter(g=>g.length);
+/* A term is {s, phrase, neg}. Quoting makes it a phrase, matched literally and
+   in order — "event log" then means the phrase, not "event" and "log" landing
+   anywhere in the entry. A leading minus excludes. Smart quotes count as quotes
+   because they are what a paste from a document carries. */
+function tokenize(str){
+  const out=[]; const re=/(-?)(?:["\u201C\u201D]([^"\u201C\u201D]*)["\u201C\u201D]?|(\S+))/g; let m;
+  while((m=re.exec(str))){
+    const neg=m[1]==="-";
+    if(m[2]!==undefined){
+      const s=m[2].trim().replace(/\s+/g," ");
+      if(s) out.push({s,phrase:true,neg});
+    } else {
+      const s=clean(m[3].replace(/['\u2018\u2019`]/g,""));
+      if(s) out.push({s,phrase:false,neg});
+    }
+  }
+  return out;
 }
-const terms=()=>groups().flat();
+function groups(){
+  /* Split on the alternation separators first, but only outside quotes, so a
+     phrase containing a comma survives. */
+  const q=state.q.toLowerCase();
+  const parts=[]; let buf="", inq=false;
+  for(let i=0;i<q.length;i++){
+    const ch=q[i];
+    if(ch==='"'||ch==="\u201C"||ch==="\u201D"){ inq=!inq; buf+='"'; continue; }
+    if(!inq){
+      if(ch===","||ch==="|"){ parts.push(buf); buf=""; continue; }
+      if(q.startsWith(" or ",i)){ parts.push(buf); buf=""; i+=3; continue; }
+    }
+    buf+=ch;
+  }
+  parts.push(buf);
+  return parts.map(tokenize).filter(g=>g.length);
+}
+/* Positive terms as plain strings, for highlighting, suggestions and the
+   analytics hook — none of which have any use for an exclusion. */
+const terms=()=>groups().flat().filter(t=>!t.neg).map(t=>t.s);
+const hitTok=(hay,t)=>t.phrase?hay.includes(t.s):hit(hay,t.s);
 /* Match a term against the haystack, tolerating simple singular/plural and
    -ing/-ed endings so "unified logs" still finds "unified logging". */
 function variants(t){
@@ -3083,7 +3123,9 @@ function match(it){
   if(state.iface.size && ![...state.iface].some(x=>it.iface.has(x))) return false;
   const gs=groups();
   if(!gs.length) return true;
-  return gs.some(g=>g.every(t=>hit(it.hay,t)));
+  /* A negated term inverts its own test, so a group of nothing but exclusions
+     still matches everything they do not name. */
+  return gs.some(g=>g.every(t=>t.neg?!hitTok(it.hay,t):hitTok(it.hay,t)));
 }
 function hl(text){
   const ts=terms(); let out=esc(text);
@@ -3165,6 +3207,70 @@ function capTags(it){
 /* A tool sitting in the category named for the query is a stronger signal than
    a suite that mentions the word once in passing, so catl outranks dl. */
 const FIELD_W=[["nl",100],["dl0",45],["catl",35],["dl",30],["capl",4]];
+/* Nearest indexed terms for a query that found nothing. Damerau-style edit
+   distance with an early bail: the vocabulary is small enough to scan, and a
+   candidate more than two edits away is not a plausible typo. Transposition is
+   counted as one edit because it is the commonest kind — "prefecth", "volatilty",
+   "regripepr". Only the unmatched terms are looked up, so "windows blahblah"
+   suggests a fix for the second word and not the first. */
+function editDist(a,b,max){
+  if(Math.abs(a.length-b.length)>max) return max+1;
+  let prev2=[], prev=[], cur=[];
+  for(let j=0;j<=b.length;j++) prev[j]=j;
+  for(let i=1;i<=a.length;i++){
+    cur=[i]; let rowMin=i;
+    for(let j=1;j<=b.length;j++){
+      const cost=a[i-1]===b[j-1]?0:1;
+      let d=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+cost);
+      if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1]) d=Math.min(d, prev2[j-2]+1);
+      cur[j]=d; if(d<rowMin) rowMin=d;
+    }
+    if(rowMin>max) return max+1;
+    prev2=prev; prev=cur;
+  }
+  return prev[b.length];
+}
+let DYM_VOCAB=null;
+function dymVocab(){
+  if(DYM_VOCAB) return DYM_VOCAB;
+  const s=new Set();
+  VOCAB.forEach(v=>s.add(v));
+  Object.keys(ALIASES).forEach(v=>s.add(v));
+  Object.keys(EXT).forEach(v=>s.add(v));
+  cats().forEach(c=>s.add(c.toLowerCase()));
+  /* Tool names split into words, so "volatilty" reaches Volatility 3 without
+     needing the version number typed. */
+  ITEMS.forEach(i=>{
+    const n=i.n.toLowerCase();
+    s.add(n);
+    n.split(/[^a-z0-9.+#-]+/).forEach(w=>{ if(w.length>3) s.add(w); });
+  });
+  DYM_VOCAB=[...s].filter(v=>v.length>2);
+  return DYM_VOCAB;
+}
+function didYouMean(){
+  const ts=[...new Set(terms())].filter(t=>t.length>2);
+  if(!ts.length) return [];
+  /* Only terms that found nothing are worth correcting. When every term has
+     hits the result list is empty because of a filter, not a typo, and offering
+     "plaso → plan" there is worse than offering nothing. */
+  const dead=ts.filter(t=>!ITEMS.some(i=>hit(i.hay,t)));
+  const out=[];
+  for(const t of dead){
+    const max=t.length<=4?1:2;
+    let best=null;
+    for(const v of dymVocab()){
+      if(v===t) continue;
+      const d=editDist(t,v,max);
+      if(d>max) continue;
+      const n=ITEMS.filter(i=>hit(i.hay,v)).length;
+      if(!n) continue;
+      if(!best||d<best.d||(d===best.d&&n>best.n)) best={v,d,n};
+    }
+    if(best) out.push({from:t,to:best.v,n:best.n});
+  }
+  return out.slice(0,3);
+}
 function matchScore(it){
   const gs=groups();
   if(!gs.length) return 0;
@@ -3172,10 +3278,13 @@ function matchScore(it){
   for(const g of gs){
     let sum=0, ok=true;
     for(const t of g){
+      /* An exclusion decides whether the entry appears at all; it contributes
+         nothing to how well the entry answers the query. */
+      if(t.neg){ if(hitTok(it.hay,t)){ ok=false; break; } continue; }
       let w=0;
-      for(const fw of FIELD_W) if(hit(it[fw[0]],t)){ w=fw[1]; break; }
+      for(const fw of FIELD_W) if(hitTok(it[fw[0]],t)){ w=fw[1]; break; }
       /* Matched only on platform, cost or interface metadata. */
-      if(!w) w = hit(it.hay,t) ? 1 : 0;
+      if(!w) w = hitTok(it.hay,t) ? 1 : 0;
       if(!w){ ok=false; break; }
       sum+=w;
     }
@@ -3203,10 +3312,18 @@ function render(){
     R.innerHTML=`<div class="empty"><strong>Nothing pinned to "${esc(activeSet)}" yet</strong>
       Click the \u25C7 on any card to add it to this set. It becomes \u25C6 once pinned here.</div>`;
   } else if(!vis.length){
+    /* Offer the nearest indexed terms before the generic examples: a dead query
+       is usually a near miss, and a list of unrelated suggestions is no more
+       use than no suggestion at all. */
+    const dym=didYouMean();
     R.innerHTML=`<div class="empty"><strong>No tools match</strong>
-      Loosen a filter or try a broader term — the index searches descriptions, artifacts and formats, not just names.
-      <div class="egs">${["prefetch","APFS","beacon","steganography","memory","timeline","RDP","SQLite"]
-        .map(t=>`<button class="f" data-eg="${t}">${t}</button>`).join("")}</div></div>`;
+      ${dym.length
+        ? `Did you mean ${dym.map(d=>`<em>${esc(d.to)}</em>`).join(" or ")}?`
+        : "Loosen a filter or try a broader term — the index searches descriptions, artifacts and formats, not just names."}
+      <div class="egs">${(dym.length
+        ? dym.map(d=>`<button class="f" data-eg="${esc(d.to)}">${esc(d.to)} <span class="cnt">${d.n}</span></button>`)
+        : ["prefetch","APFS","beacon","steganography","memory","timeline","RDP","SQLite"]
+            .map(t=>`<button class="f" data-eg="${t}">${t}</button>`)).join("")}</div></div>`;
   } else if(grouping && !main.length){
     R.innerHTML=`<div class="empty"><strong>No tools match &mdash; but ${reading.length} in the reading</strong>
       Nothing in the tool index matches that term. The references, blogs and feeds below mention it.</div>`;
@@ -3254,7 +3371,7 @@ function render(){
        contains a match. */
     if(ranked){
       const gs=groups();
-      const nameMatch=c=>{ const cl=c.toLowerCase(); return gs.length&&gs.some(g=>g.every(t=>hit(cl,t))); };
+      const nameMatch=c=>{ const cl=c.toLowerCase(); return gs.length&&gs.some(g=>g.every(t=>t.neg?!hitTok(cl,t):hitTok(cl,t))); };
       ordered=ordered
         .map(e=>{
           const top=e[1].map(sc).sort((x,y)=>y-x).slice(0,3).reduce((x,y)=>x+y,0);
@@ -3361,7 +3478,7 @@ function render(){
   state.sel=-1;
 }
 function setPlaceholder(){
-  $("#q").placeholder=`Search ${ITEMS.length} tools \u2014 prefetch, APFS  (comma = or, space = and)`;
+  $("#q").placeholder=`Search ${ITEMS.length} tools \u2014 prefetch, .evtx, memory -windows`;
 }
 
 /* Simple line icons, one per category. Stroke inherits the group accent. */
