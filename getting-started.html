@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A student's guide to incident response: the investigation lifecycle, the tools used at each stage, and where to learn more.">
+<title>Getting Started — DFIR Toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#14171B; --panel:#1D2228; --sunk:#181C21;
+  --ink:#E6E4DE; --ink-soft:#B6B9B4; --steel:#8A8F8B;
+  --rule:#2E343A; --rule-soft:#252A30;
+  --slate:#0E1114; --tape:#E3B168; --verd:#63B3A5;
+  --shadow-sm:0 1px 1px rgba(0,0,0,.35), 0 2px 6px -3px rgba(0,0,0,.5);
+  --shadow-md:0 2px 3px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.85);
+  --r:6px;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.55}
+a{color:var(--tape);text-decoration:none}
+a:hover{color:#F0C685;text-decoration:underline}
+.mast{background:linear-gradient(165deg,#1E262F 0%, var(--slate) 55%, #0D1116 100%);
+  color:#EDEFEA;border-bottom:1px solid rgba(255,255,255,.06);box-shadow:inset 0 -3px 0 var(--tape)}
+.mast-in{max-width:900px;margin:0 auto;padding:22px 28px 20px}
+.mast h1{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 110,"wght" 750;
+  font-size:23px;letter-spacing:.045em;text-transform:uppercase;margin:0}
+.mast .back{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;
+  color:#8E99A1;text-transform:uppercase}
+.mast .back:hover{color:var(--tape)}
+.mast .sub{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;
+  color:#8E99A1;margin:8px 0 0}
+main{max-width:900px;margin:0 auto;padding:32px 28px 60px}
+.intro{color:var(--ink-soft);max-width:64ch;margin:0 0 32px}
+.stage{margin-bottom:36px}
+.stage h2{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 105,"wght" 700;
+  font-size:19px;margin:0 0 4px;display:flex;align-items:baseline;gap:10px}
+.stage h2 .n{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--tape);
+  border:1px solid var(--tape);border-radius:3px;padding:1px 6px}
+.stage .why{color:var(--steel);font-size:13px;margin:0 0 14px}
+.stage .learn{font-size:13px;margin:0 0 14px;padding:8px 12px;background:var(--sunk);
+  border-radius:var(--r);border:1px solid var(--rule)}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.tool{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);
+  padding:12px 14px;box-shadow:var(--shadow-sm)}
+.tool h3{font-size:14.5px;margin:0 0 4px}
+.tool h3 a{color:var(--ink)}
+.tool h3 a:hover{color:var(--tape)}
+.tool p{font-size:13px;color:var(--ink-soft);margin:0}
+.phases{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px}
+.phase{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;
+  color:var(--ink-soft);background:var(--sunk);border:1px solid var(--rule);
+  border-radius:3px;padding:5px 10px}
+.further{background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);
+  padding:16px 18px;margin-top:8px}
+.further h2{font-size:16px;margin:0 0 10px}
+.further ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft)}
+.further li{margin-bottom:6px}
+footer{max-width:900px;margin:0 auto;padding:0 28px 50px;font-size:13px;color:var(--steel)}
+</style>
+</head>
+<body>
+<div class="mast"><div class="mast-in">
+  <a class="back" href="index.html">&larr; Full index</a>
+  <h1>Getting Started</h1>
+  <p class="sub">A guided path into KAPE &amp; Eric Zimmerman's tools — from collection to analysis</p>
+</div></div>
+
+<main>
+  <p class="intro">Incident response follows a lifecycle, usually described in six phases. This page focuses on the technical middle of that lifecycle &mdash; collecting, parsing and analyzing evidence &mdash; and maps free/open-source tools to each step. If you're coming from a unified platform like AXIOM, the shift is that these tools are single-purpose and chained by hand.</p>
+  <div class="phases">
+    <span class="phase">1. Preparation</span>
+    <span class="phase">2. Identification</span>
+    <span class="phase">3. Containment</span>
+    <span class="phase">4. Eradication</span>
+    <span class="phase">5. Recovery</span>
+    <span class="phase">6. Lessons Learned</span>
+  </div>
+  <p class="intro">The tool stages below (Collection, Parsing, Analysis, Memory) sit inside <strong>Identification</strong> &mdash; figuring out what happened, when, and how.</p>
+
+  <section class="stage">
+    <h2><span class="n">01</span> Collection</h2>
+    <p class="why">Grab the right artifacts off a live system or image before anything else.</p>
+    <div class="learn">Start here: <a href="https://www.youtube.com/watch?v=L9H1uj2HSb8" target="_blank" rel="noopener">13Cubed's Introduction to KAPE</a> — the clearest walkthrough of targets, modules and flags.</div>
+    <div class="tools">
+      <div class="tool"><h3><a href="https://ericzimmerman.github.io/KapeDocs/" target="_blank" rel="noopener">KAPE</a></h3>
+        <p>Targets pull relevant artifacts, modules run parsers on them automatically — KAPE can chain most of the tools in the next stage as part of the same collection run, not just as separate steps.</p></div>
+    </div>
+  </section>
+
+  <section class="stage">
+    <h2><span class="n">02</span> Parsing</h2>
+    <p class="why">Turn raw artifacts into readable, filterable output — usually CSV. Learn these standalone first so you know what KAPE's modules are actually doing under the hood.</p>
+    <div class="tools">
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/MFTECmd" target="_blank" rel="noopener">MFTECmd</a></h3>
+        <p>Parses the $MFT into a CSV timeline. Usually the first parser you'll reach for.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/RegistryExplorer" target="_blank" rel="noopener">Registry Explorer</a></h3>
+        <p>GUI hive browser with bookmarks for common keys — run history, USB devices, network profiles.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/evtx" target="_blank" rel="noopener">EvtxECmd</a></h3>
+        <p>Parses Windows Event Logs to CSV/JSON, with maps for common event IDs.</p></div>
+      <div class="tool"><h3><a href="https://ericzimmerman.github.io/#!index.md" target="_blank" rel="noopener">RECmd</a></h3>
+        <p>Batch registry parser driven by community-maintained "RECmd batch files" — pulls run keys, USB history, network profiles and more in one pass.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/AmcacheParser" target="_blank" rel="noopener">AmcacheParser</a></h3>
+        <p>Parses Amcache.hve for evidence of program execution, including deleted or renamed binaries.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/JLECmd" target="_blank" rel="noopener">JLECmd / LECmd</a></h3>
+        <p>Jump lists and LNK files — recent files, mapped network locations, removable media use.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/PECmd" target="_blank" rel="noopener">PECmd</a></h3>
+        <p>Prefetch parser — execution count and first/last run times for programs.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/SBECmd" target="_blank" rel="noopener">SBECmd</a></h3>
+        <p>ShellBags — folder access history, including from deleted or removable volumes.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/SrumECmd" target="_blank" rel="noopener">SrumECmd</a></h3>
+        <p>System Resource Usage Monitor — process execution, network usage and app activity over time.</p></div>
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/WxTCmd" target="_blank" rel="noopener">WxTCmd</a></h3>
+        <p>Windows Timeline / ActivitiesCache.db — cross-device user activity history.</p></div>
+    </div>
+    <p class="why" style="margin-top:10px">This covers the core artifacts. The EZ Tools suite has more (browser history, SQLite, bookmarks) — see the <a href="index.html">full index</a>.</p>
+  </section>
+
+  <section class="stage">
+    <h2><span class="n">03</span> Analysis</h2>
+    <p class="why">Combine parsed output into a single timeline, spot what matters, and triage logs at scale.</p>
+    <div class="tools">
+      <div class="tool"><h3><a href="https://github.com/EricZimmerman/TimelineExplorer" target="_blank" rel="noopener">Timeline Explorer</a></h3>
+        <p>Fast CSV/Excel viewer built for the volume EZ Tools output produces — filter, group, tag.</p></div>
+      <div class="tool"><h3><a href="https://github.com/Yamato-Security/hayabusa" target="_blank" rel="noopener">Hayabusa</a></h3>
+        <p>Fast Windows Event Log triage with built-in detection rules — produces a timeline straight from EVTX.</p></div>
+      <div class="tool"><h3><a href="https://github.com/WithSecureLabs/chainsaw" target="_blank" rel="noopener">Chainsaw</a></h3>
+        <p>Rapid EVTX/log triage for a first-pass sweep — surfaces likely-malicious events without a full parse.</p></div>
+      <div class="tool"><h3><a href="https://r3nzsec.github.io/irflow-timeline/" target="_blank" rel="noopener">IRFlow Timeline</a></h3>
+        <p>Native macOS-only timeline analyzer — a "Timeline Explorer" style experience for Mac users, without needing a Windows VM.</p></div>
+      <div class="tool"><h3><a href="https://www.autopsy.com/" target="_blank" rel="noopener">Autopsy</a></h3>
+        <p>Free GUI case platform if you want a single-pane view closer to what AXIOM gives you.</p></div>
+    </div>
+  </section>
+
+  <section class="stage">
+    <h2><span class="n">04</span> Memory</h2>
+    <p class="why">When disk artifacts aren't enough — processes, network state, injected code.</p>
+    <div class="tools">
+      <div class="tool"><h3><a href="https://github.com/volatilityfoundation/volatility3" target="_blank" rel="noopener">Volatility 3</a></h3>
+        <p>The standard for memory image analysis. Steeper learning curve — save this for last.</p></div>
+    </div>
+  </section>
+
+  <div class="further">
+    <h2>Further learning</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/@13cubed" target="_blank" rel="noopener">13Cubed (YouTube)</a> &mdash; hands-on walkthroughs of KAPE and each EZ Tool, free.</li>
+      <li>SANS FOR500 / FOR508 posters and cheat sheets &mdash; the official KAPE/EZ Tools targets-and-modules reference.</li>
+      <li><a href="https://ericzimmerman.github.io/" target="_blank" rel="noopener">Eric Zimmerman's own docs</a> &mdash; authoritative on flags and switches for each tool.</li>
+      <li><a href="https://r3nzsec.github.io/irflow-timeline/dfir-tips/kape-triage-workflow" target="_blank" rel="noopener">IRFlow's KAPE Triage Workflow</a> &mdash; from collection through timeline analysis.</li>
+      <li><a href="https://www.forensicfocus.com/" target="_blank" rel="noopener">ForensicFocus</a> &mdash; DFIR news, technique write-ups and community forums.</li>
+    </ul>
+  </div>
+
+  <p><a href="index.html">Browse the full index of 1,032 tools &rarr;</a></p>
+</main>
+
+<footer>DFIR Toolkit — curated by dfir-rick.</footer>
+</body>
+</html>
